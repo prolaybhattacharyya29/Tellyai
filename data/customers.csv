@@ -1,0 +1,1001 @@
+customer_id,name,phone,age,city,occupation,monthly_income_vnd,prior_loans,last_loan_status,product_fit,preferred_time,campaign
+CUST-10000,Hoàng Trọng Giang,+918420698546,49,Biên Hòa,Restaurant staff,5000000,0,None,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10001,Phạm Bảo An,+918420698546,32,Đà Nẵng,Street vendor,8000000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10002,Võ Thùy Nhung,+918420698546,24,Hồ Chí Minh City,Software developer,21000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Reactivation
+CUST-10003,Huỳnh Văn Lâm,+918420698546,40,Hà Tĩnh,Restaurant staff,8000000,1,Overdue,Credit card,Weekday afternoons (1-5 PM),Winback
+CUST-10004,Nguyễn Diệu Dung,+918420698546,32,Hà Nội,Logistics coordinator,14000000,0,None,Credit card,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10005,Nguyễn Văn Quân,+918420698546,47,Hà Nội,Senior accountant,49500000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Early collections
+CUST-10006,Nguyễn Ngọc Ngọc,+918420698546,57,Hải Phòng,Marketing manager,39500000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10007,Nguyễn Đức Tiến,+918420698546,26,Hải Phòng,Salesperson,16500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10008,Phan Mỹ Hạnh,+918420698546,40,Đà Nẵng,Senior engineer,42500000,2,Paid,Credit card,Weekend mornings (9-11 AM),Renewal
+CUST-10009,Võ Thanh Linh,+918420698546,31,Vũng Tàu,Retail manager,10500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-closure retention
+CUST-10010,Trương Trọng Hoàng,+84788308904,30,Thái Nguyên,Office clerk,13000000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10011,Phạm Văn Đạt,+84736384200,25,Đà Nẵng,Barista,17000000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Payment reminder
+CUST-10012,Trần Hồng Diệp,+84578524406,28,Hồ Chí Minh City,Hairdresser,7000000,0,None,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10013,Trương Ngọc Long,+84522948509,32,Hồ Chí Minh City,Delivery rider,6500000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10014,Lê Trọng Dũng,+84826776412,42,Hà Nội,Cleaning staff,3000000,6,Paid,Cash loan,Weekend afternoons (1-5 PM),Pre-closure retention
+CUST-10015,Trần Xuân Lộc,+84500849550,55,Hà Tĩnh,Factory worker,7000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10016,Hồ Minh Long,+84799065055,45,Vũng Tàu,Cleaning staff,4000000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10017,Huỳnh Quốc Minh,+84926911152,54,Huế,Hotel receptionist,16500000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10018,Võ Xuân Sang,+84714751961,31,Hà Nội,Office clerk,13500000,2,Paid,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10019,Trương Ngọc Khánh,+84563589792,48,Tuy Hòa,HR manager,19000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Winback
+CUST-10020,Nguyễn Quốc Thành,+84330419388,43,Hà Nội,Dentist,26000000,0,None,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10021,Trần Thanh Hạnh,+84319192147,46,Hà Nội,Taxi driver,16500000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10022,Hoàng Mỹ Vy,+84530633873,40,Vũng Tàu,Delivery rider,8500000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Reactivation
+CUST-10023,Phan Bảo Huyền,+84983276346,27,Hòa Bình,Salesperson,17500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10024,Lê Thu Hồng,+84510967485,22,Thanh Hóa,Architect,28000000,0,None,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10025,Vũ Thanh Minh,+84348695986,32,Hồ Chí Minh City,Dentist,35000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Reactivation
+CUST-10026,Nguyễn Công Quang,+84802235126,56,Buôn Ma Thuột,Doctor,35000000,1,Paid,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10027,Lê Anh Tiến,+84849238857,53,Hà Nội,Operations director,36000000,3,Paid,Credit card,Weekday evenings (6-8 PM),Renewal
+CUST-10028,Nguyễn Hồng Thu,+84903506140,43,Nam Định,Logistics coordinator,15500000,4,Overdue,EMI,Weekend mornings (9-11 AM),Early collections
+CUST-10029,Phạm Quốc Hoàng,+84909209002,52,Sơn La,Farmer,6500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10030,Nguyễn Thanh Long,+84371359593,28,Đà Nẵng,Primary school teacher,10500000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Payment reminder
+CUST-10031,Huỳnh Kim Lan,+84860604443,55,Cần Thơ,Motorbike taxi driver,3000000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10032,Lê Hữu Khánh,+84788082463,53,Hà Tĩnh,Mechanic,15000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10033,Nguyễn Công Long,+84507476647,41,Rạch Giá,Nurse,17000000,0,None,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10034,Huỳnh Anh Việt,+84822111571,40,Đà Nẵng,Bank teller,17000000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10035,Trần Mỹ Lan,+84395618485,25,Hà Nội,Bank teller,16500000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10036,Trần Hồng Thảo,+84990254567,49,Hồ Chí Minh City,Customer service rep,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10037,Huỳnh Hồng Dung,+84311004522,36,Điện Biên,Street vendor,8000000,0,None,EMI,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10038,Ngô Thanh Xuân,+84501375216,53,Lạng Sơn,Delivery rider,4500000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10039,Đỗ Ngọc Quỳnh,+84950785715,49,Hà Nội,Nurse,8000000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10040,Võ Thị Xuân,+84829854339,51,Đà Nẵng,Primary school teacher,9500000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10041,Lê Thanh Yến,+84912840677,27,Cần Thơ,Mechanic,8500000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10042,Phan Kim Thủy,+84892539588,54,Hồ Chí Minh City,Project manager,27500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10043,Võ Công Cường,+84835543165,42,Hà Nội,Warehouse supervisor,16000000,3,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10044,Nguyễn Ngọc Minh,+84931809018,43,Nha Trang,Accountant,34500000,5,Paid,Cash loan,Weekend mornings (9-11 AM),Renewal
+CUST-10045,Huỳnh Công Hải,+84768456262,28,Long Xuyên,HR manager,35500000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10046,Bùi Ngọc Ngân,+84524611636,51,Hồ Chí Minh City,Doctor,30000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10047,Nguyễn Kim Kim,+84899296439,44,Hồ Chí Minh City,Doctor,36000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10048,Phạm Hoàng Hoàng,+84397897282,28,Thanh Hóa,Office clerk,17000000,3,Paid,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10049,Nguyễn Tiến Phúc,+84734278352,43,Hà Nội,Bank teller,10000000,0,None,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10050,Hoàng Tiến Bình,+84805466589,57,Hồ Chí Minh City,Factory owner,72000000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10051,Phạm Anh Hồng,+84393408146,48,Hồ Chí Minh City,Dentist,28000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),EMI conversion
+CUST-10052,Trương Tiến Giang,+84898065933,35,Hòa Bình,Tailor,6000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10053,Đinh Trọng Minh,+84922831908,33,Hồ Chí Minh City,Salesperson,17000000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10054,Ngô Văn Việt,+84707574751,41,Hà Nội,Civil servant,28500000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10055,Trần Thùy Bình,+84383116573,28,Đà Nẵng,Warehouse supervisor,9500000,1,Overdue,EMI,Weekday mornings (9-11 AM),Payment reminder
+CUST-10056,Nguyễn Minh Giang,+84834404631,49,Biên Hòa,Dentist,25000000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Payment reminder
+CUST-10057,Lê Quốc Huy,+84348949023,52,Hải Phòng,Retail manager,17000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10058,Nguyễn Diệu Thảo,+84889866098,43,Hải Phòng,Restaurant staff,7500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10059,Nguyễn Ngọc Dũng,+84924337750,27,Hải Phòng,Salesperson,8500000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10060,Nguyễn Quốc Hoàng,+84816553290,38,Hà Nội,Hotel receptionist,16500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10061,Nguyễn Kim Bích,+84708009855,42,Quy Nhơn,Cleaning staff,7000000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),Reactivation
+CUST-10062,Bùi Hữu Sơn,+84940872706,31,Huế,Taxi driver,9500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10063,Nguyễn Minh Như,+84845568693,50,Hồ Chí Minh City,Hairdresser,3500000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10064,Trần Ngọc Lộc,+84780886545,34,Hà Nội,Housekeeper,6500000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10065,Hoàng Thị Thủy,+84507956393,26,Điện Biên,Security guard,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10066,Phạm Mỹ Hoa,+84969366170,55,Hà Nội,Architect,38000000,3,Paid,Credit card,Weekend mornings (9-11 AM),EMI conversion
+CUST-10067,Đặng Thùy Hoa,+84591275575,46,Hồ Chí Minh City,Barista,13500000,4,Paid,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10068,Bùi Thu Trâm,+84762427453,58,Thái Nguyên,Accountant,32500000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10069,Phan Anh Tuấn,+84580439751,54,Thái Nguyên,Taxi driver,10500000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10070,Nguyễn Tiến Hoàng,+84729309867,52,Phan Thiết,Lawyer,18500000,1,Paid,Credit card,Weekday mornings (9-11 AM),NPS feedback
+CUST-10071,Phạm Thị Loan,+84812304741,58,Hồ Chí Minh City,Construction worker,7500000,4,Paid,Cash loan,Weekday afternoons (1-5 PM),Winback
+CUST-10072,Phạm Hữu Minh,+84353957508,23,Hồ Chí Minh City,Customer service rep,14500000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10073,Nguyễn Ngọc Vinh,+84333686941,24,Quy Nhơn,Hotel receptionist,17500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10074,Trần Kim Minh,+84940628062,46,Mỹ Tho,Restaurant staff,7000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10075,Nguyễn Hồng Trang,+84349121324,50,Đà Nẵng,Senior accountant,52500000,3,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10076,Nguyễn Hoàng Tài,+84838691670,45,Hà Nội,Hotel receptionist,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10077,Nguyễn Anh Tuấn,+84553621743,35,Hồ Chí Minh City,Primary school teacher,14000000,1,Paid,EMI,Weekday evenings (6-8 PM),Renewal
+CUST-10078,Võ Anh Lan,+84898996752,45,Tây Ninh,Construction worker,3500000,1,Overdue,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10079,Phan Thùy Dung,+84938560397,30,Nam Định,Housekeeper,3000000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10080,Ngô Thanh Quyên,+84549011137,27,Nha Trang,Logistics coordinator,17000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10081,Ngô Ngọc Lộc,+84916768580,38,Cần Thơ,Shop owner,16000000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Reactivation
+CUST-10082,Nguyễn Đức Quân,+84748620044,42,Biên Hòa,Warehouse supervisor,17000000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10083,Vũ Xuân Quân,+84814109849,34,Hồ Chí Minh City,Retail manager,9500000,0,None,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10084,Nguyễn Thị Hà,+84859230486,49,Đà Nẵng,Project manager,18500000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10085,Trần Ngọc Quang,+84923458661,57,Buôn Ma Thuột,Taxi driver,8500000,1,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10086,Phạm Thanh Loan,+84785181933,56,Đà Nẵng,Office clerk,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10087,Nguyễn Phương Ngọc,+84352695204,24,Thanh Hóa,Warehouse supervisor,9500000,5,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10088,Dương Hồng Xuân,+84887012365,43,Hà Nội,Taxi driver,11000000,1,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10089,Nguyễn Phương Xuân,+84777644597,46,Hồ Chí Minh City,Delivery rider,5500000,0,None,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10090,Nguyễn Thanh Long,+84334242596,37,Sơn La,Nurse,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10091,Nguyễn Phương Diệp,+84505949841,27,Hồ Chí Minh City,Security guard,6500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10092,Hồ Hữu Phúc,+84393499980,51,Vũng Tàu,Accountant,32000000,3,Paid,EMI,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10093,Nguyễn Hoàng Thành,+84337670326,49,Mỹ Tho,Delivery rider,6500000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10094,Hoàng Tiến Phong,+84827937066,32,Hồ Chí Minh City,Real estate agent,56500000,4,Paid,Credit card,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10095,Phan Bảo Mai,+84762117645,37,Mỹ Tho,Dentist,21500000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10096,Huỳnh Tiến Giang,+84918925184,54,Hồ Chí Minh City,Bank teller,14000000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10097,Đinh Tiến Cường,+84338750309,40,Đà Nẵng,Office clerk,17000000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Winback
+CUST-10098,Huỳnh Quốc An,+84836656315,23,Bạc Liêu,Taxi driver,14000000,7,Paid,EMI,Weekend mornings (9-11 AM),Renewal
+CUST-10099,Nguyễn Minh Hải,+84711870669,24,Hải Phòng,Logistics coordinator,11500000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10100,Đặng Phương Thương,+84552873563,36,Hồ Chí Minh City,Retail manager,11500000,2,Paid,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10101,Nguyễn Thu Thảo,+84796734137,31,Hòa Bình,Salesperson,15000000,1,Paid,EMI,Weekday mornings (9-11 AM),EMI conversion
+CUST-10102,Đặng Quốc Sang,+84530435803,35,Lào Cai,Salesperson,14500000,0,None,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10103,Nguyễn Thanh Oanh,+84567323246,51,Phan Thiết,Street vendor,3500000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10104,Lê Hoàng Quang,+84570557212,38,Hà Nội,Security guard,6000000,0,None,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10105,Phan Công Hoàng,+84949560089,36,Biên Hòa,Salesperson,13500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10106,Nguyễn Minh Việt,+84950529086,31,Đà Nẵng,Customer service rep,16000000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10107,Nguyễn Công Thắng,+84842628096,57,Thanh Hóa,Cleaning staff,3500000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10108,Bùi Thùy Chi,+84389296529,33,Hồ Chí Minh City,Architect,29000000,1,Overdue,Credit card,Weekday evenings (6-8 PM),Early collections
+CUST-10109,Lê Hữu Dũng,+84928383719,28,Hồ Chí Minh City,Tailor,6000000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10110,Vũ Anh Dung,+84774253153,27,Buôn Ma Thuột,Factory owner,56500000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10111,Nguyễn Hữu Sang,+84394710455,27,Biên Hòa,Lawyer,30000000,0,None,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10112,Nguyễn Bảo Dung,+84551313404,45,Hồ Chí Minh City,Hotel receptionist,9000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Winback
+CUST-10113,Nguyễn Xuân Khoa,+84393683388,52,Đà Nẵng,Mechanic,9500000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10114,Ngô Thu Minh,+84783155565,40,Hà Nội,Project manager,37000000,2,Paid,EMI,Weekday mornings (9-11 AM),Payment reminder
+CUST-10115,Lê Bảo Trâm,+84577094459,56,Nam Định,Mechanic,10000000,1,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10116,Trần Công Vinh,+84893710275,54,Hồ Chí Minh City,Accountant,39500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Reactivation
+CUST-10117,Nguyễn Anh Hạnh,+84734244463,23,Hà Nội,Business owner,42500000,3,Paid,EMI,Weekday mornings (9-11 AM),Renewal
+CUST-10118,Trần Công Thắng,+84534476163,22,Hồ Chí Minh City,Investment banker,69500000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10119,Nguyễn Tiến Khánh,+84734285656,41,Huế,Civil servant,21000000,2,Paid,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10120,Lê Tiến Phúc,+84554131666,30,Hồ Chí Minh City,Restaurant staff,3500000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10121,Vũ Quốc Phúc,+84895464840,24,Long Xuyên,Real estate agent,44000000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10122,Nguyễn Phương Ngọc,+84325957742,41,Thái Nguyên,Hotel receptionist,16000000,1,Paid,EMI,Weekday mornings (9-11 AM),Reactivation
+CUST-10123,Lê Thùy Xuân,+84968646788,32,Hà Nội,Project manager,21500000,2,Paid,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10124,Lê Thùy Phương,+84899818278,48,Hà Nội,Architect,21000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10125,Võ Bảo Xuân,+84893077746,47,Rạch Giá,Delivery rider,5000000,2,Overdue,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10126,Trần Văn Tiến,+84878706809,34,Đà Nẵng,Nurse,13500000,1,Paid,EMI,Weekday afternoons (1-5 PM),NPS feedback
+CUST-10127,Nguyễn Tiến Đạt,+84766067740,30,Hà Nội,Doctor,21000000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),Renewal
+CUST-10128,Phạm Hoàng Huy,+84542081323,26,Hồ Chí Minh City,HR manager,22000000,6,Paid,Cash loan,Weekday mornings (9-11 AM),Renewal
+CUST-10129,Nguyễn Hoàng Giang,+84880175393,37,Hồ Chí Minh City,Barista,10500000,4,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10130,Phạm Minh Thương,+84957208941,22,Hà Nội,Senior engineer,79000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10131,Trần Kim Giang,+84300200756,56,Long Xuyên,Primary school teacher,17000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10132,Nguyễn Thanh Khánh,+84334922916,29,Hà Nội,Barista,10500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Renewal
+CUST-10133,Nguyễn Xuân Đạt,+84537871834,53,Hồ Chí Minh City,Senior accountant,69500000,2,Paid,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10134,Lê Thanh Thiện,+84325082431,36,Long Xuyên,Construction worker,5000000,2,Overdue,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10135,Nguyễn Hồng An,+84318990428,45,Hà Nội,Civil servant,30500000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10136,Ngô Văn Thắng,+84575719056,41,Quy Nhơn,Security guard,7500000,5,Overdue,Cash loan,Weekend afternoons (1-5 PM),Pre-closure retention
+CUST-10137,Nguyễn Thùy Diệp,+84585739001,49,Hà Nội,IT director,53500000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10138,Trần Thanh Trang,+84742917114,35,Hà Nội,Hotel receptionist,14500000,2,Paid,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10139,Nguyễn Công Tuấn,+84328179302,57,Hồ Chí Minh City,Hairdresser,5500000,3,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10140,Tạ Quốc Tuấn,+84518366528,30,Hồ Chí Minh City,Software developer,18000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10141,Phạm Tiến Thiện,+84334392416,57,Hòa Bình,Motorbike taxi driver,6500000,3,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10142,Nguyễn Xuân Lâm,+84397354953,23,Hồ Chí Minh City,Delivery rider,5000000,1,Paid,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10143,Hồ Ngọc Lan,+84528909287,37,Cà Mau,Motorbike taxi driver,4500000,5,Paid,Cash loan,Weekday evenings (6-8 PM),EMI conversion
+CUST-10144,Lê Văn Quang,+84588951006,34,Hồ Chí Minh City,Civil servant,36500000,0,None,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10145,Nguyễn Hữu Hoàng,+84971153076,32,Hà Tĩnh,Primary school teacher,8500000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10146,Võ Bảo Kim,+84725136179,24,Điện Biên,Salesperson,17000000,2,Overdue,Cash loan,Weekday evenings (6-8 PM),Payment reminder
+CUST-10147,Nguyễn Thu Ngọc,+84329180768,26,Lào Cai,Motorbike taxi driver,3500000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10148,Nguyễn Hữu Minh,+84833875724,28,Hồ Chí Minh City,Taxi driver,10500000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),NPS feedback
+CUST-10149,Hoàng Anh Xuân,+84874664039,38,Hồ Chí Minh City,Farmer,5500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10150,Trần Minh Phong,+84700864026,47,Hồ Chí Minh City,Logistics coordinator,16000000,0,None,Credit card,Weekday evenings (6-8 PM),Onboarding
+CUST-10151,Vũ Kim Quỳnh,+84324220760,36,Hải Phòng,Cleaning staff,6000000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10152,Ngô Tiến Khánh,+84709759866,32,Hà Nội,Logistics coordinator,15500000,1,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10153,Đỗ Thị Quỳnh,+84929903332,55,Hà Nội,Factory owner,48500000,8,Paid,EMI,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10154,Nguyễn Đức Thành,+84378882654,24,Hồ Chí Minh City,Hotel receptionist,9500000,4,Paid,Cash loan,Weekday evenings (6-8 PM),Renewal
+CUST-10155,Nguyễn Kim Giang,+84738869237,34,Hồ Chí Minh City,Nurse,14000000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10156,Nguyễn Tiến Dũng,+84774755182,45,Buôn Ma Thuột,HR manager,19500000,1,Paid,Credit card,Weekday evenings (6-8 PM),Reactivation
+CUST-10157,Nguyễn Công Dũng,+84851853187,32,Đà Nẵng,Shop owner,8500000,0,None,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10158,Trần Kim Trang,+84341182697,51,Biên Hòa,Doctor,39500000,1,Paid,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10159,Nguyễn Anh Thảo,+84755264323,34,Đà Nẵng,Customer service rep,9500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10160,Nguyễn Thanh Lâm,+84369243075,56,Nam Định,Civil servant,31500000,2,Paid,Cash loan,Weekend mornings (9-11 AM),NPS feedback
+CUST-10161,Nguyễn Quốc Phong,+84524775998,48,Nha Trang,Logistics coordinator,10500000,3,Overdue,EMI,Weekday evenings (6-8 PM),Early collections
+CUST-10162,Nguyễn Quốc Quang,+84956411654,48,Cần Thơ,Shop owner,15500000,0,None,EMI,Weekend mornings (9-11 AM),Onboarding
+CUST-10163,Nguyễn Công Tiến,+84530427517,47,Long Xuyên,Farmer,7000000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10164,Nguyễn Thị Thảo,+84916626313,40,Hồ Chí Minh City,Security guard,3000000,3,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10165,Nguyễn Thanh Cường,+84519802920,46,Hà Nội,Accountant,29500000,8,Paid,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10166,Hoàng Anh Hoàng,+84343541663,48,Cần Thơ,Office clerk,9500000,2,Paid,EMI,Weekday mornings (9-11 AM),EMI conversion
+CUST-10167,Nguyễn Thị An,+84789341596,27,Cần Thơ,Hotel receptionist,9500000,1,Paid,EMI,Weekend afternoons (1-5 PM),Renewal
+CUST-10168,Vũ Mỹ Bình,+84764920888,29,Hồ Chí Minh City,Delivery rider,3500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10169,Vũ Phương Huyền,+84780814923,29,Hồ Chí Minh City,Primary school teacher,13500000,3,Overdue,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10170,Nguyễn Kim Minh,+84567688784,24,Vinh,Motorbike taxi driver,7000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10171,Võ Trọng Dũng,+84756647466,22,Rạch Giá,Bank teller,17500000,2,Paid,Credit card,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10172,Nguyễn Hồng Minh,+84790264248,42,Đà Nẵng,Salesperson,9000000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10173,Võ Hữu Sang,+84996856438,52,Hồ Chí Minh City,Office clerk,17000000,1,Paid,Credit card,Weekday evenings (6-8 PM),Renewal
+CUST-10174,Phạm Thu Hạnh,+84753184874,47,Hồ Chí Minh City,Marketing manager,18000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10175,Đỗ Bảo Lan,+84845590754,33,Hồ Chí Minh City,Warehouse supervisor,17500000,0,None,Credit card,Weekday afternoons (1-5 PM),Onboarding
+CUST-10176,Võ Thanh Thu,+84997299414,57,Nha Trang,Primary school teacher,16000000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10177,Hoàng Thanh Quyên,+84556313456,49,Vũng Tàu,Warehouse supervisor,10000000,6,Paid,EMI,Weekend afternoons (1-5 PM),Winback
+CUST-10178,Nguyễn Phương Hiền,+84596107253,36,Hà Nội,Factory worker,4500000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10179,Vũ Phương Trâm,+84839935026,56,Đà Nẵng,Dentist,27500000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Winback
+CUST-10180,Huỳnh Ngọc Chi,+84571022180,31,Lào Cai,Construction worker,8500000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10181,Nguyễn Thu Mai,+84707595715,43,Lạng Sơn,Warehouse supervisor,13000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10182,Trần Trọng Phúc,+84749669639,23,Buôn Ma Thuột,Retail manager,8000000,0,None,EMI,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10183,Võ Thu Xuân,+84391950067,49,Đà Nẵng,Nurse,11000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10184,Nguyễn Phương Hạnh,+84312089444,56,Hồ Chí Minh City,Primary school teacher,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10185,Vũ Thanh Quyên,+84762938012,31,Quy Nhơn,Farmer,6000000,4,Paid,Cash loan,Weekday evenings (6-8 PM),NPS feedback
+CUST-10186,Nguyễn Quốc Minh,+84955937934,34,Hồ Chí Minh City,Accountant,22000000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10187,Bùi Hữu Hiếu,+84321593622,50,Long Xuyên,University lecturer,33000000,1,Paid,Credit card,Weekday evenings (6-8 PM),Renewal
+CUST-10188,Trần Bảo Thảo,+84722748178,53,Hồ Chí Minh City,Hotel receptionist,13000000,5,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10189,Lê Trọng Hoàn,+84378868572,52,Hồ Chí Minh City,Logistics coordinator,10000000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Reactivation
+CUST-10190,Trần Đức Lộc,+84953568861,58,Hồ Chí Minh City,Dentist,27500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10191,Nguyễn Thanh Phương,+84730293440,38,Đà Nẵng,Barista,16000000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10192,Nguyễn Trọng Nam,+84553844651,35,Biên Hòa,Warehouse supervisor,9000000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Reactivation
+CUST-10193,Phạm Văn Lộc,+84864564215,31,Vũng Tàu,Street vendor,6000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),NPS feedback
+CUST-10194,Phạm Trọng Minh,+84792644241,32,Đà Nẵng,Customer service rep,8000000,3,Paid,EMI,Weekday evenings (6-8 PM),NPS feedback
+CUST-10195,Đặng Trọng Trung,+84328541046,29,Cần Thơ,Cleaning staff,6000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10196,Trần Anh Vũ,+84364947389,36,Hải Phòng,Hairdresser,8000000,1,Paid,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10197,Nguyễn Thanh Bình,+84955328414,58,Rạch Giá,Barista,8000000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10198,Trần Thanh Khang,+84949573181,28,Hà Nội,Delivery rider,7500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10199,Hồ Kim Thương,+84388460236,40,Nam Định,Warehouse supervisor,8500000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10200,Trương Minh Nam,+84920552102,47,Thái Nguyên,Housekeeper,6500000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10201,Nguyễn Thanh Hà,+84993926195,57,Hồ Chí Minh City,Tailor,3500000,4,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-closure retention
+CUST-10202,Trần Anh Đạt,+84895779445,46,Hồ Chí Minh City,Nurse,17000000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10203,Nguyễn Anh Linh,+84720680943,53,Hồ Chí Minh City,Primary school teacher,16500000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Winback
+CUST-10204,Phạm Hồng Kim,+84310940898,39,Rạch Giá,Street vendor,5000000,3,Paid,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10205,Nguyễn Quốc Thắng,+84903874153,28,Hồ Chí Minh City,Office clerk,16500000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10206,Vũ Thanh Nam,+84542738211,37,Hồ Chí Minh City,Nurse,15500000,5,Paid,Credit card,Weekend mornings (9-11 AM),Winback
+CUST-10207,Trần Thanh Khang,+84818653428,25,Nam Định,Mechanic,8000000,0,None,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10208,Đinh Anh Sơn,+84958343665,42,Biên Hòa,Primary school teacher,12000000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10209,Nguyễn Diệu Phương,+84569464903,47,Hà Nội,Motorbike taxi driver,5000000,1,Overdue,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10210,Lê Thị Vy,+84312277230,55,Hòa Bình,Retail manager,15500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10211,Trương Thanh Phương,+84741510398,57,Cần Thơ,Cleaning staff,5500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10212,Lê Ngọc Hoàng,+84933584323,44,Cần Thơ,Warehouse supervisor,17000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10213,Vũ Thu Nhung,+84875751842,27,Hà Tĩnh,Project manager,28000000,0,None,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10214,Nguyễn Thị Hồng,+84984812662,25,Nam Định,Bank teller,12500000,0,None,EMI,Weekday mornings (9-11 AM),Onboarding
+CUST-10215,Võ Đức Dũng,+84502474360,39,Hồ Chí Minh City,Bank teller,15000000,2,Paid,Credit card,Weekday mornings (9-11 AM),EMI conversion
+CUST-10216,Trần Hoàng Phong,+84539291706,42,Hồ Chí Minh City,Doctor,30500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Winback
+CUST-10217,Trần Quốc An,+84788216312,24,Hải Phòng,Housekeeper,8000000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10218,Nguyễn Trọng Sơn,+84799606771,50,Hồ Chí Minh City,Marketing manager,23000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Renewal
+CUST-10219,Nguyễn Đức Tuấn,+84961137289,40,Hà Nội,Factory worker,7000000,2,Paid,EMI,Weekend afternoons (1-5 PM),Reactivation
+CUST-10220,Phạm Hữu Thiện,+84772765354,42,Hồ Chí Minh City,Taxi driver,11000000,3,Paid,Cash loan,Weekend afternoons (1-5 PM),Renewal
+CUST-10221,Phạm Minh An,+84810634650,35,Hồ Chí Minh City,IT director,37000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10222,Lê Quốc Khoa,+84382003990,55,Biên Hòa,Bank teller,14500000,3,Paid,Credit card,Weekend afternoons (1-5 PM),Renewal
+CUST-10223,Hồ Mỹ Hiền,+84874175565,42,Hồ Chí Minh City,Finance analyst,21500000,2,Paid,EMI,Weekend mornings (9-11 AM),Winback
+CUST-10224,Mai Anh An,+84992943795,41,Hà Nội,Civil servant,26000000,1,Paid,EMI,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10225,Nguyễn Kim Kim,+84991031352,35,Hồ Chí Minh City,Dentist,27000000,4,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10226,Võ Quốc An,+84708379384,46,Hồ Chí Minh City,Dentist,37000000,3,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10227,Nguyễn Minh Vũ,+84369975047,58,Hải Phòng,Delivery rider,8500000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10228,Hoàng Thùy Giang,+84546167207,29,Hồ Chí Minh City,Hotel receptionist,10000000,2,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10229,Nguyễn Văn Long,+84769410813,31,Hồ Chí Minh City,Warehouse supervisor,8000000,2,Paid,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10230,Nguyễn Hoàng Việt,+84572575696,24,Huế,Housekeeper,6500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10231,Lê Anh Hà,+84866931283,42,Thái Nguyên,Office clerk,15500000,2,Paid,Credit card,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10232,Vũ Phương Nhung,+84593470633,46,Hồ Chí Minh City,Mechanic,17000000,4,Paid,EMI,Weekday mornings (9-11 AM),EMI conversion
+CUST-10233,Trần Ngọc Mai,+84856864543,30,Sơn La,Security guard,6000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10234,Huỳnh Ngọc Quân,+84565105718,48,Hà Nội,University lecturer,22500000,1,Overdue,Credit card,Weekday evenings (6-8 PM),Early collections
+CUST-10235,Nguyễn Thanh Vũ,+84511762522,30,Lạng Sơn,Bank teller,12500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10236,Nguyễn Tiến Hiếu,+84507024797,42,Biên Hòa,Cleaning staff,7000000,1,Paid,EMI,Weekday afternoons (1-5 PM),Reactivation
+CUST-10237,Lê Công Cường,+84955875480,57,Thái Nguyên,Logistics coordinator,14000000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10238,Trần Hữu Tuấn,+84996946051,23,Hà Nội,Export-import specialist,27500000,1,Paid,Credit card,Weekend afternoons (1-5 PM),NPS feedback
+CUST-10239,Trần Công Cường,+84571143537,32,Mỹ Tho,Software developer,26000000,0,None,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10240,Nguyễn Hồng Oanh,+84737461126,56,Long Xuyên,Construction worker,4500000,2,Paid,EMI,Weekend afternoons (1-5 PM),NPS feedback
+CUST-10241,Nguyễn Thị Kim,+84908268210,41,Hồ Chí Minh City,Mechanic,15500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10242,Vũ Bảo Bình,+84955973073,57,Hà Nội,Hairdresser,5000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10243,Trần Mỹ Nhung,+84905950767,55,Huế,Delivery rider,6000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Reactivation
+CUST-10244,Trần Mỹ Trang,+84922114772,57,Hồ Chí Minh City,Retail manager,16000000,1,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10245,Nguyễn Hữu Vũ,+84957133598,52,Hồ Chí Minh City,Hotel receptionist,9000000,0,None,EMI,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10246,Nguyễn Ngọc Phương,+84382735267,23,Biên Hòa,University lecturer,29000000,1,Paid,Credit card,Weekend mornings (9-11 AM),Renewal
+CUST-10247,Lê Đức Hùng,+84773044249,45,Vinh,Taxi driver,11000000,1,Overdue,EMI,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10248,Nguyễn Văn Vinh,+84797571889,46,Hà Nội,Housekeeper,7000000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10249,Nguyễn Mỹ Minh,+84317707622,29,Hà Nội,Motorbike taxi driver,3500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10250,Nguyễn Thị Như,+84752985138,25,Hồ Chí Minh City,Retail manager,9500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10251,Nguyễn Ngọc Vinh,+84933178097,28,Hà Nội,Civil servant,39000000,3,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10252,Phạm Ngọc Loan,+84778404341,28,Hòa Bình,Motorbike taxi driver,5000000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10253,Lê Thu Lan,+84921402649,26,Biên Hòa,University lecturer,33000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10254,Nguyễn Đức An,+84819018734,31,Hồ Chí Minh City,Primary school teacher,17000000,0,None,Credit card,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10255,Võ Diệu Diệp,+84976997995,45,Hà Nội,Barista,11000000,2,Paid,EMI,Weekday mornings (9-11 AM),Cross-sell
+CUST-10256,Võ Mỹ Yến,+84933335641,31,Hải Phòng,Business owner,53500000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10257,Lê Hồng Vân,+84506447641,44,Hồ Chí Minh City,Tailor,7000000,2,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10258,Trần Minh Thương,+84950043590,27,Hải Phòng,Marketing manager,34500000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10259,Hoàng Xuân Phong,+84345474972,58,Hải Phòng,Customer service rep,8500000,4,Paid,Cash loan,Weekend mornings (9-11 AM),Renewal
+CUST-10260,Phạm Xuân Huy,+84805821280,50,Hải Phòng,Doctor,38500000,0,None,Credit card,Weekday afternoons (1-5 PM),Onboarding
+CUST-10261,Nguyễn Thanh Sơn,+84395887436,25,Huế,Hotel receptionist,16500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10262,Nguyễn Trọng Sơn,+84841809469,49,Đà Nẵng,Mechanic,16500000,0,None,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10263,Nguyễn Minh Việt,+84575136156,28,Hà Nội,Hairdresser,7500000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10264,Bùi Thanh Khánh,+84968967181,38,Hà Nội,Factory worker,8000000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10265,Trần Tiến Khoa,+84727203928,47,Hà Tĩnh,Cleaning staff,8500000,4,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10266,Hoàng Anh Huy,+84300770460,43,Hải Phòng,Customer service rep,9500000,4,Paid,EMI,Weekend afternoons (1-5 PM),Winback
+CUST-10267,Trần Phương Giang,+84350984593,45,Huế,Project manager,32500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10268,Huỳnh Ngọc Chi,+84396231648,34,Hà Nội,Architect,24500000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10269,Hồ Thanh Hồng,+84890337426,36,Hà Nội,Architect,28000000,1,Overdue,Credit card,Weekday mornings (9-11 AM),Payment reminder
+CUST-10270,Nguyễn Xuân Lâm,+84506980680,26,Đà Nẵng,Motorbike taxi driver,3000000,0,None,EMI,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10271,Nguyễn Mỹ Hiền,+84953920102,32,Vinh,Taxi driver,13000000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10272,Hoàng Thu Hồng,+84800975267,39,Hồ Chí Minh City,Civil servant,30500000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10273,Võ Thanh Loan,+84367302150,36,Hồ Chí Minh City,Civil servant,24000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10274,Đỗ Đức Khang,+84303226841,23,Hồ Chí Minh City,Architect,33500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10275,Nguyễn Kim Hồng,+84721224180,35,Hồ Chí Minh City,Customer service rep,13000000,1,Paid,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10276,Phạm Bảo Huyền,+84505214472,58,Hà Nội,Barista,14000000,5,Paid,EMI,Weekday afternoons (1-5 PM),Winback
+CUST-10277,Trần Văn Cường,+84377235851,52,Long Xuyên,Barista,17500000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10278,Nguyễn Hồng Kim,+84976423290,23,Đà Nẵng,Hotel receptionist,9500000,1,Paid,Credit card,Weekend mornings (9-11 AM),Winback
+CUST-10279,Phan Minh Quang,+84380830429,25,Rạch Giá,Hotel receptionist,14000000,1,Paid,Credit card,Weekday evenings (6-8 PM),NPS feedback
+CUST-10280,Phan Ngọc Lâm,+84567571356,42,Hồ Chí Minh City,Customer service rep,8500000,0,None,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10281,Nguyễn Tiến Giang,+84345884366,27,Hà Nội,Security guard,5500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10282,Nguyễn Minh Bình,+84556295134,36,Sơn La,Restaurant staff,3500000,2,Paid,EMI,Weekend afternoons (1-5 PM),Renewal
+CUST-10283,Phan Thị Hồng,+84984317124,44,Hà Nội,Warehouse supervisor,13000000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10284,Trương Ngọc Trâm,+84511954327,50,Hồ Chí Minh City,Salesperson,10500000,3,Paid,Credit card,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10285,Vũ Thanh Tuấn,+84507937429,43,Hồ Chí Minh City,Housekeeper,4000000,4,Overdue,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10286,Lê Tiến Giang,+84833615771,54,Hồ Chí Minh City,Nurse,8000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10287,Huỳnh Kim Minh,+84833239807,40,Cần Thơ,Hospital dept head,61500000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10288,Trần Thanh Nhi,+84748909704,58,Hà Nội,Civil servant,20500000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10289,Nguyễn Phương Quyên,+84935400298,48,Vinh,Housekeeper,3000000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10290,Nguyễn Tiến Hoàng,+84764615581,44,Buôn Ma Thuột,Shop owner,14000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Reactivation
+CUST-10291,Nguyễn Anh Trâm,+84357107588,28,Biên Hòa,Senior engineer,54000000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10292,Trần Minh Hùng,+84511218685,30,Hồ Chí Minh City,Primary school teacher,16000000,1,Overdue,Credit card,Weekend mornings (9-11 AM),Early collections
+CUST-10293,Đinh Công Hùng,+84570828121,26,Huế,Housekeeper,8000000,1,Overdue,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10294,Nguyễn Ngọc Phương,+84703001652,44,Hồ Chí Minh City,Hairdresser,7000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Winback
+CUST-10295,Nguyễn Thùy Lan,+84921295902,50,Cần Thơ,Shop owner,9500000,3,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10296,Nguyễn Minh Thắng,+84373454327,40,Hà Nội,Barista,16500000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10297,Nguyễn Công Thành,+84388930663,28,Vinh,Cleaning staff,5000000,6,Paid,EMI,Weekday afternoons (1-5 PM),Winback
+CUST-10298,Hoàng Kim Oanh,+84872752764,54,Cao Bằng,Motorbike taxi driver,6000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10299,Hoàng Trọng Hiếu,+84384016336,51,Hồ Chí Minh City,Warehouse supervisor,10000000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10300,Đặng Ngọc Oanh,+84398148401,49,Hà Nội,Logistics coordinator,17000000,1,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10301,Nguyễn Thị Quỳnh,+84851025367,24,Hồ Chí Minh City,Architect,36500000,2,Paid,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10302,Võ Minh Quang,+84833362659,32,Quy Nhơn,Hairdresser,5500000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10303,Lê Bảo Thủy,+84859335816,32,Nha Trang,Retail manager,15000000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10304,Nguyễn Thùy Thương,+84722586975,52,Hồ Chí Minh City,Hotel receptionist,9000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Winback
+CUST-10305,Lê Quốc Vinh,+84542565865,39,Biên Hòa,Hotel receptionist,13000000,1,Paid,EMI,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10306,Phạm Công Nam,+84531163438,40,Long Xuyên,Civil servant,39000000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10307,Hoàng Ngọc Chi,+84745460112,53,Hồ Chí Minh City,Construction worker,4500000,0,None,EMI,Weekday mornings (9-11 AM),Cross-sell
+CUST-10308,Lê Xuân Việt,+84768388255,38,Hồ Chí Minh City,Logistics coordinator,9000000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10309,Hoàng Minh Thu,+84592122480,56,Hồ Chí Minh City,Lawyer,37500000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10310,Lê Diệu Trâm,+84369077096,29,Rạch Giá,Lawyer,33500000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10311,Võ Bảo Oanh,+84528143867,52,Hà Nội,Factory owner,52000000,0,None,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10312,Phan Ngọc An,+84747536761,47,Rạch Giá,HR manager,23000000,2,Paid,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10313,Vũ Thu Giang,+84586734726,48,Hồ Chí Minh City,Delivery rider,8500000,5,Paid,Cash loan,Weekend mornings (9-11 AM),EMI conversion
+CUST-10314,Nguyễn Mỹ Huyền,+84969917144,58,Hòa Bình,Barista,8000000,4,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10315,Huỳnh Thu Yến,+84518724186,33,Hà Tĩnh,Hairdresser,7000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10316,Nguyễn Thanh Diệp,+84804893234,25,Bạc Liêu,Housekeeper,5000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10317,Hồ Hồng Hoa,+84963339552,27,Hà Nội,Warehouse supervisor,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10318,Huỳnh Hồng Hồng,+84792867238,57,Hà Nội,Salesperson,16000000,3,Paid,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10319,Nguyễn Minh Kiên,+84849903744,40,Hồ Chí Minh City,Factory worker,6500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10320,Trần Xuân Hải,+84355407680,42,Thanh Hóa,Warehouse supervisor,17500000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10321,Vũ Anh Quân,+84369377952,25,Vũng Tàu,Warehouse supervisor,12500000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10322,Huỳnh Diệu Hoa,+84302346912,44,Hà Nội,Salesperson,12000000,5,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10323,Hồ Trọng Việt,+84886440342,27,Đà Nẵng,Project manager,27000000,1,Paid,Credit card,Weekend mornings (9-11 AM),Cross-sell
+CUST-10324,Nguyễn Thùy Giang,+84945595544,54,Nam Định,Construction worker,8500000,4,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10325,Huỳnh Xuân Minh,+84977483982,28,Hồ Chí Minh City,Shop owner,14500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10326,Nguyễn Văn Khoa,+84973866968,29,Hồ Chí Minh City,Housekeeper,6500000,2,Overdue,EMI,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10327,Trần Hồng Quỳnh,+84913440117,37,Hồ Chí Minh City,Warehouse supervisor,12000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10328,Nguyễn Thị Thương,+84955244566,23,Hà Nội,Shop owner,15000000,5,Paid,Credit card,Weekday evenings (6-8 PM),Renewal
+CUST-10329,Đỗ Anh Nhi,+84744174455,30,Hà Nội,Mechanic,9500000,1,Overdue,EMI,Weekend mornings (9-11 AM),Pre-closure retention
+CUST-10330,Ngô Hồng Thảo,+84562761161,37,Vinh,Bank teller,14000000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10331,Phan Bảo Hiền,+84900461223,39,Hà Nội,Warehouse supervisor,10500000,0,None,EMI,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10332,Bùi Đức Phúc,+84376815511,50,Hồ Chí Minh City,Housekeeper,6500000,5,Paid,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10333,Huỳnh Kim Trâm,+84544728350,37,Hồ Chí Minh City,Primary school teacher,10000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10334,Trần Bảo Huyền,+84973010890,49,Hồ Chí Minh City,Finance analyst,31500000,3,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10335,Bùi Thùy Hồng,+84994878733,47,Biên Hòa,Senior engineer,77000000,6,Paid,Credit card,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10336,Nguyễn Thanh Hiền,+84878053785,41,Cần Thơ,Mechanic,13500000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10337,Trần Xuân An,+84891036306,51,Mỹ Tho,Nurse,12000000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10338,Vũ Hữu Vinh,+84727767523,28,Cà Mau,Warehouse supervisor,16500000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10339,Hoàng Hồng Yến,+84335553244,32,Hồ Chí Minh City,Construction worker,6500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10340,Lê Thị Thương,+84540159181,31,Hà Nội,Senior accountant,70500000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10341,Võ Công Vũ,+84949321705,58,Hà Nội,Hotel receptionist,10000000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10342,Nguyễn Thị Minh,+84876170663,39,Thái Nguyên,Bank teller,10000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10343,Nguyễn Trọng Khánh,+84909579575,23,Hải Phòng,Dentist,28000000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10344,Nguyễn Minh Hoàn,+84854931053,32,Huế,Project manager,20500000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10345,Nguyễn Quốc Long,+84717201829,53,Hồ Chí Minh City,Taxi driver,10500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10346,Nguyễn Công Tuấn,+84869055176,27,Hồ Chí Minh City,Housekeeper,7500000,1,Paid,EMI,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10347,Nguyễn Diệu Vân,+84940482909,44,Lào Cai,Construction worker,5000000,1,Paid,EMI,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10348,Phạm Bảo Minh,+84868798258,39,Đà Nẵng,Tailor,7000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10349,Lê Hoàng Tuấn,+84800156430,29,Hà Nội,Office clerk,10000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10350,Vũ Thu Ngân,+84794202930,53,Hà Nội,Tailor,3000000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10351,Nguyễn Đức Đạt,+84812511766,30,Tuy Hòa,Barista,8000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10352,Trần Kim Phương,+84966804668,29,Rạch Giá,Nurse,11000000,3,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10353,Dương Thu Linh,+84853338892,32,Đà Nẵng,Tailor,4500000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10354,Phan Xuân Tuấn,+84782498852,28,Hồ Chí Minh City,Hotel receptionist,8000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10355,Trần Thùy Yến,+84508064100,36,Cao Bằng,Finance analyst,28500000,3,Paid,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10356,Phạm Anh Sơn,+84343115071,48,Hà Nội,Civil servant,38500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10357,Nguyễn Thị Thương,+84856355146,31,Hồ Chí Minh City,Engineer,22000000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10358,Phạm Kim Thủy,+84573669535,32,Hải Phòng,Security guard,4500000,5,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10359,Nguyễn Trọng Hùng,+84879372193,31,Hà Tĩnh,Bank teller,11500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Renewal
+CUST-10360,Nguyễn Hoàng Hoàng,+84522182112,46,Phan Thiết,Office clerk,11000000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10361,Nguyễn Kim Ngọc,+84988019713,24,Hồ Chí Minh City,Primary school teacher,14000000,2,Overdue,EMI,Weekend afternoons (1-5 PM),Early collections
+CUST-10362,Nguyễn Công Trung,+84788982046,45,Hải Phòng,Lawyer,26000000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10363,Hồ Hữu Minh,+84962842243,57,Vũng Tàu,Mechanic,16000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10364,Bùi Diệu Loan,+84844833126,54,Đà Nẵng,Factory worker,6500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10365,Tạ Ngọc Hoàn,+84536277816,38,Hà Tĩnh,Farmer,6000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10366,Huỳnh Hồng Thủy,+84999827225,27,Hà Nội,Factory owner,73500000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Reactivation
+CUST-10367,Phan Anh Xuân,+84551908834,41,Hòa Bình,Housekeeper,6500000,3,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10368,Phạm Diệu Giang,+84953390343,32,Hồ Chí Minh City,Security guard,7500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10369,Trần Minh Hoa,+84822600518,56,Thanh Hóa,Office clerk,11000000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10370,Nguyễn Kim Ngọc,+84815327429,55,Tuy Hòa,Street vendor,5500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10371,Trần Phương Lan,+84838738841,58,Hà Nội,Bank teller,9500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10372,Lê Ngọc Quân,+84367249590,48,Rạch Giá,Hairdresser,7500000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10373,Trần Minh Hiền,+84778301937,37,Hồ Chí Minh City,Hairdresser,8500000,2,Paid,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10374,Đặng Trọng Kiên,+84353076132,50,Thanh Hóa,Accountant,18500000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Renewal
+CUST-10375,Vũ Phương Dung,+84377932049,36,Vũng Tàu,Finance analyst,28000000,1,Paid,EMI,Weekday mornings (9-11 AM),Winback
+CUST-10376,Nguyễn Kim Thu,+84736693421,22,Thanh Hóa,Construction worker,3000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10377,Dương Thùy Thu,+84547497795,46,Nha Trang,Customer service rep,14000000,0,None,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10378,Nguyễn Thanh Tiến,+84365362592,37,Biên Hòa,Lawyer,34000000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10379,Phạm Diệu Bích,+84994813707,36,Đà Nẵng,Cleaning staff,4500000,1,Paid,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10380,Hồ Đức Giang,+84563340801,33,Hồ Chí Minh City,Hairdresser,5000000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10381,Trần Ngọc Như,+84563592849,50,Hồ Chí Minh City,Doctor,23500000,2,Paid,Credit card,Weekend afternoons (1-5 PM),Winback
+CUST-10382,Trần Kim Hiền,+84840935513,52,Buôn Ma Thuột,Export-import specialist,34000000,0,None,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10383,Đặng Minh Vân,+84749993465,58,Hồ Chí Minh City,Senior engineer,35500000,3,Paid,Credit card,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10384,Hoàng Hoàng Huy,+84766972086,38,Thái Nguyên,Lawyer,35000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10385,Nguyễn Diệu Loan,+84369359514,56,Cần Thơ,IT director,35500000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10386,Nguyễn Minh Yến,+84973179339,55,Quy Nhơn,Dentist,20500000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10387,Trần Thùy Hà,+84551522781,32,Hồ Chí Minh City,Bank teller,10000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10388,Phạm Bảo Phương,+84302967027,53,Hà Nội,Customer service rep,11500000,1,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10389,Nguyễn Minh Việt,+84830331467,39,Hà Nội,Lawyer,28500000,3,Overdue,Credit card,Weekday afternoons (1-5 PM),Early collections
+CUST-10390,Nguyễn Tiến Hải,+84703083464,46,Cần Thơ,Project manager,35000000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10391,Nguyễn Đức Giang,+84873658141,28,Rạch Giá,Export-import specialist,34500000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10392,Võ Thùy Dung,+84769669647,43,Lạng Sơn,Export-import specialist,27000000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10393,Dương Thùy An,+84321351951,41,Thái Nguyên,Factory owner,50500000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10394,Lê Tiến Huy,+84556235419,40,Hà Nội,Hotel receptionist,14000000,2,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10395,Hoàng Văn Khánh,+84862290817,53,Hà Nội,Business owner,53000000,8,Paid,EMI,Weekday evenings (6-8 PM),NPS feedback
+CUST-10396,Nguyễn Mỹ Quỳnh,+84869735261,25,Nha Trang,Engineer,36000000,0,None,EMI,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10397,Nguyễn Công Khang,+84528163817,25,Hồ Chí Minh City,Tailor,7000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10398,Phan Hoàng Thắng,+84821335177,39,Hồ Chí Minh City,Hospital dept head,74500000,1,Paid,EMI,Weekend mornings (9-11 AM),Reactivation
+CUST-10399,Nguyễn Ngọc Hà,+84359460539,42,Hồ Chí Minh City,Housekeeper,8000000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10400,Võ Thanh Khánh,+84355771798,22,Thanh Hóa,Delivery rider,7000000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10401,Ngô Trọng Phúc,+84301291962,56,Hồ Chí Minh City,Construction worker,3500000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10402,Nguyễn Anh Bình,+84360018215,26,Hà Nội,Hospital dept head,75500000,1,Paid,Credit card,Weekday evenings (6-8 PM),Reactivation
+CUST-10403,Trần Đức Quân,+84550796136,49,Tuy Hòa,Shop owner,12000000,2,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10404,Ngô Bảo Hạnh,+84333282039,33,Hà Nội,Warehouse supervisor,17000000,1,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10405,Trần Ngọc Nhung,+84768193379,22,Nam Định,Security guard,8500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Renewal
+CUST-10406,Ngô Thanh Ngân,+84772671975,41,Hồ Chí Minh City,Nurse,8500000,4,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10407,Hoàng Anh Hoa,+84591075489,52,Hà Nội,Shop owner,9000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10408,Hoàng Ngọc Việt,+84727988566,36,Hà Nội,Logistics coordinator,8000000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Payment reminder
+CUST-10409,Nguyễn Anh Kim,+84793688824,47,Đà Nẵng,Factory owner,68000000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10410,Trần Quốc Giang,+84336330813,55,Điện Biên,Factory worker,6500000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),Reactivation
+CUST-10411,Nguyễn Công An,+84833852964,44,Phan Thiết,Hairdresser,5000000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10412,Lê Anh Vân,+84599914461,30,Hà Nội,Cleaning staff,5500000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10413,Nguyễn Ngọc Hùng,+84745042046,38,Hồ Chí Minh City,Office clerk,11500000,0,None,EMI,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10414,Trần Xuân Khoa,+84518611421,27,Hà Nội,Hotel receptionist,9500000,2,Paid,EMI,Weekend mornings (9-11 AM),Reactivation
+CUST-10415,Nguyễn Văn Dũng,+84804013972,42,Hà Nội,Barista,11500000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10416,Nguyễn Diệu Mai,+84716671387,46,Cần Thơ,Nurse,16000000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10417,Nguyễn Công Sang,+84890537927,38,Quy Nhơn,Motorbike taxi driver,8000000,3,Paid,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10418,Phan Thanh Khoa,+84859712929,47,Mỹ Tho,Bank teller,9500000,4,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10419,Nguyễn Thu Quyên,+84921126874,39,Cao Bằng,Delivery rider,6000000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10420,Nguyễn Anh Hiền,+84527628503,38,Hải Phòng,Warehouse supervisor,10000000,4,Paid,Credit card,Weekend mornings (9-11 AM),EMI conversion
+CUST-10421,Ngô Diệu Hiền,+84719597717,35,Hà Nội,Senior engineer,58500000,0,None,EMI,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10422,Ngô Ngọc Quyên,+84574144481,23,Hồ Chí Minh City,Logistics coordinator,14500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10423,Nguyễn Ngọc Giang,+84815786308,39,Huế,Construction worker,3500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10424,Phạm Minh Bích,+84324541310,24,Lào Cai,Software developer,36000000,2,Paid,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10425,Nguyễn Minh Ngân,+84833296679,28,Mỹ Tho,Office clerk,11500000,0,None,EMI,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10426,Đỗ Phương Trâm,+84931486628,38,Cần Thơ,Farmer,3000000,1,Paid,EMI,Weekday mornings (9-11 AM),Winback
+CUST-10427,Nguyễn Công Sơn,+84877405920,42,Long Xuyên,IT director,56000000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10428,Huỳnh Quốc Tài,+84535545207,22,Hà Nội,Lawyer,22500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Reactivation
+CUST-10429,Nguyễn Thanh Huy,+84521899280,46,Đà Nẵng,Farmer,3000000,4,Paid,EMI,Weekend mornings (9-11 AM),Pre-closure retention
+CUST-10430,Huỳnh Thanh Phong,+84311208474,52,Huế,Shop owner,15500000,3,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10431,Đỗ Thanh Thảo,+84361134947,36,Biên Hòa,Farmer,4000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10432,Nguyễn Bảo Trâm,+84817588436,49,Hồ Chí Minh City,Salesperson,11500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10433,Nguyễn Thùy Kim,+84550573560,24,Hà Nội,Lawyer,18500000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10434,Lê Ngọc Huy,+84917797047,23,Hà Nội,Senior engineer,58500000,2,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10435,Trần Ngọc Thủy,+84392261795,40,Rạch Giá,Construction worker,4000000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10436,Lê Tiến Quân,+84559007387,32,Vũng Tàu,Barista,11500000,8,Paid,EMI,Weekday afternoons (1-5 PM),Winback
+CUST-10437,Trần Thùy Hoa,+84897499943,50,Hải Phòng,Shop owner,11000000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10438,Lê Minh Lâm,+84366728082,46,Hà Nội,University lecturer,33000000,0,None,EMI,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10439,Nguyễn Anh Như,+84579971339,29,Đà Nẵng,Logistics coordinator,15500000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10440,Nguyễn Phương Lan,+84808792207,27,Hòa Bình,Street vendor,5500000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10441,Trần Anh Huyền,+84710849219,49,Hà Nội,HR manager,32000000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Reactivation
+CUST-10442,Hồ Hồng Thu,+84963997731,29,Hồ Chí Minh City,Civil servant,24500000,0,None,EMI,Weekend mornings (9-11 AM),Onboarding
+CUST-10443,Trương Xuân An,+84307167622,45,Vũng Tàu,IT director,77500000,1,Overdue,EMI,Weekday mornings (9-11 AM),Early collections
+CUST-10444,Lê Công Phúc,+84838493943,49,Hà Nội,Software developer,34500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),NPS feedback
+CUST-10445,Hoàng Công Kiên,+84364479045,36,Tuy Hòa,Farmer,3500000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10446,Nguyễn Bảo Yến,+84896739752,37,Hồ Chí Minh City,Shop owner,13500000,5,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10447,Nguyễn Phương Vân,+84715453630,33,Hồ Chí Minh City,HR manager,35000000,3,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10448,Nguyễn Bảo Quỳnh,+84978625920,31,Hà Nội,Construction worker,7000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10449,Hoàng Diệu Giang,+84716218783,31,Hồ Chí Minh City,Bank teller,10000000,6,Paid,Credit card,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10450,Trần Hoàng Đạt,+84780438340,35,Hồ Chí Minh City,Business owner,42000000,0,None,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10451,Nguyễn Thanh Minh,+84566813395,29,Biên Hòa,Salesperson,11000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10452,Trần Bảo Oanh,+84501061210,49,Đà Nẵng,Marketing manager,30000000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10453,Phạm Công Khoa,+84937948478,58,Hồ Chí Minh City,Tailor,5000000,5,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10454,Nguyễn Mỹ Hạnh,+84930137306,22,Mỹ Tho,Specialist doctor,74000000,1,Paid,Credit card,Weekday mornings (9-11 AM),Renewal
+CUST-10455,Hoàng Kim Thu,+84922579865,42,Hồ Chí Minh City,Primary school teacher,11500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Payment reminder
+CUST-10456,Nguyễn Kim Chi,+84565200750,56,Đà Nẵng,Factory owner,43000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10457,Võ Xuân Hải,+84745363648,23,Hồ Chí Minh City,Logistics coordinator,14500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10458,Nguyễn Anh Đạt,+84319399982,38,Tây Ninh,Bank teller,15000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10459,Trương Mỹ Như,+84578944155,36,Hà Nội,Accountant,37500000,1,Paid,Credit card,Weekday evenings (6-8 PM),Renewal
+CUST-10460,Phan Diệu Nhi,+84304264343,31,Hà Nội,Marketing manager,39500000,2,Paid,EMI,Weekday mornings (9-11 AM),NPS feedback
+CUST-10461,Nguyễn Tiến Khánh,+84812138618,39,Hồ Chí Minh City,Mechanic,16500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10462,Trần Xuân Nam,+84943430391,55,Hà Nội,Business owner,58500000,1,Paid,EMI,Weekend afternoons (1-5 PM),Reactivation
+CUST-10463,Huỳnh Thanh Nam,+84352528643,53,Nha Trang,Shop owner,11500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10464,Bùi Ngọc An,+84996786161,52,Hà Nội,Bank teller,8000000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10465,Phan Ngọc Hải,+84908400622,28,Hà Nội,Hairdresser,3000000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10466,Hoàng Anh Bích,+84383356884,31,Quy Nhơn,Specialist doctor,79500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Renewal
+CUST-10467,Đinh Thanh Lan,+84720931265,38,Hồ Chí Minh City,Barista,17500000,2,Overdue,Credit card,Weekday evenings (6-8 PM),Payment reminder
+CUST-10468,Lê Hoàng Huy,+84953644972,51,Hà Nội,Nurse,13000000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10469,Nguyễn Đức Sơn,+84700250346,40,Cần Thơ,Doctor,34000000,0,None,EMI,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10470,Lý Minh Nhung,+84549209263,41,Buôn Ma Thuột,Farmer,8500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10471,Nguyễn Thanh Minh,+84541329417,42,Nha Trang,Customer service rep,10000000,2,Paid,Credit card,Weekday evenings (6-8 PM),Reactivation
+CUST-10472,Nguyễn Kim Hoa,+84907019753,47,Hà Nội,Taxi driver,15500000,0,None,Credit card,Weekend mornings (9-11 AM),Cross-sell
+CUST-10473,Huỳnh Trọng Huy,+84330243076,57,Rạch Giá,Office clerk,9000000,0,None,EMI,Weekend mornings (9-11 AM),Onboarding
+CUST-10474,Trần Trọng Tuấn,+84386201852,47,Mỹ Tho,Salesperson,13000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10475,Lê Thanh Hoàn,+84968646186,34,Đà Nẵng,Street vendor,7500000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10476,Nguyễn Mỹ Hoa,+84348121350,51,Hồ Chí Minh City,Primary school teacher,12500000,0,None,EMI,Weekend mornings (9-11 AM),Onboarding
+CUST-10477,Phan Phương Thảo,+84930637377,47,Bạc Liêu,Delivery rider,4500000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10478,Nguyễn Minh Hiếu,+84565558007,52,Đà Nẵng,Civil servant,35000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10479,Đỗ Hữu Hải,+84874061807,50,Nam Định,Barista,9500000,3,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10480,Đặng Hữu Thiện,+84545700900,58,Hồ Chí Minh City,Warehouse supervisor,12500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10481,Đặng Thùy Giang,+84554365104,30,Nha Trang,Senior accountant,68000000,0,None,EMI,Weekday evenings (6-8 PM),Onboarding
+CUST-10482,Trần Thị Xuân,+84792708905,29,Đà Nẵng,Delivery rider,5500000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10483,Nguyễn Minh Thiện,+84557968209,27,Hồ Chí Minh City,Barista,13500000,3,Paid,EMI,Weekend mornings (9-11 AM),NPS feedback
+CUST-10484,Hoàng Anh Bích,+84847829071,57,Hà Nội,Factory worker,7000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10485,Nguyễn Thanh Hoàn,+84816933920,58,Huế,Taxi driver,17000000,0,None,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10486,Hồ Thu Oanh,+84736226410,44,Hồ Chí Minh City,Factory worker,4000000,1,Paid,EMI,Weekday afternoons (1-5 PM),Reactivation
+CUST-10487,Võ Trọng Lâm,+84735134940,41,Hà Nội,Retail manager,12500000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10488,Lê Kim Vân,+84890825390,50,Vũng Tàu,Engineer,25500000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Reactivation
+CUST-10489,Nguyễn Xuân Tiến,+84799738272,49,Nha Trang,Warehouse supervisor,13000000,0,None,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10490,Nguyễn Thu Xuân,+84972949292,40,Hải Phòng,Specialist doctor,70500000,1,Paid,Credit card,Weekend mornings (9-11 AM),Cross-sell
+CUST-10491,Trần Xuân Giang,+84968840003,39,Hà Nội,Nurse,8000000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10492,Lê Quốc Dũng,+84516010685,38,Hồ Chí Minh City,Restaurant staff,5000000,3,Paid,Credit card,Weekday mornings (9-11 AM),Renewal
+CUST-10493,Đặng Ngọc Bích,+84351025860,42,Long Xuyên,Bank teller,8500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10494,Hồ Kim Quỳnh,+84321512377,24,Hà Nội,Project manager,27500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Reactivation
+CUST-10495,Nguyễn Thùy Quyên,+84975187665,37,Tây Ninh,Farmer,4500000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10496,Đỗ Quốc Thiện,+84705034272,30,Hà Nội,Investment banker,64500000,2,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10497,Võ Công Bình,+84588012597,32,Hồ Chí Minh City,Retail manager,10000000,1,Paid,EMI,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10498,Huỳnh Hữu Tuấn,+84922383617,48,Đà Nẵng,Taxi driver,13500000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10499,Ngô Minh Ngân,+84310564317,41,Đà Nẵng,Construction worker,7500000,4,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10500,Nguyễn Diệu Huyền,+84831187925,29,Mỹ Tho,Logistics coordinator,15000000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10501,Nguyễn Văn Tài,+84712870995,35,Mỹ Tho,Restaurant staff,8000000,2,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10502,Huỳnh Quốc Đạt,+84344289713,42,Hà Nội,Housekeeper,5000000,4,Paid,Cash loan,Weekday evenings (6-8 PM),Winback
+CUST-10503,Nguyễn Xuân Thắng,+84349738680,36,Biên Hòa,Hotel receptionist,9000000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Reactivation
+CUST-10504,Hoàng Thùy Vân,+84398700521,37,Đà Nẵng,Housekeeper,5000000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10505,Trần Hồng Thu,+84873340187,37,Sơn La,Logistics coordinator,11500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10506,Nguyễn Bảo Thu,+84888660228,38,Sơn La,Primary school teacher,14500000,2,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10507,Nguyễn Thanh Bích,+84334512696,23,Hà Nội,Office clerk,12500000,1,Paid,EMI,Weekday mornings (9-11 AM),Winback
+CUST-10508,Nguyễn Thu Hiền,+84353115828,37,Hà Nội,Hotel receptionist,17000000,0,None,EMI,Weekday mornings (9-11 AM),Cross-sell
+CUST-10509,Vũ Anh Giang,+84732722176,26,Buôn Ma Thuột,Retail manager,14500000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10510,Nguyễn Kim Giang,+84588747340,36,Quy Nhơn,Salesperson,9500000,2,Paid,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10511,Nguyễn Thùy Hà,+84879774507,41,Hà Nội,University lecturer,26000000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10512,Võ Thị Thu,+84548587044,58,Hồ Chí Minh City,Project manager,37500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10513,Nguyễn Thị Huyền,+84537589016,55,Hồ Chí Minh City,Mechanic,17000000,1,Overdue,EMI,Weekday afternoons (1-5 PM),Early collections
+CUST-10514,Lê Thùy Trâm,+84947532429,58,Rạch Giá,Cleaning staff,7000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10515,Trần Ngọc Như,+84823799174,26,Nha Trang,Dentist,30000000,1,Paid,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10516,Vũ Kim Quỳnh,+84365068301,41,Hồ Chí Minh City,University lecturer,33000000,0,None,Credit card,Weekend mornings (9-11 AM),Cross-sell
+CUST-10517,Lý Anh Như,+84522175737,35,Hải Phòng,Barista,9000000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10518,Nguyễn Công Thắng,+84338054635,46,Hồ Chí Minh City,Accountant,22500000,0,None,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10519,Nguyễn Mỹ Nhi,+84778547654,44,Đà Nẵng,Customer service rep,11500000,5,Overdue,EMI,Weekday afternoons (1-5 PM),Early collections
+CUST-10520,Phạm Văn Nam,+84313153995,52,Rạch Giá,Marketing manager,30500000,0,None,Credit card,Weekday evenings (6-8 PM),Onboarding
+CUST-10521,Võ Đức Giang,+84817651367,48,Hồ Chí Minh City,Office clerk,15500000,8,Paid,EMI,Weekday mornings (9-11 AM),Winback
+CUST-10522,Lê Phương Vy,+84567368819,48,Biên Hòa,Farmer,7500000,0,None,EMI,Weekday mornings (9-11 AM),Onboarding
+CUST-10523,Nguyễn Hồng Kim,+84806646893,27,Thanh Hóa,Bank teller,12000000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10524,Huỳnh Thanh Hoàng,+84377230728,41,Hà Tĩnh,Farmer,4500000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10525,Vũ Phương Huyền,+84512624536,24,Hồ Chí Minh City,Barista,11000000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10526,Nguyễn Minh Thương,+84726587072,33,Hải Phòng,Tailor,6500000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10527,Nguyễn Thanh Lan,+84368043619,23,Hà Nội,Customer service rep,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10528,Trần Ngọc Nam,+84764409299,58,Hải Phòng,Taxi driver,15500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10529,Trần Hồng An,+84971399378,31,Hồ Chí Minh City,Customer service rep,16500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10530,Bùi Hoàng Thắng,+84515701053,51,Hồ Chí Minh City,Street vendor,6500000,0,None,EMI,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10531,Nguyễn Hữu Trung,+84855369081,22,Hà Nội,Factory owner,56500000,3,Paid,EMI,Weekend mornings (9-11 AM),NPS feedback
+CUST-10532,Nguyễn Kim Thương,+84803113642,28,Biên Hòa,Street vendor,3000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10533,Huỳnh Minh Minh,+84553449473,54,Quy Nhơn,Taxi driver,8000000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10534,Trần Hồng Quyên,+84880097256,24,Vinh,Business owner,47000000,6,Paid,Credit card,Weekend mornings (9-11 AM),Pre-closure retention
+CUST-10535,Lê Công Long,+84351303653,33,Hồ Chí Minh City,Primary school teacher,12000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10536,Trần Thanh Giang,+84599985030,43,Hồ Chí Minh City,Nurse,13500000,5,Paid,EMI,Weekday evenings (6-8 PM),Pre-closure retention
+CUST-10537,Nguyễn Tiến Kiên,+84897596576,49,Hồ Chí Minh City,Specialist doctor,78500000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10538,Nguyễn Hữu Lâm,+84827624760,26,Nha Trang,Salesperson,12500000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10539,Nguyễn Thị Kim,+84903344726,27,Cần Thơ,Primary school teacher,17000000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10540,Lê Hồng Ngọc,+84744156547,46,Hồ Chí Minh City,University lecturer,30000000,0,None,EMI,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10541,Bùi Diệu Thu,+84351177447,45,Sơn La,Cleaning staff,4500000,0,None,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10542,Trần Hoàng Thiện,+84818408766,48,Đà Nẵng,Cleaning staff,7000000,2,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10543,Lê Thu Huyền,+84761669067,51,Hồ Chí Minh City,Shop owner,17500000,2,Overdue,Cash loan,Weekday afternoons (1-5 PM),Early collections
+CUST-10544,Vũ Hữu Khang,+84324269795,37,Lạng Sơn,Lawyer,22000000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10545,Trần Anh Diệp,+84379857697,40,Hồ Chí Minh City,HR manager,35000000,8,Overdue,EMI,Weekday mornings (9-11 AM),Early collections
+CUST-10546,Vũ Quốc Minh,+84587577361,28,Vũng Tàu,Warehouse supervisor,15000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Reactivation
+CUST-10547,Lê Anh Quyên,+84834220150,41,Vũng Tàu,Export-import specialist,26500000,0,None,EMI,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10548,Nguyễn Thanh Thương,+84512360235,47,Hà Nội,Architect,27500000,0,None,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10549,Nguyễn Anh Hùng,+84868443602,34,Biên Hòa,Retail manager,13000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),EMI conversion
+CUST-10550,Trương Văn Tuấn,+84763030557,58,Biên Hòa,Tailor,7000000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10551,Lê Văn Kiên,+84819227799,36,Quy Nhơn,Warehouse supervisor,12000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10552,Huỳnh Tiến Khoa,+84810152455,51,Hồ Chí Minh City,Engineer,28500000,2,Paid,EMI,Weekday evenings (6-8 PM),Winback
+CUST-10553,Lê Hữu Trung,+84725365617,52,Cần Thơ,Salesperson,13500000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10554,Hồ Thu Kim,+84981123374,31,Hà Nội,Logistics coordinator,15000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10555,Nguyễn Diệu Thủy,+84996772948,44,Thái Nguyên,Civil servant,23000000,0,None,EMI,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10556,Vũ Thị Thu,+84838970727,49,Hà Nội,Taxi driver,8000000,2,Paid,EMI,Weekday evenings (6-8 PM),EMI conversion
+CUST-10557,Nguyễn Thùy Quỳnh,+84323474906,46,Quy Nhơn,Civil servant,34500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Renewal
+CUST-10558,Nguyễn Trọng Minh,+84337411210,57,Hà Nội,Nurse,9500000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10559,Nguyễn Hoàng Thiện,+84872323192,49,Hồ Chí Minh City,HR manager,28500000,5,Paid,Credit card,Weekend mornings (9-11 AM),Cross-sell
+CUST-10560,Lê Trọng Hùng,+84899835230,56,Vinh,Delivery rider,6000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10561,Lê Anh Bình,+84884891315,23,Hồ Chí Minh City,Operations director,78500000,7,Paid,Credit card,Weekday evenings (6-8 PM),Winback
+CUST-10562,Nguyễn Đức Kiên,+84557562898,41,Thanh Hóa,Street vendor,5500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10563,Phan Văn Hoàng,+84333223429,50,Hòa Bình,Construction worker,7500000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10564,Nguyễn Quốc Hùng,+84832380197,53,Rạch Giá,Marketing manager,30500000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10565,Võ Kim Thảo,+84759034913,36,Hà Nội,Farmer,7000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10566,Võ Hoàng Phúc,+84312511670,45,Nam Định,Engineer,27000000,2,Overdue,Cash loan,Weekday afternoons (1-5 PM),Early collections
+CUST-10567,Nguyễn Tiến Cường,+84370243860,31,Hồ Chí Minh City,Salesperson,11000000,0,None,EMI,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10568,Võ Ngọc An,+84780914985,41,Buôn Ma Thuột,Salesperson,10500000,0,None,Credit card,Weekday evenings (6-8 PM),Onboarding
+CUST-10569,Nguyễn Anh Khánh,+84912192004,41,Biên Hòa,Customer service rep,9500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Renewal
+CUST-10570,Nguyễn Hoàng Cường,+84765909301,37,Đà Nẵng,Nurse,10000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10571,Tạ Ngọc Nhung,+84842651279,43,Đà Nẵng,Marketing manager,39000000,3,Overdue,EMI,Weekend mornings (9-11 AM),Payment reminder
+CUST-10572,Đặng Anh Tuấn,+84740509817,49,Hà Nội,Security guard,7000000,0,None,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10573,Lê Anh Thương,+84571757550,32,Cao Bằng,Delivery rider,4500000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10574,Nguyễn Anh Thảo,+84882992998,22,Biên Hòa,Marketing manager,23000000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10575,Trần Thu Ngọc,+84814199931,44,Hồ Chí Minh City,Civil servant,20000000,0,None,Credit card,Weekday evenings (6-8 PM),Onboarding
+CUST-10576,Nguyễn Minh Xuân,+84567013164,51,Hà Nội,Civil servant,23000000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10577,Nguyễn Phương Oanh,+84586772196,49,Sơn La,Restaurant staff,3500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Payment reminder
+CUST-10578,Tạ Thanh Hiếu,+84790182456,57,Hà Nội,Doctor,26000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Reactivation
+CUST-10579,Nguyễn Ngọc Tuấn,+84351736943,51,Đà Nẵng,Factory owner,37500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10580,Vũ Mỹ Trang,+84916324048,37,Hà Nội,Dentist,32000000,2,Paid,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10581,Nguyễn Anh Hải,+84967771403,27,Huế,Hotel receptionist,10500000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10582,Phan Thanh Lan,+84788793159,47,Biên Hòa,Marketing manager,26500000,3,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10583,Nguyễn Quốc Tuấn,+84753919882,24,Hồ Chí Minh City,Warehouse supervisor,14500000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),Renewal
+CUST-10584,Trần Trọng Thành,+84548129844,58,Hà Nội,Logistics coordinator,11500000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10585,Nguyễn Ngọc Trung,+84533918925,52,Huế,Specialist doctor,63500000,0,None,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10586,Lê Thị Trang,+84545064491,52,Cần Thơ,Dentist,39500000,5,Paid,EMI,Weekday afternoons (1-5 PM),Winback
+CUST-10587,Nguyễn Thùy Loan,+84374799245,48,Hà Nội,Specialist doctor,73000000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10588,Võ Văn Hiếu,+84370041197,29,Cần Thơ,Civil servant,19500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),NPS feedback
+CUST-10589,Nguyễn Mỹ Giang,+84813037841,43,Hải Phòng,Factory owner,62000000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10590,Nguyễn Xuân Hiếu,+84395030958,33,Hồ Chí Minh City,Retail manager,8500000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10591,Vũ Anh Phúc,+84878118005,28,Nha Trang,Security guard,7500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10592,Nguyễn Ngọc Ngọc,+84999953415,53,Hồ Chí Minh City,Street vendor,8000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10593,Nguyễn Đức Tuấn,+84380695757,34,Hồ Chí Minh City,Real estate agent,79000000,2,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10594,Nguyễn Xuân Lộc,+84863977650,56,Hà Nội,Mechanic,9500000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10595,Nguyễn Đức Lâm,+84908875136,42,Hải Phòng,Restaurant staff,6000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10596,Đỗ Kim Chi,+84390288998,31,Hải Phòng,Office clerk,14000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10597,Phạm Công Cường,+84740838172,50,Hà Nội,Operations director,77000000,0,None,Credit card,Weekday afternoons (1-5 PM),Onboarding
+CUST-10598,Nguyễn Minh Vy,+84717976228,34,Hồ Chí Minh City,Housekeeper,3500000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10599,Hoàng Trọng Khoa,+84381782641,35,Hồ Chí Minh City,Office clerk,15500000,1,Paid,Credit card,Weekday mornings (9-11 AM),EMI conversion
+CUST-10600,Nguyễn Hồng Dung,+84590395263,37,Hòa Bình,Restaurant staff,4000000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10601,Lê Công Lộc,+84907730960,29,Hồ Chí Minh City,Senior engineer,42000000,2,Paid,EMI,Weekday mornings (9-11 AM),EMI conversion
+CUST-10602,Trần Hữu Lâm,+84939242964,31,Hồ Chí Minh City,Mechanic,17500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10603,Trần Kim Nhi,+84714752483,50,Hà Nội,Salesperson,14000000,2,Paid,Credit card,Weekend mornings (9-11 AM),Reactivation
+CUST-10604,Nguyễn Diệu Mai,+84575977348,47,Hà Nội,Accountant,35500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10605,Nguyễn Thanh Lộc,+84538694902,31,Hà Nội,Operations director,62500000,0,None,EMI,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10606,Đỗ Văn Quang,+84839678670,27,Hồ Chí Minh City,Mechanic,12000000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10607,Nguyễn Thanh Như,+84847215914,39,Hồ Chí Minh City,Farmer,6000000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10608,Bùi Hồng Kim,+84844759345,44,Nha Trang,Housekeeper,3500000,2,Paid,EMI,Weekday mornings (9-11 AM),NPS feedback
+CUST-10609,Phạm Bảo Oanh,+84519916277,23,Hồ Chí Minh City,Restaurant staff,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10610,Nguyễn Anh Nhi,+84990316729,27,Hồ Chí Minh City,Marketing manager,35000000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10611,Trần Mỹ Hoa,+84814362335,44,Bạc Liêu,Bank teller,17500000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10612,Phan Minh An,+84788017210,22,Hà Nội,Housekeeper,8500000,0,None,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10613,Phan Thu Mai,+84360199170,25,Cần Thơ,Hairdresser,6500000,1,Paid,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10614,Hoàng Thanh Đạt,+84775845092,34,Đà Nẵng,Barista,16000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Winback
+CUST-10615,Nguyễn Ngọc Dung,+84852487569,25,Hồ Chí Minh City,Logistics coordinator,17500000,0,None,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10616,Lê Thanh Quân,+84807059366,50,Hồ Chí Minh City,Finance analyst,20500000,2,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10617,Trần Ngọc Vân,+84503449894,48,Hà Nội,Retail manager,11000000,0,None,EMI,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10618,Nguyễn Hồng Vy,+84876151031,32,Hà Nội,Accountant,31000000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10619,Vũ Kim Oanh,+84890903422,22,Hồ Chí Minh City,Mechanic,15000000,1,Overdue,Credit card,Weekday afternoons (1-5 PM),Early collections
+CUST-10620,Ngô Thanh Lâm,+84778839044,42,Hà Nội,Customer service rep,10000000,1,Paid,Credit card,Weekend mornings (9-11 AM),Winback
+CUST-10621,Trần Đức Quân,+84992528440,27,Hải Phòng,Primary school teacher,11000000,4,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10622,Phan Hữu Hiếu,+84773742036,42,Mỹ Tho,Specialist doctor,39000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10623,Nguyễn Diệu Bích,+84371727480,23,Thanh Hóa,Motorbike taxi driver,8000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10624,Dương Minh Diệp,+84943941625,42,Đà Nẵng,IT director,64500000,1,Paid,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10625,Lê Minh Hoàng,+84767637057,31,Vinh,Office clerk,15000000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),NPS feedback
+CUST-10626,Trần Minh Minh,+84774556318,36,Hồ Chí Minh City,Lawyer,29000000,0,None,Credit card,Weekend afternoons (1-5 PM),Onboarding
+CUST-10627,Lê Phương Yến,+84599133635,57,Biên Hòa,Project manager,19000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10628,Lê Ngọc Linh,+84758310662,38,Hồ Chí Minh City,Office clerk,13500000,2,Paid,Cash loan,Weekday evenings (6-8 PM),NPS feedback
+CUST-10629,Vũ Phương Mai,+84972131927,41,Hà Nội,Project manager,18500000,1,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10630,Phạm Ngọc Oanh,+84332134774,52,Hồ Chí Minh City,HR manager,26000000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10631,Nguyễn Hữu Kiên,+84386899335,34,Nha Trang,Business owner,76000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10632,Nguyễn Minh Giang,+84749991697,37,Hà Nội,Factory worker,4000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10633,Hoàng Ngọc Nam,+84523304410,40,Hà Nội,Motorbike taxi driver,7000000,0,None,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10634,Nguyễn Minh Tài,+84889058577,51,Hồ Chí Minh City,Logistics coordinator,11000000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10635,Nguyễn Kim Giang,+84745397168,38,Nha Trang,Retail manager,17000000,0,None,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10636,Nguyễn Kim Hạnh,+84555817182,54,Biên Hòa,Retail manager,10500000,3,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10637,Hoàng Minh Ngân,+84817753635,51,Hồ Chí Minh City,IT director,50000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10638,Nguyễn Minh Kiên,+84363732691,33,Mỹ Tho,Business owner,68000000,0,None,EMI,Weekday mornings (9-11 AM),Onboarding
+CUST-10639,Lê Hữu Bình,+84733369656,38,Hà Nội,Security guard,8500000,1,Paid,EMI,Weekend mornings (9-11 AM),Winback
+CUST-10640,Trần Thanh Quang,+84339702028,37,Thái Nguyên,Customer service rep,13500000,4,Paid,Credit card,Weekend mornings (9-11 AM),Winback
+CUST-10641,Hoàng Kim Xuân,+84806560501,25,Hà Nội,HR manager,33000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10642,Phan Văn Phong,+84931181407,33,Đà Nẵng,Specialist doctor,45500000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10643,Phạm Minh Yến,+84519604747,52,Hồ Chí Minh City,Bank teller,9500000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10644,Lê Hồng Dung,+84852910011,33,Hà Nội,Restaurant staff,8500000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10645,Võ Ngọc Kiên,+84707165081,34,Hồ Chí Minh City,Construction worker,8500000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10646,Võ Mỹ Ngân,+84581749016,38,Hồ Chí Minh City,Warehouse supervisor,17000000,3,Paid,Credit card,Weekend mornings (9-11 AM),Cross-sell
+CUST-10647,Nguyễn Trọng Phúc,+84982949548,53,Hà Nội,Barista,14000000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10648,Lê Kim Quỳnh,+84734893533,57,Hà Nội,Bank teller,10000000,2,Paid,EMI,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10649,Bùi Thùy Linh,+84956222253,44,Thái Nguyên,Security guard,3500000,2,Overdue,Credit card,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10650,Phạm Ngọc Hạnh,+84981726353,40,Đà Nẵng,Nurse,15000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10651,Nguyễn Thu Nhung,+84842551629,53,Biên Hòa,Warehouse supervisor,16000000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10652,Nguyễn Minh Nam,+84864143117,28,Hà Nội,Barista,12000000,0,None,Credit card,Weekday evenings (6-8 PM),Onboarding
+CUST-10653,Hồ Mỹ Ngọc,+84901972226,31,Hồ Chí Minh City,Finance analyst,24500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10654,Nguyễn Hồng Huyền,+84901569812,33,Hồ Chí Minh City,HR manager,30500000,0,None,EMI,Weekday evenings (6-8 PM),Onboarding
+CUST-10655,Đặng Tiến Tiến,+84344188707,55,Hồ Chí Minh City,Customer service rep,14000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Reactivation
+CUST-10656,Bùi Kim Như,+84366372342,23,Cần Thơ,Civil servant,24500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10657,Trần Ngọc Ngân,+84730444432,55,Huế,Hotel receptionist,8000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10658,Nguyễn Anh Khang,+84960094282,55,Bạc Liêu,Street vendor,3500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Renewal
+CUST-10659,Lê Ngọc Vinh,+84898281701,57,Hải Phòng,HR manager,23500000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10660,Lê Diệu Nhi,+84985831482,37,Lạng Sơn,Factory worker,5500000,3,Paid,Cash loan,Weekday mornings (9-11 AM),Renewal
+CUST-10661,Phan Thùy Vy,+84747635459,38,Hồ Chí Minh City,Office clerk,9000000,6,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10662,Trần Hoàng Huy,+84781932047,50,Long Xuyên,Factory worker,4500000,0,None,EMI,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10663,Nguyễn Văn Sơn,+84844844098,51,Hà Nội,Factory worker,4500000,4,Paid,EMI,Weekend mornings (9-11 AM),Winback
+CUST-10664,Nguyễn Quốc Việt,+84803350175,45,Hà Nội,University lecturer,34000000,0,None,Credit card,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10665,Tạ Đức Thắng,+84958745657,43,Cần Thơ,Primary school teacher,12500000,0,None,Credit card,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10666,Mai Thu An,+84503915481,26,Biên Hòa,Street vendor,3500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10667,Phạm Mỹ Thương,+84368373495,31,Đà Nẵng,Housekeeper,4000000,4,Paid,Cash loan,Weekend afternoons (1-5 PM),Renewal
+CUST-10668,Vũ Trọng Lâm,+84735474938,36,Hà Nội,Barista,11500000,3,Paid,EMI,Weekday afternoons (1-5 PM),Reactivation
+CUST-10669,Trần Công Huy,+84843014903,48,Hồ Chí Minh City,Delivery rider,7000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10670,Nguyễn Minh An,+84548261133,31,Hà Nội,Mechanic,16000000,4,Paid,Credit card,Weekend mornings (9-11 AM),EMI conversion
+CUST-10671,Đặng Hữu Hải,+84502869660,24,Lạng Sơn,Bank teller,10500000,7,Paid,EMI,Weekday mornings (9-11 AM),NPS feedback
+CUST-10672,Nguyễn Bảo Loan,+84815658206,28,Cần Thơ,Marketing manager,23500000,3,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10673,Nguyễn Hồng Hồng,+84793684978,31,Hồ Chí Minh City,Architect,23000000,2,Paid,Credit card,Weekday mornings (9-11 AM),EMI conversion
+CUST-10674,Hồ Thu Như,+84323324496,24,Hồ Chí Minh City,Housekeeper,4000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10675,Dương Bảo Kim,+84849784877,33,Hồ Chí Minh City,Restaurant staff,6000000,0,None,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10676,Vũ Mỹ Thủy,+84526997476,22,Hà Nội,Primary school teacher,10000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Onboarding
+CUST-10677,Lê Bảo Nhi,+84889664984,24,Hồ Chí Minh City,HR manager,34500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10678,Trần Thị Thương,+84959822888,36,Biên Hòa,Project manager,32000000,4,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10679,Lê Trọng Phúc,+84808777764,29,Hồ Chí Minh City,Farmer,5000000,1,Overdue,EMI,Weekend mornings (9-11 AM),Early collections
+CUST-10680,Nguyễn Ngọc Trâm,+84590172664,28,Hà Nội,Barista,8000000,2,Paid,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10681,Lê Hồng Phương,+84390772173,27,Hải Phòng,Shop owner,9000000,6,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10682,Nguyễn Kim Bình,+84391356197,28,Hà Nội,Restaurant staff,3000000,4,Paid,EMI,Weekend mornings (9-11 AM),Winback
+CUST-10683,Trần Văn Lộc,+84589754338,44,Hồ Chí Minh City,Hotel receptionist,17500000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Renewal
+CUST-10684,Phan Hoàng Quân,+84355114973,37,Hà Nội,Lawyer,33500000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10685,Trần Thị Quyên,+84789289934,42,Long Xuyên,Restaurant staff,8500000,5,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10686,Võ Thanh Xuân,+84397315500,27,Lạng Sơn,Logistics coordinator,9500000,0,None,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10687,Nguyễn Tiến Cường,+84870946200,52,Rạch Giá,Retail manager,12500000,0,None,EMI,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10688,Mai Văn Việt,+84519718471,39,Hà Nội,Retail manager,12000000,0,None,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10689,Nguyễn Thùy Oanh,+84921945268,22,Hồ Chí Minh City,Customer service rep,14500000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10690,Lê Hoàng Kiên,+84510977612,29,Quy Nhơn,Customer service rep,11000000,3,Paid,EMI,Weekday mornings (9-11 AM),Reactivation
+CUST-10691,Lê Anh Tiến,+84835268131,25,Hà Nội,Salesperson,10000000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Reactivation
+CUST-10692,Nguyễn Thu Minh,+84381240755,34,Hồ Chí Minh City,Engineer,33000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Payment reminder
+CUST-10693,Hoàng Diệu Thương,+84563956123,41,Lào Cai,Housekeeper,4500000,1,Paid,EMI,Weekday mornings (9-11 AM),Cross-sell
+CUST-10694,Phan Bảo Hiền,+84985996909,48,Điện Biên,Restaurant staff,5000000,3,Paid,Cash loan,Weekday mornings (9-11 AM),Reactivation
+CUST-10695,Nguyễn Hữu Sơn,+84756695336,52,Hồ Chí Minh City,Dentist,32000000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10696,Huỳnh Thu Mai,+84528249069,35,Hồ Chí Minh City,Senior engineer,40000000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10697,Nguyễn Thanh Nam,+84509602579,56,Hà Tĩnh,Restaurant staff,8000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),NPS feedback
+CUST-10698,Huỳnh Hoàng Lộc,+84959243346,23,Đà Nẵng,Factory owner,57000000,0,None,EMI,Weekday afternoons (1-5 PM),Onboarding
+CUST-10699,Phạm Bảo Thảo,+84512046077,49,Hồ Chí Minh City,Dentist,24000000,0,None,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10700,Nguyễn Trọng Sang,+84568172112,55,Hồ Chí Minh City,Salesperson,14000000,0,None,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10701,Nguyễn Anh Thắng,+84924184369,56,Phan Thiết,Real estate agent,45500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Payment reminder
+CUST-10702,Nguyễn Văn Trung,+84353678018,56,Hồ Chí Minh City,Engineer,25500000,2,Paid,EMI,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10703,Phạm Minh Tiến,+84911482826,56,Hồ Chí Minh City,Shop owner,12000000,0,None,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10704,Nguyễn Quốc Vũ,+84377687017,28,Nha Trang,Hospital dept head,37000000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10705,Nguyễn Thanh Dung,+84731967208,31,Hồ Chí Minh City,Customer service rep,8000000,2,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10706,Trần Xuân Hùng,+84350223335,37,Thái Nguyên,Housekeeper,3000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),EMI conversion
+CUST-10707,Phạm Bảo Bích,+84573076024,55,Cà Mau,Factory worker,6000000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10708,Lê Thu Thương,+84915506281,34,Nam Định,HR manager,31000000,0,None,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10709,Đặng Ngọc Hoàng,+84862156741,45,Hồ Chí Minh City,Salesperson,9000000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10710,Phan Anh Trâm,+84829337780,43,Hồ Chí Minh City,Specialist doctor,40500000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10711,Lê Trọng Việt,+84785959021,33,Điện Biên,Engineer,20500000,1,Paid,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10712,Phạm Anh Hạnh,+84760829273,47,Cao Bằng,Tailor,3500000,2,Paid,EMI,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10713,Tạ Thị Yến,+84356156124,24,Hồ Chí Minh City,Project manager,35500000,1,Overdue,EMI,Weekday mornings (9-11 AM),Payment reminder
+CUST-10714,Phạm Hữu Thiện,+84987750920,29,Cần Thơ,Hotel receptionist,13000000,7,Paid,Credit card,Weekend afternoons (1-5 PM),Renewal
+CUST-10715,Nguyễn Thị Dung,+84785999863,41,Hồ Chí Minh City,Lawyer,33500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Payment reminder
+CUST-10716,Phạm Trọng Huy,+84534857417,26,Biên Hòa,Shop owner,17000000,0,None,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10717,Trần Bảo Chi,+84554786734,55,Hà Nội,Factory worker,8500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10718,Nguyễn Đức Kiên,+84533687360,38,Hà Nội,Engineer,24000000,3,Paid,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10719,Nguyễn Trọng An,+84845969829,55,Hà Nội,Taxi driver,17500000,0,None,EMI,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10720,Lê Xuân Đạt,+84326611360,40,Hồ Chí Minh City,University lecturer,35500000,0,None,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10721,Nguyễn Thanh Quyên,+84976675372,31,Vũng Tàu,Nurse,17500000,3,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10722,Nguyễn Đức Tiến,+84985789818,47,Biên Hòa,Salesperson,13500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Reactivation
+CUST-10723,Lê Quốc Quân,+84344861259,45,Huế,Real estate agent,45000000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10724,Trần Ngọc Sơn,+84881166358,56,Mỹ Tho,HR manager,27500000,3,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
+CUST-10725,Lê Bảo Hạnh,+84392580887,38,Hồ Chí Minh City,Customer service rep,14000000,0,None,EMI,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10726,Nguyễn Thị Hạnh,+84388170656,46,Hồ Chí Minh City,Hotel receptionist,13000000,3,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10727,Phan Phương Thương,+84330606070,34,Hồ Chí Minh City,Logistics coordinator,8000000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10728,Hoàng Thùy Hoa,+84845309877,44,Biên Hòa,Security guard,4500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10729,Nguyễn Tiến Lâm,+84966723550,27,Đà Nẵng,Mechanic,14000000,4,Overdue,Credit card,Weekday evenings (6-8 PM),Early collections
+CUST-10730,Nguyễn Thanh Thu,+84808811601,30,Lạng Sơn,Cleaning staff,3500000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10731,Trương Minh Tiến,+84922098313,39,Hà Nội,Street vendor,6500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10732,Bùi Thùy Xuân,+84597459086,33,Hồ Chí Minh City,Shop owner,14500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10733,Võ Đức Hoàn,+84876478282,42,Lạng Sơn,Motorbike taxi driver,7500000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10734,Võ Văn Tài,+84849140849,22,Buôn Ma Thuột,Senior engineer,68000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10735,Trần Ngọc Dung,+84503837541,55,Vinh,Hairdresser,5500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10736,Nguyễn Văn Quang,+84957246250,24,Hải Phòng,Taxi driver,15500000,2,Overdue,Credit card,Weekday afternoons (1-5 PM),Early collections
+CUST-10737,Dương Bảo Chi,+84526865003,50,Hải Phòng,Operations director,51500000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10738,Phạm Hồng Vân,+84506279069,56,Hải Phòng,Mechanic,11000000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10739,Nguyễn Thanh Nam,+84954775606,23,Hà Nội,Logistics coordinator,10500000,3,Paid,Credit card,Weekday evenings (6-8 PM),Winback
+CUST-10740,Phạm Thu Hoa,+84318178215,44,Hà Nội,Lawyer,33000000,1,Paid,EMI,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10741,Nguyễn Phương Thu,+84882959514,33,Biên Hòa,Salesperson,16500000,2,Paid,Credit card,Weekday evenings (6-8 PM),Winback
+CUST-10742,Lê Công Tài,+84919263661,45,Lạng Sơn,Security guard,6000000,0,None,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10743,Đỗ Minh Vũ,+84777220368,52,Sơn La,University lecturer,28500000,0,None,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10744,Phạm Thu Yến,+84723343317,52,Huế,Nurse,8500000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10745,Nguyễn Kim Thương,+84928661970,29,Nam Định,Primary school teacher,8500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10746,Trần Mỹ Quỳnh,+84718583113,54,Hồ Chí Minh City,Accountant,34000000,0,None,Credit card,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10747,Lê Anh Hùng,+84753597376,27,Hà Nội,Accountant,34500000,2,Paid,EMI,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10748,Vũ Hữu Đạt,+84732629188,35,Hồ Chí Minh City,Senior engineer,37500000,0,None,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10749,Trần Hoàng Tuấn,+84738535944,40,Đà Nẵng,Taxi driver,17000000,2,Paid,Credit card,Weekday afternoons (1-5 PM),Winback
+CUST-10750,Phạm Hoàng An,+84358158710,41,Hồ Chí Minh City,Dentist,23500000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Pre-closure retention
+CUST-10751,Phan Hữu Vũ,+84525357476,51,Hồ Chí Minh City,Street vendor,6000000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10752,Lê Đức Tuấn,+84908873621,29,Hà Nội,Construction worker,7500000,4,Paid,Cash loan,Weekday afternoons (1-5 PM),Winback
+CUST-10753,Dương Thanh Tiến,+84599315567,42,Huế,Tailor,4500000,4,Paid,Cash loan,Weekend afternoons (1-5 PM),Winback
+CUST-10754,Huỳnh Hồng Oanh,+84772582534,36,Hà Nội,Salesperson,11500000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10755,Trần Đức Dũng,+84867148841,43,Hòa Bình,Nurse,12000000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10756,Phan Công Dũng,+84719951069,57,Đà Nẵng,Shop owner,11500000,1,Overdue,Cash loan,Weekday mornings (9-11 AM),Payment reminder
+CUST-10757,Đỗ Bảo Chi,+84946678632,34,Hà Nội,Customer service rep,15500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10758,Phạm Đức Sơn,+84808127880,23,Hà Nội,Motorbike taxi driver,7500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10759,Huỳnh Minh Kiên,+84359064613,32,Biên Hòa,Marketing manager,19500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Reactivation
+CUST-10760,Hồ Thu Mai,+84314111747,24,Buôn Ma Thuột,Farmer,8000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Reactivation
+CUST-10761,Đỗ Văn Lộc,+84771721276,42,Hà Nội,Warehouse supervisor,11000000,1,Overdue,Credit card,Weekday afternoons (1-5 PM),Early collections
+CUST-10762,Nguyễn Anh Quỳnh,+84778076826,53,Hà Nội,Motorbike taxi driver,4500000,2,Paid,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10763,Nguyễn Tiến Dũng,+84933920987,49,Hà Nội,Street vendor,6500000,4,Paid,Cash loan,Weekend afternoons (1-5 PM),Winback
+CUST-10764,Nguyễn Ngọc An,+84348021269,36,Hồ Chí Minh City,Office clerk,10500000,1,Paid,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10765,Võ Thu Nhung,+84838304693,52,Hồ Chí Minh City,Security guard,6000000,5,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10766,Lê Công Việt,+84912874242,24,Hồ Chí Minh City,Shop owner,8500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10767,Nguyễn Văn Phúc,+84397410424,45,Vũng Tàu,Shop owner,10000000,1,Overdue,Credit card,Weekday evenings (6-8 PM),Early collections
+CUST-10768,Nguyễn Văn Quang,+84943864754,34,Hồ Chí Minh City,Shop owner,11000000,0,None,EMI,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10769,Trần Kim Hà,+84880558640,41,Hồ Chí Minh City,Project manager,26500000,3,Overdue,Credit card,Weekend afternoons (1-5 PM),Early collections
+CUST-10770,Lê Mỹ Ngọc,+84707227585,26,Hồ Chí Minh City,Housekeeper,7500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10771,Hoàng Kim Vân,+84989369661,57,Cần Thơ,Hotel receptionist,17500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10772,Phạm Minh Minh,+84345287426,22,Hà Nội,Street vendor,7000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10773,Phạm Hoàng Minh,+84358510016,28,Hà Nội,IT director,36500000,0,None,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10774,Hồ Thanh Bích,+84959598040,26,Nam Định,Hairdresser,8500000,2,Paid,Credit card,Weekend mornings (9-11 AM),NPS feedback
+CUST-10775,Nguyễn Văn Thiện,+84959545401,52,Hà Nội,Farmer,6500000,4,Overdue,Cash loan,Weekday mornings (9-11 AM),Payment reminder
+CUST-10776,Lê Thanh Hồng,+84806018657,51,Hồ Chí Minh City,Motorbike taxi driver,3500000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10777,Bùi Phương Ngọc,+84352190514,33,Tây Ninh,Project manager,39000000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10778,Huỳnh Xuân Tiến,+84816897263,23,Hà Nội,Shop owner,15500000,1,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10779,Nguyễn Công Hoàn,+84519526250,54,Hồ Chí Minh City,Delivery rider,5500000,0,None,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10780,Nguyễn Ngọc Khang,+84860080091,35,Hồ Chí Minh City,Mechanic,10500000,7,Paid,Credit card,Weekday mornings (9-11 AM),Winback
+CUST-10781,Huỳnh Hồng Hồng,+84502503801,38,Đà Nẵng,Office clerk,13500000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10782,Phạm Thùy Xuân,+84948478905,24,Biên Hòa,Dentist,27500000,0,None,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10783,Lê Thùy Xuân,+84748123133,37,Đà Nẵng,Shop owner,12500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10784,Nguyễn Hoàng Vũ,+84335980115,45,Cần Thơ,Retail manager,14000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),NPS feedback
+CUST-10785,Nguyễn Xuân Minh,+84585782347,42,Hồ Chí Minh City,Housekeeper,3500000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Reactivation
+CUST-10786,Trần Kim Diệp,+84755123387,42,Hồ Chí Minh City,Hairdresser,8000000,1,Paid,EMI,Weekday evenings (6-8 PM),Cross-sell
+CUST-10787,Trần Quốc Tài,+84838573327,38,Thanh Hóa,Lawyer,32000000,3,Paid,EMI,Weekend mornings (9-11 AM),Winback
+CUST-10788,Nguyễn Anh Khánh,+84866390948,50,Long Xuyên,Cleaning staff,5500000,2,Paid,Cash loan,Weekend mornings (9-11 AM),Renewal
+CUST-10789,Mai Thị Xuân,+84302909882,22,Đà Nẵng,Hotel receptionist,13000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10790,Phan Ngọc Bình,+84315947084,26,Hà Nội,University lecturer,22000000,0,None,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10791,Đinh Thanh Lan,+84835370596,41,Hồ Chí Minh City,Barista,16000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10792,Võ Minh Hùng,+84706433631,30,Hồ Chí Minh City,Nurse,14000000,2,Overdue,Credit card,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10793,Phạm Phương Huyền,+84866804772,53,Cà Mau,Delivery rider,8000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10794,Nguyễn Xuân Lâm,+84360863203,42,Hải Phòng,Salesperson,9000000,3,Paid,EMI,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10795,Nguyễn Anh Tài,+84357342983,38,Hà Nội,Lawyer,25500000,3,Paid,Credit card,Weekday mornings (9-11 AM),Payment reminder
+CUST-10796,Nguyễn Tiến Trung,+84875067862,54,Hồ Chí Minh City,Primary school teacher,9000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Winback
+CUST-10797,Nguyễn Quốc Cường,+84909351424,27,Nam Định,Taxi driver,17500000,1,Paid,EMI,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10798,Nguyễn Ngọc Kim,+84586512519,35,Lào Cai,Salesperson,12000000,0,None,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10799,Nguyễn Thị Loan,+84301110054,57,Hà Tĩnh,Retail manager,11500000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10800,Phạm Ngọc Dũng,+84872925966,52,Hồ Chí Minh City,Logistics coordinator,12500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10801,Ngô Anh Quỳnh,+84301708413,46,Hồ Chí Minh City,Logistics coordinator,17500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10802,Đinh Văn Tuấn,+84700692008,56,Tuy Hòa,Cleaning staff,8500000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10803,Nguyễn Thùy Nhi,+84907745215,22,Hà Tĩnh,Hotel receptionist,15500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10804,Nguyễn Thùy Ngọc,+84870084385,30,Hải Phòng,Civil servant,21500000,1,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10805,Hồ Minh Nhi,+84958330879,45,Rạch Giá,Lawyer,33000000,3,Paid,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10806,Hồ Kim Phương,+84731057610,33,Hồ Chí Minh City,Nurse,9500000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),NPS feedback
+CUST-10807,Nguyễn Ngọc Trung,+84773915638,30,Hà Nội,Mechanic,8500000,3,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10808,Nguyễn Tiến Khánh,+84303984942,54,Vinh,Logistics coordinator,8000000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10809,Nguyễn Thanh Trâm,+84859816721,22,Mỹ Tho,Doctor,18000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10810,Nguyễn Thị Trâm,+84930148963,36,Hòa Bình,Hotel receptionist,8500000,0,None,EMI,Weekend mornings (9-11 AM),Onboarding
+CUST-10811,Lê Mỹ Quyên,+84856049868,36,Hải Phòng,Factory worker,6500000,0,None,EMI,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10812,Trương Quốc Phong,+84835241806,56,Đà Nẵng,Retail manager,17500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10813,Nguyễn Đức Thiện,+84508287327,55,Hà Nội,Delivery rider,8500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10814,Trần Ngọc Xuân,+84789559329,25,Hà Nội,Project manager,24500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Reactivation
+CUST-10815,Bùi Mỹ Hà,+84930915700,24,Hà Nội,Office clerk,14500000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10816,Nguyễn Anh Lan,+84879090329,32,Nha Trang,Barista,9500000,5,Overdue,Cash loan,Weekend mornings (9-11 AM),Payment reminder
+CUST-10817,Nguyễn Công Dũng,+84386197939,27,Hà Nội,Restaurant staff,8500000,4,Paid,Cash loan,Weekday evenings (6-8 PM),Winback
+CUST-10818,Trần Trọng Dũng,+84866029477,44,Vũng Tàu,Security guard,8000000,2,Paid,EMI,Weekend afternoons (1-5 PM),Renewal
+CUST-10819,Nguyễn Thị Mai,+84826237281,49,Biên Hòa,Business owner,38000000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10820,Hoàng Mỹ Hồng,+84593689372,24,Buôn Ma Thuột,Delivery rider,5500000,1,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10821,Tạ Trọng Nam,+84899503427,30,Hà Nội,Customer service rep,8000000,1,Paid,EMI,Weekday afternoons (1-5 PM),Renewal
+CUST-10822,Lê Công Quân,+84843813268,38,Hải Phòng,Customer service rep,14000000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10823,Lê Hoàng Thiện,+84565722300,24,Hồ Chí Minh City,Salesperson,17500000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10824,Dương Hồng Thủy,+84319032192,58,Điện Biên,Taxi driver,16500000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10825,Trần Hữu Việt,+84833284810,33,Long Xuyên,Software developer,23500000,1,Paid,Credit card,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10826,Nguyễn Trọng Hùng,+84782701716,55,Mỹ Tho,Salesperson,8000000,4,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10827,Huỳnh Minh Thắng,+84553578549,57,Nha Trang,Taxi driver,9500000,2,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10828,Dương Diệu Diệp,+84509619415,28,Thái Nguyên,Project manager,35500000,2,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10829,Hoàng Anh Hoa,+84919919002,55,Buôn Ma Thuột,Factory worker,4000000,1,Paid,EMI,Weekday mornings (9-11 AM),Reactivation
+CUST-10830,Nguyễn Đức Hoàng,+84367716927,50,Sơn La,Motorbike taxi driver,8500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10831,Hồ Tiến Vinh,+84903021683,51,Hồ Chí Minh City,Barista,8500000,3,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10832,Võ Đức Việt,+84590689028,35,Hải Phòng,Farmer,8500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10833,Lê Mỹ Yến,+84831089400,47,Vinh,Logistics coordinator,12500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10834,Hoàng Xuân Khoa,+84705773093,36,Huế,Software developer,37000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10835,Ngô Thanh Thu,+84534809276,39,Biên Hòa,Mechanic,11000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10836,Hoàng Xuân Thắng,+84996791238,38,Vinh,Office clerk,16500000,2,Overdue,Cash loan,Weekend afternoons (1-5 PM),Early collections
+CUST-10837,Nguyễn Hữu Việt,+84763229906,53,Hồ Chí Minh City,Restaurant staff,6500000,5,Paid,Cash loan,Weekday evenings (6-8 PM),NPS feedback
+CUST-10838,Ngô Mỹ Ngọc,+84747477979,49,Hà Nội,Export-import specialist,31000000,4,Paid,Credit card,Weekend mornings (9-11 AM),NPS feedback
+CUST-10839,Đỗ Thùy Thảo,+84349112060,54,Hà Nội,Bank teller,17500000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10840,Nguyễn Công Hùng,+84781824913,40,Hà Nội,Security guard,7500000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10841,Nguyễn Hoàng Hùng,+84782844641,53,Hải Phòng,Construction worker,6000000,3,Paid,EMI,Weekday evenings (6-8 PM),NPS feedback
+CUST-10842,Nguyễn Phương Oanh,+84921392849,25,Hồ Chí Minh City,Security guard,7500000,1,Overdue,Cash loan,Weekday afternoons (1-5 PM),Early collections
+CUST-10843,Nguyễn Văn Hùng,+84788244543,39,Hồ Chí Minh City,Logistics coordinator,8000000,2,Paid,EMI,Weekday mornings (9-11 AM),NPS feedback
+CUST-10844,Nguyễn Hữu Vinh,+84735909467,34,Biên Hòa,Salesperson,15000000,4,Paid,Cash loan,Weekday mornings (9-11 AM),Renewal
+CUST-10845,Huỳnh Thanh Vy,+84856099116,33,Hồ Chí Minh City,Hotel receptionist,10000000,2,Paid,EMI,Weekday mornings (9-11 AM),EMI conversion
+CUST-10846,Nguyễn Thùy Linh,+84793862216,55,Hồ Chí Minh City,HR manager,34000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10847,Trần Tiến Hùng,+84540303954,54,Hà Nội,Bank teller,11500000,2,Paid,EMI,Weekday afternoons (1-5 PM),Reactivation
+CUST-10848,Đỗ Bảo Nhung,+84929661086,56,Hồ Chí Minh City,Salesperson,14500000,0,None,EMI,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10849,Tạ Mỹ Hiền,+84599117016,58,Hà Nội,Accountant,22500000,0,None,Credit card,Weekday afternoons (1-5 PM),Onboarding
+CUST-10850,Võ Minh Hoàn,+84726928747,25,Điện Biên,Cleaning staff,4500000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10851,Hoàng Thanh Quyên,+84997630623,47,Thanh Hóa,Hairdresser,5500000,0,None,Cash loan,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10852,Lê Hoàng Quang,+84720160092,43,Hà Nội,Nurse,15500000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10853,Hoàng Minh Hiếu,+84853140124,28,Nha Trang,Taxi driver,17500000,6,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10854,Nguyễn Bảo Lan,+84856455214,30,Hồ Chí Minh City,Street vendor,6500000,4,Paid,Cash loan,Weekend mornings (9-11 AM),Renewal
+CUST-10855,Nguyễn Minh Thắng,+84942626596,43,Hồ Chí Minh City,Operations director,70500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10856,Lê Hồng Quyên,+84311530382,52,Nha Trang,Architect,29000000,0,None,Credit card,Weekday mornings (9-11 AM),Onboarding
+CUST-10857,Trần Thị Nhung,+84842443942,43,Hà Nội,Taxi driver,13000000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10858,Nguyễn Thu Diệp,+84756941661,45,Hà Nội,Street vendor,3000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10859,Nguyễn Diệu Yến,+84720325887,49,Hà Nội,Construction worker,6500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Winback
+CUST-10860,Nguyễn Hồng Quyên,+84777315626,36,Rạch Giá,Doctor,25000000,0,None,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10861,Nguyễn Ngọc Hà,+84503464996,22,Hà Nội,Warehouse supervisor,17000000,0,None,EMI,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10862,Nguyễn Văn Phong,+84932743817,39,Hồ Chí Minh City,Housekeeper,3000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Reactivation
+CUST-10863,Lê Thùy Vy,+84317311748,34,Hồ Chí Minh City,Marketing manager,37000000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10864,Nguyễn Trọng Sang,+84969232233,45,Vinh,Senior accountant,63500000,5,Paid,Credit card,Weekday afternoons (1-5 PM),Winback
+CUST-10865,Lê Anh Vy,+84514146024,56,Hồ Chí Minh City,Accountant,22500000,0,None,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10866,Nguyễn Thị Thảo,+84991806480,35,Tuy Hòa,Lawyer,22500000,1,Paid,EMI,Weekday mornings (9-11 AM),Cross-sell
+CUST-10867,Nguyễn Trọng Huy,+84962317777,36,Hải Phòng,Lawyer,19500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10868,Trần Công Huy,+84514471973,52,Hà Nội,Investment banker,48500000,3,Paid,EMI,Weekday evenings (6-8 PM),Winback
+CUST-10869,Nguyễn Anh Hoàng,+84720997524,24,Hà Nội,Engineer,23500000,0,None,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10870,Hoàng Thanh Nhi,+84596103484,28,Hòa Bình,Hotel receptionist,8000000,0,None,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10871,Phạm Mỹ Loan,+84991236284,26,Huế,Restaurant staff,6000000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10872,Phan Minh Hoàng,+84922579464,27,Nam Định,Bank teller,13500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10873,Phạm Hữu Hải,+84909908846,38,Hà Nội,Barista,13500000,6,Paid,Credit card,Weekday afternoons (1-5 PM),Renewal
+CUST-10874,Nguyễn Minh Vân,+84514322413,33,Quy Nhơn,Software developer,34500000,0,None,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10875,Lê Thùy Thủy,+84368223883,22,Hà Nội,Finance analyst,24000000,4,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10876,Nguyễn Xuân Quân,+84368164693,48,Hồ Chí Minh City,Warehouse supervisor,14000000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Reactivation
+CUST-10877,Nguyễn Anh Hùng,+84348308165,26,Đà Nẵng,Salesperson,10500000,4,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10878,Nguyễn Mỹ Nhung,+84868616271,54,Hồ Chí Minh City,Hotel receptionist,17500000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10879,Ngô Đức Đạt,+84325871808,45,Hồ Chí Minh City,Marketing manager,39500000,1,Overdue,EMI,Weekend afternoons (1-5 PM),Early collections
+CUST-10880,Nguyễn Diệu Hoa,+84944815525,22,Mỹ Tho,Retail manager,10500000,3,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10881,Phạm Thanh Hoàng,+84757962877,35,Hà Tĩnh,Project manager,32500000,1,Paid,Credit card,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10882,Hồ Thùy Hạnh,+84506012292,27,Hồ Chí Minh City,IT director,47000000,0,None,Credit card,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10883,Huỳnh Thanh Khang,+84901615084,22,Thanh Hóa,Customer service rep,17500000,5,Paid,Cash loan,Weekday evenings (6-8 PM),EMI conversion
+CUST-10884,Lê Ngọc Yến,+84306312527,32,Quy Nhơn,Barista,17000000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10885,Hoàng Thu Mai,+84879815885,52,Hồ Chí Minh City,Retail manager,15000000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10886,Nguyễn Quốc Huy,+84814370015,28,Biên Hòa,University lecturer,31500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10887,Trần Hoàng Tài,+84839774840,32,Hồ Chí Minh City,Project manager,38000000,2,Paid,Credit card,Weekend afternoons (1-5 PM),EMI conversion
+CUST-10888,Lê Anh Sơn,+84891963555,53,Long Xuyên,Marketing manager,20500000,1,Paid,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10889,Nguyễn Quốc Nam,+84857638143,49,Thanh Hóa,Cleaning staff,6000000,0,None,Cash loan,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10890,Trần Thanh An,+84761649375,57,Quy Nhơn,Civil servant,38000000,0,None,EMI,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10891,Lê Phương Thủy,+84705888142,35,Nha Trang,Primary school teacher,17500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10892,Nguyễn Đức Vinh,+84706653091,24,Đà Nẵng,Specialist doctor,74000000,1,Paid,Credit card,Weekday evenings (6-8 PM),EMI conversion
+CUST-10893,Trần Phương Xuân,+84731255588,57,Tuy Hòa,Delivery rider,4500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10894,Phan Kim Hà,+84509430003,44,Hà Nội,Software developer,36500000,0,None,Cash loan,Weekday mornings (9-11 AM),Cross-sell
+CUST-10895,Đỗ Thị Hạnh,+84914589455,55,Sơn La,Farmer,7500000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10896,Hoàng Kim Hiền,+84302292693,47,Nam Định,Hairdresser,4500000,1,Overdue,EMI,Weekday evenings (6-8 PM),Early collections
+CUST-10897,Nguyễn Quốc Phúc,+84764434191,50,Hòa Bình,Construction worker,3500000,0,None,EMI,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10898,Trương Anh Quang,+84924188534,44,Đà Nẵng,Retail manager,12500000,2,Paid,Cash loan,Weekday afternoons (1-5 PM),Renewal
+CUST-10899,Lê Kim Phương,+84599074966,56,Long Xuyên,Office clerk,12000000,0,None,Credit card,Weekday afternoons (1-5 PM),Pre-approved offer
+CUST-10900,Lê Thùy Giang,+84553637349,50,Hải Phòng,Lawyer,36500000,0,None,Credit card,Weekday evenings (6-8 PM),Cross-sell
+CUST-10901,Nguyễn Bảo Nhi,+84834763145,29,Đà Nẵng,Primary school teacher,13000000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Renewal
+CUST-10902,Nguyễn Hoàng Việt,+84334521207,33,Bạc Liêu,Restaurant staff,5000000,3,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10903,Hoàng Kim Thu,+84544084301,35,Đà Nẵng,Export-import specialist,36500000,0,None,EMI,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10904,Phạm Minh Thảo,+84861230479,36,Nam Định,Shop owner,16500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10905,Lê Trọng Lâm,+84705500053,43,Cần Thơ,Taxi driver,15000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10906,Vũ Hồng Thủy,+84972796754,58,Hà Nội,Nurse,10500000,2,Paid,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10907,Lê Thu Minh,+84345768888,27,Đà Nẵng,Motorbike taxi driver,3000000,0,None,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10908,Nguyễn Trọng Quang,+84547199112,49,Đà Nẵng,Specialist doctor,57000000,3,Paid,EMI,Weekday mornings (9-11 AM),Winback
+CUST-10909,Vũ Tiến Vinh,+84758076885,58,Hải Phòng,Mechanic,17000000,0,None,Cash loan,Weekday evenings (6-8 PM),Onboarding
+CUST-10910,Nguyễn Phương Vy,+84708357747,23,Long Xuyên,Civil servant,24500000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10911,Vũ Bảo Hà,+84993631700,54,Hồ Chí Minh City,Office clerk,12000000,5,Paid,Credit card,Weekday mornings (9-11 AM),Winback
+CUST-10912,Lê Thùy Vy,+84797527142,58,Hồ Chí Minh City,Street vendor,8500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10913,Lê Mỹ Trang,+84806260333,29,Cần Thơ,Architect,29000000,1,Overdue,Cash loan,Weekday evenings (6-8 PM),Early collections
+CUST-10914,Nguyễn Trọng Giang,+84844854730,46,Sơn La,Warehouse supervisor,10000000,3,Overdue,EMI,Weekday evenings (6-8 PM),Early collections
+CUST-10915,Nguyễn Hoàng Sang,+84762589429,56,Huế,Office clerk,9500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Lead follow-up
+CUST-10916,Đỗ Xuân Thiện,+84982221723,58,Hồ Chí Minh City,Cleaning staff,4500000,1,Overdue,EMI,Weekend mornings (9-11 AM),Early collections
+CUST-10917,Nguyễn Anh Ngọc,+84351589578,43,Hà Nội,Architect,38000000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10918,Nguyễn Quốc Trung,+84999778877,55,Đà Nẵng,Barista,8000000,1,Paid,EMI,Weekend afternoons (1-5 PM),Reactivation
+CUST-10919,Ngô Hữu Khoa,+84522402200,54,Hải Phòng,Bank teller,14000000,5,Paid,EMI,Weekend mornings (9-11 AM),NPS feedback
+CUST-10920,Trần Ngọc An,+84599088200,39,Hồ Chí Minh City,Construction worker,5500000,0,None,EMI,Weekday mornings (9-11 AM),Onboarding
+CUST-10921,Dương Đức Huy,+84513786046,39,Huế,Customer service rep,12500000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10922,Nguyễn Minh Hải,+84941398710,56,Quy Nhơn,Salesperson,14500000,6,Overdue,EMI,Weekday mornings (9-11 AM),Early collections
+CUST-10923,Phan Thu Vy,+84805460970,48,Hà Nội,Shop owner,14000000,0,None,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10924,Nguyễn Hồng Giang,+84843041950,34,Hồ Chí Minh City,Operations director,37000000,0,None,EMI,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10925,Huỳnh Bảo Hạnh,+84940311828,53,Hồ Chí Minh City,Street vendor,7500000,3,Paid,Cash loan,Weekday afternoons (1-5 PM),EMI conversion
+CUST-10926,Nguyễn Phương Vy,+84549123891,22,Tây Ninh,Factory worker,6500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10927,Nguyễn Đức Vũ,+84874162163,48,Cần Thơ,Accountant,18500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),EMI conversion
+CUST-10928,Nguyễn Công Hoàn,+84783510151,47,Hà Nội,Warehouse supervisor,10000000,0,None,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10929,Lê Quốc Tuấn,+84961499524,57,Nam Định,Doctor,34000000,1,Paid,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10930,Phạm Anh Hoa,+84830575889,34,Hồ Chí Minh City,Logistics coordinator,17500000,0,None,Credit card,Weekday afternoons (1-5 PM),Onboarding
+CUST-10931,Hoàng Anh Hồng,+84994217001,22,Hà Nội,Mechanic,8500000,1,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10932,Nguyễn Minh Thành,+84937794560,22,Hồ Chí Minh City,Factory worker,3000000,0,None,Cash loan,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10933,Trần Trọng Quang,+84824869547,41,Buôn Ma Thuột,Logistics coordinator,11500000,0,None,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10934,Huỳnh Quốc Tuấn,+84309895621,27,Long Xuyên,Mechanic,12000000,0,None,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10935,Nguyễn Quốc Quân,+84731581068,37,Hà Nội,University lecturer,39500000,0,None,Credit card,Weekend mornings (9-11 AM),Onboarding
+CUST-10936,Vũ Thanh Hoàn,+84982447052,27,Hà Nội,Operations director,75000000,0,None,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10937,Phạm Thu Yến,+84815502312,41,Biên Hòa,Customer service rep,12500000,5,Paid,Cash loan,Weekday afternoons (1-5 PM),Pre-closure retention
+CUST-10938,Nguyễn Thị Quyên,+84995356967,47,Hà Nội,Farmer,4000000,1,Overdue,Cash loan,Weekday mornings (9-11 AM),Early collections
+CUST-10939,Lê Hoàng Tiến,+84555407719,26,Cần Thơ,Restaurant staff,6500000,1,Paid,Cash loan,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10940,Trương Anh Khánh,+84843977923,31,Tuy Hòa,Dentist,30500000,0,None,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10941,Lê Kim Giang,+84337799382,53,Long Xuyên,Factory worker,3500000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10942,Ngô Ngọc Phương,+84539587336,26,Hòa Bình,Bank teller,10000000,3,Paid,EMI,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10943,Vũ Anh Trung,+84924010204,58,Mỹ Tho,Retail manager,15000000,1,Paid,Credit card,Weekday evenings (6-8 PM),Lead follow-up
+CUST-10944,Phạm Bảo Trang,+84778759136,32,Hồ Chí Minh City,Nurse,11500000,0,None,Cash loan,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10945,Võ Công Lâm,+84371741554,41,Hồ Chí Minh City,Bank teller,12500000,3,Paid,Cash loan,Weekend afternoons (1-5 PM),Winback
+CUST-10946,Mai Đức Giang,+84754042730,32,Đà Nẵng,Export-import specialist,23500000,2,Paid,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10947,Huỳnh Hoàng Trung,+84314375094,46,Nha Trang,Hotel receptionist,11000000,0,None,Cash loan,Weekday mornings (9-11 AM),Onboarding
+CUST-10948,Nguyễn Ngọc Hiếu,+84969080029,28,Hồ Chí Minh City,Software developer,37500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Winback
+CUST-10949,Võ Phương Nhi,+84579667050,55,Hải Phòng,Tailor,3500000,3,Paid,Cash loan,Weekday evenings (6-8 PM),NPS feedback
+CUST-10950,Nguyễn Hồng Diệp,+84911415847,36,Biên Hòa,Housekeeper,5500000,0,None,Cash loan,Weekend mornings (9-11 AM),Onboarding
+CUST-10951,Trần Quốc Cường,+84586859241,50,Hồ Chí Minh City,Software developer,38500000,1,Paid,EMI,Weekend afternoons (1-5 PM),Payment reminder
+CUST-10952,Nguyễn Công Khánh,+84933850662,32,Tuy Hòa,Restaurant staff,7500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10953,Lê Hữu Huy,+84826086346,27,Hồ Chí Minh City,Operations director,79500000,2,Paid,Credit card,Weekday mornings (9-11 AM),Payment reminder
+CUST-10954,Huỳnh Thanh Hùng,+84323996781,56,Mỹ Tho,Finance analyst,20000000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10955,Bùi Kim Như,+84797688321,45,Hải Phòng,Shop owner,11500000,0,None,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10956,Trần Bảo Hồng,+84982503882,53,Huế,Hotel receptionist,12000000,0,None,Credit card,Weekend afternoons (1-5 PM),Pre-approved offer
+CUST-10957,Lê Mỹ Trâm,+84317993023,38,Long Xuyên,Housekeeper,5000000,1,Paid,Cash loan,Weekday mornings (9-11 AM),Winback
+CUST-10958,Nguyễn Minh Bích,+84774797441,51,Thanh Hóa,Barista,14000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Lead follow-up
+CUST-10959,Nguyễn Minh Thảo,+84547243201,54,Hà Nội,Export-import specialist,39500000,1,Overdue,EMI,Weekend mornings (9-11 AM),Early collections
+CUST-10960,Nguyễn Thị Minh,+84864145894,46,Hà Nội,Construction worker,5500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10961,Phạm Kim Bích,+84994416257,38,Hồ Chí Minh City,Marketing manager,29000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10962,Huỳnh Mỹ Minh,+84772305874,49,Cần Thơ,Factory worker,8500000,0,None,Credit card,Weekday mornings (9-11 AM),Lead follow-up
+CUST-10963,Nguyễn Ngọc Việt,+84858432407,38,Nha Trang,Finance analyst,33000000,0,None,Credit card,Weekday afternoons (1-5 PM),Lead follow-up
+CUST-10964,Phạm Hồng Hà,+84516410438,49,Long Xuyên,Salesperson,15500000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Cross-sell
+CUST-10965,Nguyễn Đức Thiện,+84923989058,58,Mỹ Tho,Nurse,12000000,3,Paid,Credit card,Weekday mornings (9-11 AM),Cross-sell
+CUST-10966,Trần Quốc Tuấn,+84305848798,24,Bạc Liêu,Hairdresser,6000000,0,None,EMI,Weekday mornings (9-11 AM),Cross-sell
+CUST-10967,Lê Xuân Cường,+84732181249,47,Hà Nội,Construction worker,6000000,3,Paid,EMI,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10968,Vũ Quốc Sơn,+84926179450,25,Hồ Chí Minh City,Bank teller,17000000,0,None,Cash loan,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10969,Nguyễn Anh An,+84541632466,54,Hồ Chí Minh City,Dentist,32000000,1,Paid,EMI,Weekend mornings (9-11 AM),Pre-approved offer
+CUST-10970,Bùi Ngọc Phong,+84356958101,37,Hồ Chí Minh City,Lawyer,31500000,3,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10971,Nguyễn Thị Hạnh,+84521920136,36,Hải Phòng,Street vendor,4000000,3,Paid,Credit card,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10972,Phạm Đức An,+84927672822,56,Vũng Tàu,Marketing manager,31500000,1,Paid,Credit card,Weekend afternoons (1-5 PM),Winback
+CUST-10973,Ngô Minh Huy,+84708077396,37,Hải Phòng,Shop owner,10000000,3,Paid,EMI,Weekend mornings (9-11 AM),Cross-sell
+CUST-10974,Phạm Đức Thành,+84335865939,50,Đà Nẵng,Primary school teacher,12500000,0,None,Cash loan,Weekday afternoons (1-5 PM),Onboarding
+CUST-10975,Nguyễn Bảo Ngân,+84718633810,23,Hà Nội,Accountant,32000000,3,Paid,Credit card,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10976,Nguyễn Hoàng Hải,+84511323002,41,Quy Nhơn,Nurse,13000000,3,Paid,Cash loan,Weekday mornings (9-11 AM),EMI conversion
+CUST-10977,Phạm Phương Thu,+84861621952,56,Hà Nội,Real estate agent,77500000,0,None,EMI,Weekend afternoons (1-5 PM),Onboarding
+CUST-10978,Võ Thị Huyền,+84881221553,43,Hà Tĩnh,Delivery rider,7000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Renewal
+CUST-10979,Trần Đức Bình,+84775859347,54,Điện Biên,Delivery rider,5500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10980,Nguyễn Ngọc Thành,+84770511137,32,Hải Phòng,Restaurant staff,4500000,3,Paid,EMI,Weekday evenings (6-8 PM),Reactivation
+CUST-10981,Trần Anh Minh,+84572225576,24,Hải Phòng,Restaurant staff,4500000,1,Paid,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10982,Nguyễn Ngọc Khoa,+84514207607,56,Hà Tĩnh,Logistics coordinator,8500000,5,Paid,Cash loan,Weekday afternoons (1-5 PM),Winback
+CUST-10983,Đỗ Thanh Thiện,+84364054632,25,Vinh,Motorbike taxi driver,4500000,0,None,Cash loan,Weekend mornings (9-11 AM),Cross-sell
+CUST-10984,Nguyễn Quốc Thiện,+84934144412,29,Hà Nội,Delivery rider,8500000,4,Paid,Cash loan,Weekend afternoons (1-5 PM),Winback
+CUST-10985,Trần Kim Chi,+84838291148,49,Vũng Tàu,Specialist doctor,44000000,4,Paid,EMI,Weekday afternoons (1-5 PM),Cross-sell
+CUST-10986,Nguyễn Thanh Khánh,+84833549846,24,Cần Thơ,Factory worker,5000000,3,Paid,EMI,Weekday evenings (6-8 PM),EMI conversion
+CUST-10987,Nguyễn Anh Hoàn,+84737753259,45,Hà Nội,Nurse,9000000,2,Paid,EMI,Weekend mornings (9-11 AM),Payment reminder
+CUST-10988,Trần Diệu Lan,+84947009528,27,Hồ Chí Minh City,Office clerk,12500000,2,Paid,Cash loan,Weekday evenings (6-8 PM),Pre-approved offer
+CUST-10989,Nguyễn Hồng Diệp,+84906046402,47,Thái Nguyên,Logistics coordinator,8500000,1,Paid,EMI,Weekday mornings (9-11 AM),EMI conversion
+CUST-10990,Hoàng Anh Giang,+84881874997,55,Hà Nội,HR manager,29500000,3,Paid,Credit card,Weekend afternoons (1-5 PM),Winback
+CUST-10991,Trương Mỹ Yến,+84980536683,49,Hải Phòng,IT director,65000000,1,Paid,Credit card,Weekday mornings (9-11 AM),Pre-approved offer
+CUST-10992,Nguyễn Đức Thiện,+84844284795,48,Hồ Chí Minh City,Taxi driver,17500000,1,Paid,EMI,Weekend mornings (9-11 AM),NPS feedback
+CUST-10993,Nguyễn Phương Huyền,+84942768042,54,Biên Hòa,Civil servant,18500000,2,Paid,Credit card,Weekend afternoons (1-5 PM),Winback
+CUST-10994,Phan Bảo Dung,+84386511428,56,Cà Mau,Security guard,8000000,0,None,EMI,Weekend mornings (9-11 AM),Onboarding
+CUST-10995,Lê Trọng Huy,+84349518809,48,Hà Nội,Factory worker,3500000,1,Paid,EMI,Weekday afternoons (1-5 PM),Winback
+CUST-10996,Trương Minh Long,+84761512659,42,Hồ Chí Minh City,Tailor,3000000,1,Paid,Cash loan,Weekend afternoons (1-5 PM),Renewal
+CUST-10997,Nguyễn Thanh Phương,+84916840261,37,Hồ Chí Minh City,Customer service rep,15000000,1,Overdue,EMI,Weekday afternoons (1-5 PM),Payment reminder
+CUST-10998,Nguyễn Hoàng Minh,+84859336663,31,Huế,Software developer,33500000,2,Paid,EMI,Weekend afternoons (1-5 PM),Cross-sell
+CUST-10999,Trần Công Huy,+84542400606,55,Hồ Chí Minh City,Senior engineer,42500000,1,Overdue,Cash loan,Weekend mornings (9-11 AM),Early collections
