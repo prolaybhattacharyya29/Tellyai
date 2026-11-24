@@ -1,5 +1,23 @@
 # CAMPAIGN: Renewal
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Product being renewed: {{product_type}} (current tier: {{current_tier}})
+- Product reference: {{product_id}}
+- Expires on: {{expiry_date}} ({{days_until_expiry}} days away)
+- FE Credit relationship: {{customer_since_years}} years
+- Usage pattern: {{utilization_pct}}% utilization
+- Payment track record: {{on_time_payment_rate_pct}}% on-time, {{missed_payments_12mo}} missed in last 12 months
+- Performance tier: {{performance_tier}}
+- Renewal eligible: {{renewal_eligible}}
+- Tier being upgraded: {{tier_upgraded}} (new tier: {{renewal_tier}})
+- Annual fee waived in renewal: {{annual_fee_waived}}
+- Bonus benefits included in renewal: {{bonus_benefits_added}}
+- Auto-renewal already scheduled: {{auto_renewal_scheduled}}
+- Opportunity: a renewal offer is ready, with upgraded terms for strong performers (specialist handles exact details)
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer's **FE Credit credit card** (or in some cases, an insurance policy or other product) is **approaching its renewal/expiry date** — typically **7 to 30 days away**. Without active renewal, the card will expire and they stop being a cardholder.

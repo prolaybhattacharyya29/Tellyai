@@ -1,127 +1,183 @@
 """
-Fire an outbound call from Retell to one customer in customers.csv.
-Loads the right campaign prompt based on the customer's `campaign` field
-and injects it as a dynamic variable.
+scripts/trigger_call.py
+
+Fires an outbound Retell AI call for a specific campaign + customer.
+Reads campaign CSVs from the OneDrive data folder.
+Generates opening_line and first_name so the prompt's {{opening_line}}
+and {{first_name}} placeholders resolve.
 
 Usage:
-    python -m scripts.trigger_call CUST-10000
+    python -m scripts.trigger_call --campaign cross_sell --customer_id XS-10000
 """
+
+import argparse
 import os
 import sys
-import httpx
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 from dotenv import load_dotenv
+from retell import Retell
 
-from scripts.generate_opening import generate_opening
+PROJECT_ROOT = Path(__file__).parent.parent
+load_dotenv(PROJECT_ROOT / ".env")
 
-load_dotenv()
+DATA_DIR = Path(os.getenv(
+    "CAMPAIGN_DATA_DIR",
+    r"C:\Users\Prolay Bhattacharyya\OneDrive\Documents\Fe Credit data"
+))
 
-RETELL_KEY = os.environ["RETELL_API_KEY"]
-AGENT_ID = os.environ["RETELL_AGENT_ID"]
-FROM_NUMBER = os.environ["RETELL_FROM_NUMBER"]
+RETELL_API_KEY = os.getenv("RETELL_API_KEY")
+RETELL_AGENT_ID = os.getenv("RETELL_AGENT_ID")
+RETELL_LLM_ID = os.getenv("RETELL_LLM_ID")
+RETELL_FROM_NUMBER = os.getenv("RETELL_FROM_NUMBER")
 
-# Map campaign names (as in the CSV) to campaign prompt filenames.
-CAMPAIGN_FILES = {
-    "Cross-sell": "cross_sell.md",
-    "Pre-approved offer": "pre_approved.md",
-    "Reactivation": "reactivation.md",
-    "Winback": "winback.md",
-    "Payment reminder": "payment_reminder.md",
-    "Early collections": "early_collections.md",
-    "Onboarding": "onboarding.md",
-    "EMI conversion": "emi_conversion.md",
-    "Renewal": "renewal.md",
-    "Pre-closure retention": "pre_closure.md",
-    "Lead follow-up": "lead_followup.md",
-    "NPS feedback": "nps_feedback.md",
+CAMPAIGNS = [
+    "cross_sell", "pre_approved", "reactivation", "winback",
+    "payment_reminder", "early_collections", "onboarding",
+    "emi_conversion", "renewal", "pre_closure",
+    "lead_followup", "nps_feedback",
+]
+
+# One-line campaign intro Marissa says after the greeting.
+CAMPAIGN_INTROS = {
+    "cross_sell":         "I'm calling with a product opportunity that might suit your profile.",
+    "pre_approved":       "I'm calling because you have a pre-approved loan offer ready and waiting for you.",
+    "reactivation":       "It's been a while since we've connected, and I'm calling with a special offer for returning customers like yourself.",
+    "winback":            "I'm calling to reconnect and share something we've put together specially for you.",
+    "payment_reminder":   "I'm calling with a friendly reminder about your upcoming EMI payment.",
+    "early_collections":  "I'm calling about your loan account and would like to work with you on bringing it current.",
+    "onboarding":         "I'm calling to welcome you to FE Credit and help you make the most of your new product.",
+    "emi_conversion":     "I'm calling because there's an option to convert your outstanding card balance into a more manageable EMI plan.",
+    "renewal":            "I'm calling about an upcoming renewal on one of your products with us.",
+    "pre_closure":        "I'm calling because your loan with us is nearing its final payments, and I wanted to discuss the options available.",
+    "lead_followup":      "I'm following up on your recent interest in one of our products.",
+    "nps_feedback":       "I'm calling to get your quick feedback on your recent experience with FE Credit.",
 }
 
 
-def profile_to_text(row: dict) -> str:
-    """Format one CSV row as a compact profile string."""
-    parts = []
-    for k, v in row.items():
-        if v == "" or pd.isna(v):
-            continue
-        parts.append(f"{k}: {v}")
-    return ". ".join(parts) + "."
+def load_campaign_data(campaign):
+    csv_path = DATA_DIR / f"{campaign}.csv"
+    if not csv_path.exists():
+        raise FileNotFoundError(
+            f"Campaign data not found: {csv_path}\n"
+            f"Check the file exists in: {DATA_DIR}"
+        )
+    return pd.read_csv(csv_path, dtype=str)
 
 
-def load_campaign_rules(campaign: str) -> str:
-    """Load the campaign-specific prompt from prompts/campaigns/."""
-    filename = CAMPAIGN_FILES.get(campaign)
-    if filename is None:
-        return f"(No campaign rules available for '{campaign}'. Follow universal rules.)"
-
-    path = Path("prompts/campaigns") / filename
-    if not path.exists():
-        return f"(Campaign file {filename} not found. Follow universal rules.)"
-
-    content = path.read_text(encoding="utf-8").strip()
-    if not content:
-        return f"(Campaign file {filename} is empty. Follow universal rules.)"
-
-    return content
+def load_campaign_prompt(campaign):
+    prompt_path = PROJECT_ROOT / "prompts" / "campaigns" / f"{campaign}.md"
+    if not prompt_path.exists():
+        raise FileNotFoundError(f"Campaign prompt not found: {prompt_path}")
+    return prompt_path.read_text(encoding="utf-8")
 
 
-def place_call(customer: dict) -> dict:
-    opening = generate_opening(customer)
-    profile_text = profile_to_text(customer)
-    campaign = customer.get("campaign", "")
-    campaign_rules = load_campaign_rules(campaign)
+def extract_first_name(full_name):
+    """For Vietnamese names like 'Nguyen Thi Minh Chi', the given name is the
+    last word ('Chi'). For other names, same rule works well enough."""
+    if not full_name or not full_name.strip():
+        return "there"
+    parts = full_name.strip().split()
+    return parts[-1] if parts else "there"
 
-    body = {
-        "from_number": FROM_NUMBER,
-        "to_number": customer["phone"],
-        "override_agent_id": AGENT_ID,
-        "retell_llm_dynamic_variables": {
-            "opening_line": opening,
-            "customer_profile": profile_text,
-            "campaign_rules": campaign_rules,
-        },
-        "metadata": {
-            "customer_id": customer["customer_id"],
-            "campaign": campaign,
-        },
-    }
 
-    print(f"  campaign:  {campaign}")
-    print(f"  calling    {customer['phone']}")
-    print(f"  opening:   {opening}")
-
-    r = httpx.post(
-        "https://api.retellai.com/v2/create-phone-call",
-        headers={"Authorization": f"Bearer {RETELL_KEY}"},
-        json=body,
-        timeout=30,
+def make_opening_line(campaign, first_name):
+    """Generate a short, campaign-aware opening line Marissa speaks first."""
+    intro = CAMPAIGN_INTROS.get(
+        campaign,
+        "I'm calling from FE Credit with something I think might interest you."
     )
+    return f"Hi {first_name}, this is Marissa from FE Credit. {intro} Do you have a quick minute to chat?"
 
-    if r.status_code not in (200, 201):
-        print(f"\nFAIL: status {r.status_code}")
-        print(r.text)
-        sys.exit(1)
 
-    return r.json()
+def row_to_variables(row):
+    """Convert row → {str: str} for Retell dynamic variables. Skip blanks."""
+    out = {}
+    for col, val in row.items():
+        s = str(val).strip()
+        if not s or s.lower() == "nan":
+            continue
+        out[col] = s
+    return out
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python -m scripts.trigger_call CUST-10000")
+    parser = argparse.ArgumentParser(description="Trigger a Retell AI outbound call")
+    parser.add_argument("--campaign", required=True, choices=CAMPAIGNS)
+    parser.add_argument("--customer_id", required=True)
+    args = parser.parse_args()
+
+    missing = [k for k, v in {
+        "RETELL_API_KEY": RETELL_API_KEY,
+        "RETELL_AGENT_ID": RETELL_AGENT_ID,
+        "RETELL_LLM_ID": RETELL_LLM_ID,
+        "RETELL_FROM_NUMBER": RETELL_FROM_NUMBER,
+    }.items() if not v]
+    if missing:
+        print(f"❌ Missing env vars: {', '.join(missing)}")
         sys.exit(1)
 
-    cust_id = sys.argv[1]
-    df = pd.read_csv("data/customers.csv", dtype={"phone": str})
-    row = df[df["customer_id"] == cust_id]
-    if row.empty:
-        print(f"Customer {cust_id} not found in CSV")
+    print(f"📁 Data folder: {DATA_DIR}")
+    print(f"📂 Campaign: {args.campaign}")
+    print(f"👤 Customer:  {args.customer_id}")
+
+    df = load_campaign_data(args.campaign)
+    match = df[df["customer_id"] == args.customer_id]
+    if len(match) == 0:
+        print(f"❌ Customer {args.customer_id} not found in {args.campaign}.csv")
+        sys.exit(1)
+    row = match.iloc[0]
+
+    prompt_template = load_campaign_prompt(args.campaign)
+
+    # Build dynamic variables from the row
+    variables = row_to_variables(row)
+    variables["campaign"] = args.campaign
+
+    # Derive first_name + opening_line so prompts can use these placeholders
+    full_name = variables.get("name", "")
+    first_name = extract_first_name(full_name)
+    variables["first_name"] = first_name
+    variables["opening_line"] = make_opening_line(args.campaign, first_name)
+
+    to_number = row["phone"]
+
+    client = Retell(api_key=RETELL_API_KEY)
+
+    try:
+        client.llm.update(
+            llm_id=RETELL_LLM_ID,
+            general_prompt=prompt_template,
+        )
+        print(f"✓ Updated Retell LLM with {args.campaign} prompt")
+    except Exception as e:
+        print(f"❌ Failed to update Retell LLM: {e}")
         sys.exit(1)
 
-    customer = row.iloc[0].to_dict()
-    print(f"Triggering call for {cust_id} ({customer.get('name', '?')})")
-    result = place_call(customer)
-    print(f"\nOK -- call_id = {result.get('call_id', '?')}")
-    print("Your phone should ring in 5-10 seconds.")
+    try:
+        call = client.call.create_phone_call(
+            from_number=RETELL_FROM_NUMBER,
+            to_number=to_number,
+            override_agent_id=RETELL_AGENT_ID,
+            retell_llm_dynamic_variables=variables,
+            metadata={
+                "campaign": args.campaign,
+                "customer_id": args.customer_id,
+                "customer_name": full_name,
+            },
+        )
+        print(f"✓ Call initiated")
+        print(f"  Call ID       : {call.call_id}")
+        print(f"  Customer      : {full_name}")
+        print(f"  First name    : {first_name}")
+        print(f"  Opening line  : {variables['opening_line']}")
+        print(f"  Phone         : {to_number}")
+        print(f"  Campaign      : {args.campaign}")
+        print(f"  Variables sent: {len(variables)}")
+    except Exception as e:
+        print(f"❌ Failed to create call: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,14 @@
 # CAMPAIGN: Cross-sell
 
+## Customer context (for your awareness only — do not recite)
+- Customer name: {{name}}
+- FE Credit relationship: {{customer_since_years}} years
+- Payment track record: {{on_time_payment_rate_pct}}% on-time
+- Currently holds: {{current_products}}
+- Opportunity category: {{recommended_next_product}}
+- Previous contact: {{last_contact_outcome}}
+
+
 ## Campaign intent
 
 This customer is an existing FE Credit cardholder with **high card utilization** and a **regular salary credit pattern**. They have demonstrated repayment behavior and liquidity. The business wants to expand this relationship by offering them a **Personal Loan** or **Insurance product** in addition to their current card.

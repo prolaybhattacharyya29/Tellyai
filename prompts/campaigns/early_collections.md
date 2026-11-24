@@ -1,5 +1,29 @@
 # CAMPAIGN: Early Collections (PTP capture)
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Loan type: {{loan_type}}
+- Loan reference: {{loan_id}}
+- Days overdue: {{days_overdue}}
+- Missed payments on this loan: {{missed_payments_count}}
+- Delinquency bucket: {{dpd_bucket}} (DPD stage: {{delinquency_stage}})
+- Reason for delay (if captured): {{reason_for_delay}}
+- Previously promised to pay: {{previous_promise_to_pay}}
+- Promise kept: {{promise_kept}}
+- Historical payment track record: {{historical_on_time_rate_pct}}% on-time
+- Missed in last 12 months: {{missed_payments_12mo}}
+- Loan previously restructured: {{previous_restructuring}}
+- Last payment: {{last_payment_date}}
+- Recovery options available to offer (specialist handles details):
+  - Restructuring eligible: {{restructuring_eligible}}
+  - Partial payment acceptable (minimum applies): yes
+  - Grace extension available: yes
+  - Hardship program eligible: {{hardship_program_eligible}}
+- Collection attempts so far: {{collection_attempts_count}}
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Escalation risk: {{escalation_risk}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer has a payment (credit card bill or loan EMI) that is **5 to 47 days overdue**. The account hasn't gone into severe collections yet, but it needs attention. The call's job:

@@ -1,5 +1,23 @@
 # CAMPAIGN: Winback
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Was an FE Credit customer for {{tenure_at_exit_years}} years
+- Left on: {{churn_date}} ({{days_since_churn}} days ago)
+- Reason for leaving: {{churn_reason}}
+- Exit type: {{exit_type}}
+- Last product they held: {{last_product_held}}
+- All previous products: {{all_previous_products}}
+- Historical payment track record: {{historical_on_time_rate_pct}}% on-time
+- Closed in good standing: {{closed_in_good_standing}}
+- Had complaints: {{had_complaints}}
+- Satisfaction at exit: {{satisfaction_score_at_exit}}/10
+- If they went to a competitor: {{competitor_name}}
+- Winback probability: {{winback_probability}}
+- Opportunity: a special winback offer has been designed for them
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer **closed their FE Credit account between 2 and 12 months ago**. They are no longer an active customer. We want to bring them back by:

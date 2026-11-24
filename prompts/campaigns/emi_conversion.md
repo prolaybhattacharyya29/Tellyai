@@ -1,5 +1,18 @@
 # CAMPAIGN: EMI Conversion
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Credit card type: {{card_type}} (ending {{card_last4}})
+- Currently carrying an outstanding balance on the card
+- Months paying only minimum due: {{months_at_minimum_payment}}
+- Payment track record: {{on_time_payment_rate_pct}}% on-time, {{missed_payments_12mo}} missed in last 12 months
+- Eligible for EMI conversion: {{eligible}}
+- Eligibility tier: {{eligibility_tier}}
+- Opportunity: a structured EMI plan can convert their revolving balance into fixed, lower-rate monthly installments (specialist will walk through the math and tenure options)
+- Previous conversion attempts: {{previous_conversion_attempts}}
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer **recently made a large transaction on their FE Credit credit card** (typically > 5M VND equivalent). The full amount will hit their next bill. FE Credit offers to **convert this transaction into an EMI (Equated Monthly Installment)** spread over 3, 6, 9, or 12 months at a specific interest rate.

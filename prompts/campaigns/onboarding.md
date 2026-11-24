@@ -1,5 +1,23 @@
 # CAMPAIGN: Onboarding / Card Activation
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Product they got: {{product_type}} ({{product_tier}} tier)
+- Approval date: {{approval_date}} ({{days_since_approval}} days ago)
+- Product status: {{product_status}}
+- Card ending (if applicable): {{card_last4}}
+- Activation checklist:
+  - Card delivered: {{card_delivered_status}}
+  - Card PIN set: {{card_pin_set}}
+  - Mobile app registered: {{mobile_app_registered}}
+  - Autopay set up: {{autopay_setup}}
+- Annual fee waived: {{annual_fee_waived}}
+- Key benefits included: {{key_benefits}}
+- Assigned Relationship Manager: {{assigned_relationship_manager}} (phone: {{rm_phone}})
+- This is onboarding call attempt number: {{onboarding_call_attempt}}
+- Preferred call time: {{preferred_time}}
+- Preferred contact channel: {{preferred_contact_channel}}
+
 ## Campaign intent
 
 This customer **recently received a new FE Credit credit card** (physical card delivered to their address) and **has NOT activated it yet**. The card is sitting unused.

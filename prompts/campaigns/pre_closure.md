@@ -1,5 +1,22 @@
 # CAMPAIGN: Pre-closure Retention
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Loan type: {{loan_type}}
+- Loan reference: {{loan_id}}
+- Loan is nearing its natural end: {{installments_remaining}} installments remaining
+- Scheduled final payment date: {{scheduled_final_payment_date}}
+- FE Credit relationship: {{customer_since_years}} years
+- Payment track record: {{on_time_payment_rate_pct}}% on-time, {{missed_payments_12mo}} missed in last 12 months
+- Options available to discuss (specialist handles details):
+  - Pre-close the loan early: eligible → {{pre_closure_eligible}}
+  - Top-up option (continue relationship with fresh loan): eligible → {{top_up_eligible}}
+  - Continue paying EMIs to natural closure
+- Customer's expressed intention (if known): {{expressed_intention}}
+- Source of funds for prepayment (if mentioned): {{source_of_funds_for_prepayment}}
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer has **actively requested** to close their FE Credit relationship — most commonly:

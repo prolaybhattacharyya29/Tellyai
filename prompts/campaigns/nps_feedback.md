@@ -1,5 +1,30 @@
 # CAMPAIGN: NPS Feedback
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- FE Credit relationship: {{customer_since_years}} years
+- Current products: {{current_products}}
+- Primary product with FE Credit: {{primary_product}}
+- Last interaction: {{last_interaction_type}} on {{last_interaction_date}} ({{days_since_last_interaction}} days ago)
+- Customer care contacts in last 12 months: {{customer_care_contacts_12mo}}
+- Complaints filed in last 12 months: {{complaints_filed_12mo}} (resolved: {{complaints_resolved_12mo}})
+- Last complaint status: {{last_complaint_status}}
+- App usage pattern: {{app_usage_frequency}}
+- Why we are surveying now: {{nps_trigger_event}}
+- NPS cycle: {{nps_cycle}}
+- Previous NPS score given: {{previous_nps_score}} (on {{previous_nps_date}})
+- Trend: {{score_trend}}
+- Predicted NPS band (based on behavior): {{predicted_nps_band}}
+- Churn risk signal: {{churn_risk_signal}}
+- Promoter candidate (eligible for referral ask): {{promoter_candidate}}
+- Topics to probe in this survey: {{feedback_topics_to_probe}}
+- Known pain points (from prior feedback): {{known_pain_points}}
+- Known positive signals (from prior feedback): {{known_positive_signals}}
+- Survey type: {{survey_type}}
+- Incentive on offer for completing survey: {{incentive_offered}}
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer **just completed a service interaction with FE Credit** — a service request / ticket / incident was resolved, a product was delivered, or a call-center conversation ended. The call has 3 jobs:

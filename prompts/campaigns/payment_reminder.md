@@ -1,5 +1,22 @@
 # CAMPAIGN: Payment reminder
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- Loan type: {{loan_type}}
+- Loan reference: {{loan_id}}
+- Upcoming EMI due in: {{days_until_due}} days
+- Installment number: {{installment_number}} of {{total_installments}} ({{remaining_installments}} left)
+- Payment method on file: {{payment_method}}
+- Autopay enabled: {{autopay_enabled}}
+- Linked bank or wallet: {{linked_bank_or_wallet}}
+- Payment track record: {{on_time_payment_rate_pct}}% on-time, {{missed_payments_12mo}} missed in last 12 months
+- Consecutive on-time streak: {{consecutive_on_time_count}} payments
+- Last payment: {{last_payment_date}}
+- Grace period available: {{grace_period_days}} days
+- Preferred reminder channel: {{preferred_reminder_channel}}
+- Last reminder sent: {{last_reminder_sent_date}} via {{last_reminder_channel}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer has a payment (credit card bill or loan EMI) **due in 1 to 5 days**. The call is a **friendly reminder** — not collections. The customer is NOT overdue yet.

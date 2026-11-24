@@ -1,5 +1,24 @@
 # CAMPAIGN: Lead Follow-up
 
+## Customer context (for your awareness only — do NOT recite)
+- Lead name: {{name}}
+- Lead source: {{lead_source}}
+- Marketing campaign: {{campaign_name}}
+- Product they showed interest in: {{product_interest}}
+- Stated purpose (if captured): {{stated_purpose}}
+- Lead created: {{lead_created_date}} ({{days_since_lead_created}} days ago)
+- Lead quality tier: {{lead_quality_tier}}
+- Last engagement: {{last_engagement_type}} on {{last_engagement_date}}
+- Already an FE Credit customer: {{existing_customer}}
+- Existing products (if any): {{existing_products}}
+- Self-reported employment status: {{self_reported_employment_status}}
+- Preliminary eligibility: {{preliminary_eligibility}}
+- Recommended next action (for specialist): {{recommended_next_action}}
+- Call attempts so far: {{call_attempts_count}}
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+- Preferred contact channel: {{preferred_contact_channel}}
+
 ## Campaign intent
 
 This customer **started an FE Credit application** (loan, credit card, or EMI) — through the app, website, or a partner channel — but **abandoned before completing**. The application is sitting in an incomplete state, waiting for them to come back.

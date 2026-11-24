@@ -1,5 +1,19 @@
 # CAMPAIGN: Reactivation
 
+## Customer context (for your awareness only — do NOT recite)
+- Customer name: {{name}}
+- FE Credit relationship: {{customer_since_years}} years total
+- Last active with FE Credit: {{last_activity_date}} ({{days_since_last_activity}} days ago)
+- Dormancy depth: {{dormancy_tier}}
+- Last product they used: {{last_active_product}}
+- Products they previously held: {{previous_products}}
+- Historical payment track record: {{historical_on_time_rate_pct}}% on-time
+- Closed in good standing: {{closed_in_good_standing}}
+- Churn risk level: {{churn_risk}}
+- Opportunity: a special returning-customer offer is ready for them
+- Previous contact: {{last_contact_outcome}} on {{last_contact_date}}
+- Preferred call time: {{preferred_time}}
+
 ## Campaign intent
 
 This customer has an active FE Credit account (usually a credit card, or a paid-off loan with eligibility for a new one) but **hasn't transacted in 90+ days**. They've gone quiet but haven't left. The call's job is to:
