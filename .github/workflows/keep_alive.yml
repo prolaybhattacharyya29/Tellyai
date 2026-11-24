@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Ping Render Service
         env:
-          RENDER_URL: ${{ secrets.RENDER_APP_URL || 'https://fe-credit-webhook.onrender.com' }}
+          RENDER_URL: ${{ secrets.RENDER_APP_URL || 'https://fe-credit-demo.onrender.com' }}
         run: |
           echo "Pinging ${RENDER_URL}/health ..."
           RESPONSE=$(curl -sS --max-time 30 -w "\nHTTP_STATUS:%{http_code}" "${RENDER_URL}/health" || true)
