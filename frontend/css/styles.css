@@ -1,0 +1,47 @@
+/* Frontend Styles for AI Voice Assistant Dashboard */
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+/* Tactile Click & Selection Animations */
+@keyframes selectPulse {
+  0% { transform: scale(0.97); }
+  50% { transform: scale(1.015); box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.25); }
+  100% { transform: scale(1); }
+}
+
+@keyframes iconWiggle {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.2) rotate(-8deg); }
+  70% { transform: scale(1.1) rotate(4deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.card-selected-pulse {
+  animation: selectPulse 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.icon-wiggle {
+  animation: iconWiggle 0.35s ease-out;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.25s ease-out forwards;
+}

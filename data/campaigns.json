@@ -1,0 +1,110 @@
+[
+  {
+    "id": "cross_sell",
+    "title": "Cross-Sell",
+    "sub": "Offer relevant products",
+    "csv_name": "Cross-sell",
+    "file": "cross_sell.md",
+    "icon": "arrow-left-right",
+    "description": "Discover how the AI recommends an additional loan product based on an existing customer relationship."
+  },
+  {
+    "id": "pre_approved",
+    "title": "Pre-Approved Loan",
+    "sub": "Present eligible offers",
+    "csv_name": "Pre-approved offer",
+    "file": "pre_approved.md",
+    "icon": "check-square",
+    "description": "Experience how the AI presents tailored pre-approved credit limits and terms with instant eligibility."
+  },
+  {
+    "id": "reactivation",
+    "title": "Reactivation",
+    "sub": "Engage inactive customers",
+    "csv_name": "Reactivation",
+    "file": "reactivation.md",
+    "icon": "rotate-ccw",
+    "description": "Hear how the AI re-engages dormant borrowers with personalized incentives to renew their credit line."
+  },
+  {
+    "id": "winback",
+    "title": "Winback",
+    "sub": "Recover lost customers",
+    "csv_name": "Winback",
+    "file": "winback.md",
+    "icon": "undo-2",
+    "description": "Understand customer churn reasons and deliver compelling win-back offers to restore loyalty."
+  },
+  {
+    "id": "payment_reminder",
+    "title": "Payment Reminder",
+    "sub": "Remind before due date",
+    "csv_name": "Payment reminder",
+    "file": "payment_reminder.md",
+    "icon": "calendar",
+    "description": "Experience friendly, proactive reminders before due dates to encourage on-time payments smoothly."
+  },
+  {
+    "id": "early_collections",
+    "title": "Early Collections",
+    "sub": "Address overdue EMIs",
+    "csv_name": "Early collections",
+    "file": "early_collections.md",
+    "icon": "clock",
+    "description": "Observe empathetic yet firm collection conversations to resolve early delinquency and schedule payments."
+  },
+  {
+    "id": "onboarding",
+    "title": "Onboarding",
+    "sub": "Welcome new customers",
+    "csv_name": "Onboarding",
+    "file": "onboarding.md",
+    "icon": "user-plus",
+    "description": "Guide newly approved borrowers through first-use activation, digital app features, and repayment terms."
+  },
+  {
+    "id": "emi_conversion",
+    "title": "EMI Conversion",
+    "sub": "Convert spends into EMIs",
+    "csv_name": "EMI conversion",
+    "file": "emi_conversion.md",
+    "icon": "credit-card",
+    "description": "Proactively offer eligible credit card purchases or transactions to be broken down into flexible EMIs."
+  },
+  {
+    "id": "renewal",
+    "title": "Renewal",
+    "sub": "Encourage repeat borrowing",
+    "csv_name": "Renewal",
+    "file": "renewal.md",
+    "icon": "refresh-cw",
+    "description": "Approach prime customers nearing loan completion with pre-qualified top-up and renewal financing."
+  },
+  {
+    "id": "pre_closure",
+    "title": "Pre-Closure",
+    "sub": "Address closure requests",
+    "csv_name": "Pre-closure retention",
+    "file": "pre_closure.md",
+    "icon": "file-text",
+    "description": "Handle loan pre-closure inquiries with retention benefits, rate discounts, and value preservation."
+  },
+  {
+    "id": "lead_followup",
+    "title": "Lead Follow-up",
+    "sub": "Convert interested prospects",
+    "csv_name": "Lead follow-up",
+    "file": "lead_followup.md",
+    "icon": "user-check",
+    "description": "Convert interested prospects with prompt, personalized information answering queries and closing applications."
+  },
+  {
+    "id": "nps_feedback",
+    "title": "NPS Feedback",
+    "sub": "Capture customer sentiment",
+    "csv_name": "NPS feedback",
+    "file": "nps_feedback.md",
+    "icon": "smile",
+    "description": "Capture customer sentiment and feedback through empathetic conversation to measure Net Promoter Score."
+  }
+]
