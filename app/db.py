@@ -1,13 +1,65 @@
 """
-Supabase helper for persisting call results.
+Supabase helper for persisting call results and managing admin users.
 """
 import os
 import logging
+import hashlib
+import hmac
 from supabase import create_client
+from dotenv import load_dotenv
+
+load_dotenv()
 
 log = logging.getLogger("db")
 
 sb = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_KEY"])
+
+
+def hash_password(password: str) -> str:
+    """Hash password using sha256 + salt."""
+    salt = "fe_credit_salt_2026"
+    return hashlib.sha256(f"{salt}{password}".encode("utf-8")).hexdigest()
+
+
+def verify_password(plain_password: str, stored_hash: str) -> bool:
+    """Verify against either salted hash, plain sha256, or plain text (for initial seeding)."""
+    if not stored_hash or not plain_password:
+        return False
+    if plain_password == stored_hash:
+        return True
+    salt = "fe_credit_salt_2026"
+    salted = hashlib.sha256(f"{salt}{plain_password}".encode("utf-8")).hexdigest()
+    if hmac.compare_digest(salted, stored_hash):
+        return True
+    pure = hashlib.sha256(plain_password.encode("utf-8")).hexdigest()
+    if hmac.compare_digest(pure, stored_hash):
+        return True
+    return False
+
+
+def get_admin_user(identifier: str) -> dict | None:
+    """Fetch an active admin user by username or email from Supabase."""
+    cleaned = identifier.strip().lower()
+    try:
+        # Search by username
+        res = sb.table("admin_users").select("*").eq("username", cleaned).eq("is_active", True).execute()
+        if res.data:
+            return res.data[0]
+        # Search by email
+        res = sb.table("admin_users").select("*").eq("email", cleaned).eq("is_active", True).execute()
+        if res.data:
+            return res.data[0]
+    except Exception as e:
+        log.warning("Supabase admin_users lookup failed: %s", e)
+    return None
+
+
+def authenticate_admin(identifier: str, password: str) -> dict | None:
+    """Authenticate an admin user against Supabase admin_users table."""
+    user = get_admin_user(identifier)
+    if user and verify_password(password, user.get("password_hash", "")):
+        return user
+    return None
 
 
 def save_call_result(

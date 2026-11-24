@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - AI Voice Assistant | FE Credit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700">
+
+  <!-- Top Navigation Bar (Identical to Dashboard) -->
+  <header class="bg-[#0b1528] text-white px-4 sm:px-6 py-3 border-b border-slate-800/80 shadow-sm sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20 ring-1 ring-blue-400/30 shrink-0">
+          <i data-lucide="audio-waveform" class="w-4 h-4 sm:w-5 sm:h-5 text-white"></i>
+        </div>
+        <div class="min-w-0">
+          <h1 class="font-bold text-sm sm:text-base tracking-tight text-white leading-tight truncate">AI Voice Assistant</h1>
+          <p class="text-[11px] sm:text-xs text-slate-400 font-medium truncate">Consumer Lending Solutions</p>
+        </div>
+      </div>
+      <div class="flex items-center shrink-0">
+        <div class="inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700/60 text-[10px] sm:text-xs font-semibold tracking-wide uppercase text-slate-300 whitespace-nowrap shrink-0 select-none">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span>Demo Environment</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Login Main Content Area -->
+  <main class="flex-1 flex items-center justify-center px-4 sm:px-6 py-12 w-full">
+    <div class="w-full max-w-md">
+      
+      <!-- Card Container (Matching Dashboard White Card Style) -->
+      <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 space-y-6">
+        
+        <!-- Header in Card -->
+        <div class="text-center space-y-1.5">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center mx-auto mb-2 shadow-xs">
+            <i data-lucide="lock" class="w-5 h-5"></i>
+          </div>
+          <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Welcome Back</h2>
+          <p class="text-xs sm:text-sm text-slate-500">Please sign in to access the AI Experience Centre</p>
+        </div>
+
+        <!-- Error Notification Banner (if any) -->
+        {% if error %}
+        <div class="rounded-xl p-3.5 text-xs font-medium bg-rose-50 border border-rose-200 text-rose-700 flex items-center space-x-2">
+          <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 text-rose-600"></i>
+          <span>{{ error }}</span>
+        </div>
+        {% endif %}
+
+        <!-- Form -->
+        <form method="POST" action="/login" class="space-y-4">
+          
+          <!-- Username / Email -->
+          <div class="space-y-1.5">
+            <label for="username" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Username / Email</label>
+            <div class="flex items-center rounded-xl border border-slate-200 bg-white overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all shadow-xs">
+              <span class="pl-3.5 text-slate-400 pointer-events-none">
+                <i data-lucide="user" class="w-4 h-4"></i>
+              </span>
+              <input 
+                type="text" 
+                id="username" 
+                name="username" 
+                required 
+                placeholder="Enter your email or username"
+                class="w-full px-3 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none"
+              >
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-1.5">
+            <label for="password" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Password</label>
+            <div class="flex items-center rounded-xl border border-slate-200 bg-white overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all shadow-xs">
+              <span class="pl-3.5 text-slate-400 pointer-events-none">
+                <i data-lucide="key" class="w-4 h-4"></i>
+              </span>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                required 
+                placeholder="Enter your password"
+                class="w-full px-3 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none"
+              >
+              <button 
+                type="button" 
+                onclick="togglePassword()" 
+                class="pr-3.5 text-slate-400 hover:text-slate-600 transition-colors"
+                title="Toggle password visibility"
+              >
+                <i id="eye-icon" data-lucide="eye" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Submit Button (Disabled/Grey by default until inputs filled) -->
+          <button 
+            type="submit" 
+            id="signin-btn"
+            disabled
+            class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-slate-400 cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 shadow-sm mt-2 select-none"
+          >
+            <span>Sign In to Dashboard</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+        </form>
+
+        <!-- Demo Credentials Box (Matching Dashboard Accent Style) -->
+        <div class="rounded-xl bg-blue-50/60 border border-blue-100/70 p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-600">Demo Credentials</span>
+            <button 
+              type="button" 
+              onclick="autofillDemo()" 
+              class="text-xs text-blue-600 hover:text-blue-700 font-bold flex items-center space-x-1 cursor-pointer transition-colors"
+            >
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Auto-fill</span>
+            </button>
+          </div>
+          <div class="text-xs text-slate-600 font-mono space-y-1">
+            <div>User: <strong class="text-slate-900 cursor-pointer hover:text-blue-600 transition-colors" onclick="autofillDemo('admin@fecredit.com', 'admin123')" title="Click to fill">admin@fecredit.com</strong> <span class="text-slate-400">(or admin)</span></div>
+            <div>Password: <strong class="text-slate-900 cursor-pointer hover:text-blue-600 transition-colors" onclick="autofillDemo('admin@fecredit.com', 'admin123')" title="Click to fill">admin123</strong></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Page Footer (Identical to Dashboard) -->
+  <footer class="border-t border-slate-200/80 bg-white/70 py-4 px-6 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div>AI Voice Assistant · Interactive Demonstration</div>
+      <div class="flex items-center space-x-1.5 font-medium text-slate-500">
+        <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+        <span>Demo environment</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+    const signinBtn = document.getElementById("signin-btn");
+
+    function validateLoginForm() {
+      const user = usernameInput.value.trim();
+      const pwd = passwordInput.value.trim();
+
+      if (user.length > 0 && pwd.length > 0) {
+        signinBtn.disabled = false;
+        signinBtn.className = "w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 active:scale-[0.99] transition-all duration-200 flex items-center justify-center space-x-2 shadow-md shadow-blue-500/20 cursor-pointer mt-2";
+      } else {
+        signinBtn.disabled = true;
+        signinBtn.className = "w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-slate-400 cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 shadow-sm mt-2 select-none";
+      }
+    }
+
+    usernameInput.addEventListener("input", validateLoginForm);
+    passwordInput.addEventListener("input", validateLoginForm);
+
+    function togglePassword() {
+      const pwd = document.getElementById("password");
+      const icon = document.getElementById("eye-icon");
+      if (pwd.type === "password") {
+        pwd.type = "text";
+        icon.setAttribute("data-lucide", "eye-off");
+      } else {
+        pwd.type = "password";
+        icon.setAttribute("data-lucide", "eye");
+      }
+      lucide.createIcons();
+    }
+
+    function autofillDemo(user = "admin@fecredit.com", pwd = "admin123") {
+      usernameInput.value = user;
+      passwordInput.value = pwd;
+      validateLoginForm();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      validateLoginForm();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

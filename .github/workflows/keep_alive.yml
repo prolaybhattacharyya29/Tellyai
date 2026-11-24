@@ -1,0 +1,21 @@
+name: Keep Render Alive
+
+on:
+  schedule:
+    # Runs every 14 minutes (Render free tier sleeps after 15 minutes of inactivity)
+    - cron: '*/14 * * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  ping:
+    name: Ping Health Endpoint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Service
+        env:
+          RENDER_URL: ${{ secrets.RENDER_APP_URL || 'https://tellyai-tsqc.onrender.com' }}
+        run: |
+          CLEAN_URL="${RENDER_URL%/}"
+          echo "Pinging ${CLEAN_URL}/health ..."
+          RESPONSE=$(curl -sS --max-time 30 -w "\nHTTP_STATUS:%{http_code}" "${CLEAN_URL}/health" || true)
+          echo "$RESPONSE"
