@@ -144,8 +144,8 @@ async def serve_dashboard(request: Request):
     )
 
 
-@app.get("/health")
-@app.get("/health/")
+@app.api_route("/health", methods=["GET", "HEAD", "POST"])
+@app.api_route("/health/", methods=["GET", "HEAD", "POST"])
 async def health_check():
     return {
         "status": "ok",
