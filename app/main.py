@@ -163,6 +163,33 @@ async def serve_logs(request: Request):
     )
 
 
+@app.get("/api/debug-diag")
+async def api_debug_diag():
+    sb_url = os.environ.get("SUPABASE_URL", "")
+    sb_key = os.environ.get("SUPABASE_KEY", "")
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    retell_key = os.environ.get("RETELL_API_KEY", "")
+
+    db_err = None
+    row_count = None
+    try:
+        from supabase import create_client
+        client = create_client(sb_url, sb_key)
+        res = client.table("call_results").select("call_id").limit(10).execute()
+        row_count = len(res.data) if res.data else 0
+    except Exception as e:
+        db_err = str(e)
+
+    return {
+        "supabase_url": sb_url,
+        "supabase_key_len": len(sb_key),
+        "anthropic_key_present": bool(anthropic_key),
+        "retell_key_present": bool(retell_key),
+        "db_row_count": row_count,
+        "db_error": db_err,
+    }
+
+
 @app.get("/api/call-results")
 async def api_call_results(limit: int = 100):
     calls = get_call_results(limit=limit)
@@ -224,12 +251,12 @@ async def retell_webhook(request: Request):
     raw_path = RAW_DIR / f"{timestamp}_{event}_{call_id[:12]}.json"
     raw_path.write_text(json.dumps(body, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    if event == "call_ended":
+    if event in ("call_ended", "call_analyzed"):
         transcript = call.get("transcript", "") or ""
         duration_ms = call.get("duration_ms")
         end_reason = call.get("disconnection_reason", "unknown")
 
-        log.info("  → call ended: duration=%sms, reason=%s, transcript_len=%d",
+        log.info("  → call ended/analyzed: duration=%sms, reason=%s, transcript_len=%d",
                  duration_ms, end_reason, len(transcript))
 
         # Look up customer profile
@@ -239,42 +266,59 @@ async def retell_webhook(request: Request):
         log.info("  → summarizing with Claude...")
         summary = summarize_call(transcript, customer, campaign, duration_ms)
 
-        if summary:
-            log.info("  → disposition=%s  interest=%s  escalation=%s",
-                     summary.get("disposition"),
-                     summary.get("interest_level"),
-                     summary.get("escalation_needed"))
-
-            # Save summary to disk for inspection
-            summary_record = {
-                "call_id": call_id,
-                "customer_id": customer_id,
-                "campaign": campaign,
-                "duration_ms": duration_ms,
-                "end_reason": end_reason,
-                "transcript": transcript,
-                "summary": summary,
-                "created_at": datetime.now().isoformat(timespec="seconds"),
+        if not summary:
+            log.warning("Empty summary from Claude, using fallback summary.")
+            is_connected = (duration_ms or 0) > 8000
+            summary = {
+                "disposition": "completed" if is_connected else "no_answer",
+                "interest_level": "Medium" if is_connected else "None",
+                "customer_decision": "Call completed." if is_connected else "No customer response or short interaction.",
+                "call_duration_seconds": (duration_ms or 0) // 1000,
+                "escalation_needed": False,
+                "escalation_reason": "",
+                "key_quotes": [],
+                "objections_raised": [],
+                "next_action": "Follow up as appropriate.",
+                "follow_up_within_hours": 24,
+                "sentiment": "Neutral",
+                "notes_for_marketing": "Auto-processed interaction.",
             }
-            summary_path = SUMMARY_DIR / f"{timestamp}_{call_id[:12]}.json"
-            summary_path.write_text(
-                json.dumps(summary_record, indent=2, ensure_ascii=False),
-                encoding="utf-8",
-            )
-            log.info("  → summary saved to %s", summary_path.name)
-            
-            # Insert into Supabase
-            phone_number = call.get("to_number") or customer.get("phone")
-            save_call_result(
-                call_id=call_id,
-                customer_id=customer_id,
-                campaign=campaign,
-                phone_number=phone_number,
-                duration_ms=duration_ms,
-                end_reason=end_reason,
-                transcript=transcript,
-                summary=summary,
-            )
+
+        log.info("  → disposition=%s  interest=%s  escalation=%s",
+                 summary.get("disposition"),
+                 summary.get("interest_level"),
+                 summary.get("escalation_needed"))
+
+        # Save summary to disk for inspection
+        summary_record = {
+            "call_id": call_id,
+            "customer_id": customer_id,
+            "campaign": campaign,
+            "duration_ms": duration_ms,
+            "end_reason": end_reason,
+            "transcript": transcript,
+            "summary": summary,
+            "created_at": datetime.now().isoformat(timespec="seconds"),
+        }
+        summary_path = SUMMARY_DIR / f"{timestamp}_{call_id[:12]}.json"
+        summary_path.write_text(
+            json.dumps(summary_record, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        log.info("  → summary saved to %s", summary_path.name)
+        
+        # Insert into Supabase
+        phone_number = call.get("to_number") or customer.get("phone")
+        save_call_result(
+            call_id=call_id,
+            customer_id=customer_id,
+            campaign=campaign,
+            phone_number=phone_number,
+            duration_ms=duration_ms,
+            end_reason=end_reason,
+            transcript=transcript,
+            summary=summary,
+        )
 
     elif event == "call_analyzed":
         log.info("  → Retell's own analysis arrived (we use our own)")
