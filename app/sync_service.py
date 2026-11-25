@@ -8,22 +8,19 @@ import httpx
 from dotenv import load_dotenv
 from supabase import create_client
 from app.summarize import summarize_call
-from app.db import save_call_result
+from app.db import save_call_result, sb
 
 load_dotenv()
 log = logging.getLogger("sync_service")
 
 RETELL_KEY = os.environ.get("RETELL_API_KEY")
-SUPABASE_URL = os.environ.get("SUPABASE_URL")
-SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 
 
-def sync_recent_calls(limit: int = 10) -> dict:
-    if not RETELL_KEY or not SUPABASE_URL or not SUPABASE_KEY:
-        return {"ok": False, "error": "Missing Retell or Supabase environment variables."}
+def sync_recent_calls(limit: int = 15) -> dict:
+    if not RETELL_KEY:
+        return {"ok": False, "error": "Missing Retell environment variable RETELL_API_KEY."}
 
     try:
-        sb = create_client(SUPABASE_URL, SUPABASE_KEY)
         existing_res = sb.table("call_results").select("call_id").execute()
         existing_call_ids = {r["call_id"] for r in (existing_res.data or [])}
 

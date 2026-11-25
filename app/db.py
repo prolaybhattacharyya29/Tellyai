@@ -12,7 +12,19 @@ load_dotenv()
 
 log = logging.getLogger("db")
 
-sb = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_KEY"])
+ACTIVE_SUPABASE_URL = "https://mkslmzogliyfckkojgyt.supabase.co"
+ACTIVE_SUPABASE_KEY = "sb_publishable_QZ_WjejfOAQ4KPleQuJ_ng_fq8PtPcU"
+
+_url = os.environ.get("SUPABASE_URL", "")
+_key = os.environ.get("SUPABASE_KEY", "")
+
+if not _url or "lagejwzhelvqlyqhsvig" in _url:
+    _url = ACTIVE_SUPABASE_URL
+
+if not _key or len(_key) < 50:
+    _key = ACTIVE_SUPABASE_KEY
+
+sb = create_client(_url, _key)
 
 
 def hash_password(password: str) -> str:

@@ -165,24 +165,21 @@ async def serve_logs(request: Request):
 
 @app.get("/api/debug-diag")
 async def api_debug_diag():
-    sb_url = os.environ.get("SUPABASE_URL", "")
-    sb_key = os.environ.get("SUPABASE_KEY", "")
+    from app.db import sb, _url, _key
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
     retell_key = os.environ.get("RETELL_API_KEY", "")
 
     db_err = None
     row_count = None
     try:
-        from supabase import create_client
-        client = create_client(sb_url, sb_key)
-        res = client.table("call_results").select("call_id").limit(10).execute()
+        res = sb.table("call_results").select("call_id").limit(10).execute()
         row_count = len(res.data) if res.data else 0
     except Exception as e:
         db_err = str(e)
 
     return {
-        "supabase_url": sb_url,
-        "supabase_key_len": len(sb_key),
+        "supabase_url": _url,
+        "supabase_key_len": len(_key),
         "anthropic_key_present": bool(anthropic_key),
         "retell_key_present": bool(retell_key),
         "db_row_count": row_count,
