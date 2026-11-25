@@ -70,6 +70,7 @@ def save_call_result(
     end_reason: str | None,
     transcript: str,
     summary: dict,
+    phone_number: str | None = None,
 ):
     """
     Insert one call's summary into the call_results table.
@@ -83,6 +84,7 @@ def save_call_result(
         "call_id": call_id,
         "customer_id": customer_id,
         "campaign": campaign,
+        "phone_number": phone_number,
         "duration_ms": duration_ms,
         "end_reason": end_reason,
         "transcript": transcript,
@@ -104,3 +106,13 @@ def save_call_result(
         log.info("  -> row saved to Supabase (call_id=%s)", call_id[:12])
     except Exception as e:
         log.exception("Supabase insert failed: %s", e)
+
+
+def get_call_results(limit: int = 100) -> list[dict]:
+    """Fetch recent call results from Supabase ordered from newest to oldest."""
+    try:
+        res = sb.table("call_results").select("*").order("created_at", desc=True).limit(limit).execute()
+        return res.data or []
+    except Exception as e:
+        log.warning("Supabase call_results lookup failed: %s", e)
+        return []

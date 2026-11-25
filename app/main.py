@@ -19,8 +19,9 @@ from starlette.middleware.sessions import SessionMiddleware
 from dotenv import load_dotenv
 
 from app.summarize import summarize_call
-from app.db import save_call_result, authenticate_admin
+from app.db import save_call_result, authenticate_admin, get_call_results
 from app.call_service import trigger_call
+from app.sync_service import sync_recent_calls
 from app.campaigns import CAMPAIGNS_LIST
 
 load_dotenv()
@@ -54,6 +55,7 @@ DEMO_USERS = {
     "admin": DEMO_PASSWORD,
     "demo@fecredit.com": DEMO_PASSWORD,
     "demo": DEMO_PASSWORD,
+    "admin@xtagelabs.com": "xtage@2026kk",
 }
 
 # Mount frontend static assets
@@ -94,7 +96,7 @@ async def handle_login(request: Request):
     db_user = authenticate_admin(username, password)
     if db_user:
         request.session["user"] = db_user.get("username", username)
-        request.session["user_name"] = db_user.get("name", "")
+        request.session["user_name"] = db_user.get("full_name") or db_user.get("name") or "admin"
         request.session["user_role"] = db_user.get("role", "admin")
         log.info("Admin user '%s' (%s) authenticated via database.", username, db_user.get("role"))
         return RedirectResponse(url="/", status_code=303)
@@ -144,6 +146,29 @@ async def serve_dashboard(request: Request):
     )
 
 
+@app.get("/logs", response_class=HTMLResponse)
+async def serve_logs(request: Request):
+    if not request.session.get("user"):
+        return RedirectResponse(url="/login", status_code=303)
+
+    calls = get_call_results(limit=100)
+    return templates.TemplateResponse(
+        request=request,
+        name="logs.html",
+        context={
+            "user": request.session.get("user"),
+            "calls": calls,
+            "calls_json": json.dumps(calls, default=str, ensure_ascii=False),
+        },
+    )
+
+
+@app.get("/api/call-results")
+async def api_call_results(limit: int = 100):
+    calls = get_call_results(limit=limit)
+    return {"ok": True, "count": len(calls), "data": calls}
+
+
 @app.api_route("/health", methods=["GET", "HEAD", "POST"])
 @app.api_route("/health/", methods=["GET", "HEAD", "POST"])
 async def health_check():
@@ -173,6 +198,13 @@ async def api_trigger_call(request: Request):
     except Exception as e:
         log.exception("Call trigger error: %s", e)
         return JSONResponse(status_code=500, content={"ok": False, "error": str(e)})
+
+
+@app.api_route("/api/sync-calls", methods=["GET", "POST"])
+async def api_sync_calls():
+    """Manual sync endpoint to fetch completed calls from Retell AI into Supabase."""
+    res = sync_recent_calls(limit=15)
+    return res
 
 
 @app.post("/retell-webhook")
@@ -232,10 +264,12 @@ async def retell_webhook(request: Request):
             log.info("  → summary saved to %s", summary_path.name)
             
             # Insert into Supabase
+            phone_number = call.get("to_number") or customer.get("phone")
             save_call_result(
                 call_id=call_id,
                 customer_id=customer_id,
                 campaign=campaign,
+                phone_number=phone_number,
                 duration_ms=duration_ms,
                 end_reason=end_reason,
                 transcript=transcript,

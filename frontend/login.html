@@ -121,25 +121,6 @@
 
         </form>
 
-        <!-- Demo Credentials Box (Matching Dashboard Accent Style) -->
-        <div class="rounded-xl bg-blue-50/60 border border-blue-100/70 p-4 space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-600">Demo Credentials</span>
-            <button 
-              type="button" 
-              onclick="autofillDemo()" 
-              class="text-xs text-blue-600 hover:text-blue-700 font-bold flex items-center space-x-1 cursor-pointer transition-colors"
-            >
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              <span>Auto-fill</span>
-            </button>
-          </div>
-          <div class="text-xs text-slate-600 font-mono space-y-1">
-            <div>User: <strong class="text-slate-900 cursor-pointer hover:text-blue-600 transition-colors" onclick="autofillDemo('admin@fecredit.com', 'admin123')" title="Click to fill">admin@fecredit.com</strong> <span class="text-slate-400">(or admin)</span></div>
-            <div>Password: <strong class="text-slate-900 cursor-pointer hover:text-blue-600 transition-colors" onclick="autofillDemo('admin@fecredit.com', 'admin123')" title="Click to fill">admin123</strong></div>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -188,12 +169,6 @@
         icon.setAttribute("data-lucide", "eye");
       }
       lucide.createIcons();
-    }
-
-    function autofillDemo(user = "admin@fecredit.com", pwd = "admin123") {
-      usernameInput.value = user;
-      passwordInput.value = pwd;
-      validateLoginForm();
     }
 
     document.addEventListener("DOMContentLoaded", () => {

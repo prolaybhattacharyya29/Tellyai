@@ -76,7 +76,7 @@ Match the disposition exactly to the campaign being analyzed. Pick from THAT cam
 2. If no transcript exists (silent call / no answer), use disposition `no_answer`.
 3. `follow_up_within_hours`: 0 if no follow-up, 24 for standard RM callback, 2 for fraud or hardship, 4 for service recovery, 48 for "think about it" / reschedule.
 4. `interest_level` reflects the customer's engagement with the product/offer — not the call quality.
-5. Keep `key_quotes` SHORT (under 20 words each). Only include quotes that matter — business-relevant signals or clear sentiment.
+5. Keep `key_quotes` SHORT (under 20 words each). Only include exact verbatim quotes that matter — business-relevant signals or clear sentiment. NEVER append parenthetical annotations, comments, or explanations inside or outside the string quotes.
 6. For `objections_raised`: use the customer's actual language where possible (e.g., "interest too high", "already have a card with HSBC"). Empty list if no objections.
-7. For `escalation_needed = true`, always populate `escalation_reason` — it determines which team gets the lead.
-8. Output ONLY the JSON. No explanation, no reasoning, no markdown fences, no "here is the summary". Just `{` to `}`.
+7. For `escalation_needed = true`, always populate `escalation_reason` (e.g. "fraud", "dispute", "hardship", "service_recovery", "retention"). When `escalation_needed = false`, use empty string "".
+8. Output ONLY pure valid JSON. No trailing annotations, no commentary, no markdown fences. Just `{` to `}`.
