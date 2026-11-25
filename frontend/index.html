@@ -65,10 +65,10 @@
     </div>
 
     <!-- Main Two-Column Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
       
       <!-- LEFT COLUMN: Step 1 (Choose a campaign) -->
-      <section class="lg:col-span-7 xl:col-span-7 space-y-4">
+      <section class="lg:col-span-7 xl:col-span-7 flex flex-col space-y-4">
         <div class="flex items-center justify-between pb-1">
           <div class="flex items-center space-x-2.5">
             <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">1</span>
@@ -78,90 +78,94 @@
         </div>
 
         <!-- 3x4 Campaign Cards Grid (2 cols on mobile, 3 cols on sm+) -->
-        <div id="campaign-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3.5">
+        <div id="campaign-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3.5 flex-1">
           <!-- Dynamically populated or rendered by JS -->
         </div>
       </section>
 
       <!-- RIGHT COLUMN: Step 2 (Configure your demo call) -->
-      <section id="step-2-section" class="lg:col-span-5 xl:col-span-5 space-y-4 scroll-mt-20">
+      <section id="step-2-section" class="lg:col-span-5 xl:col-span-5 flex flex-col space-y-4 scroll-mt-20">
         <div class="flex items-center space-x-2.5 pb-1">
           <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">2</span>
           <h3 class="font-bold text-slate-900 text-base sm:text-lg">Configure your demo call</h3>
         </div>
 
-        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 space-y-6">
+        <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 flex flex-col justify-between flex-1 space-y-5">
           
-          <!-- Selected Campaign Preview Box -->
-          <div class="bg-blue-50/60 rounded-xl p-4 border border-blue-100/70">
-            <div class="text-[11px] font-bold tracking-wider uppercase text-slate-500 mb-1">Selected Campaign</div>
-            <div id="preview-title" class="text-xl font-bold text-blue-600 mb-1.5">Cross-Sell</div>
-            <p id="preview-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Discover how the AI recommends an additional loan product based on an existing customer relationship.
-            </p>
-          </div>
-
-          <!-- Phone Number Input -->
-          <div>
-            <label for="phone-input" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Mobile number</label>
-            <div class="flex rounded-xl border border-slate-200 overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all bg-white shadow-xs">
-              <select id="country-code" class="bg-slate-50 border-r border-slate-200 px-3 py-3 text-sm font-semibold text-slate-700 outline-none cursor-pointer hover:bg-slate-100 transition-colors">
-                <option value="+91" selected>IN +91</option>
-                <option value="+84">VN +84</option>
-                <option value="+1">US +1</option>
-                <option value="+44">UK +44</option>
-                <option value="+65">SG +65</option>
-              </select>
-              <input 
-                type="tel" 
-                id="phone-input" 
-                inputmode="numeric"
-                pattern="[0-9]*"
-                maxlength="15"
-                placeholder="Enter mobile number" 
-                class="w-full px-3.5 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none"
-              >
+          <div class="space-y-5">
+            <!-- Selected Campaign Preview Box -->
+            <div class="bg-blue-50/60 rounded-xl p-4 border border-blue-100/70">
+              <div class="text-[11px] font-bold tracking-wider uppercase text-slate-500 mb-1">Selected Campaign</div>
+              <div id="preview-title" class="text-xl font-bold text-blue-600 mb-1.5">Cross-Sell</div>
+              <p id="preview-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Discover how the AI recommends an additional loan product based on an existing customer relationship.
+              </p>
             </div>
-            <p class="text-[11px] text-slate-400 mt-1.5 font-medium">The AI assistant will call you on this number.</p>
-          </div>
 
-          <!-- Preferred Language -->
-          <div>
-            <label for="lang-select" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Preferred language</label>
-            <div class="relative">
-              <select id="lang-select" class="w-full appearance-none bg-white rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all cursor-pointer shadow-xs">
-                <option value="English" selected>English</option>
-                <option value="Vietnamese">Vietnamese (Tiếng Việt)</option>
-              </select>
-              <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+            <!-- Phone Number Input -->
+            <div>
+              <label for="phone-input" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Mobile number</label>
+              <div class="flex rounded-xl border border-slate-200 overflow-hidden focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all bg-white shadow-xs">
+                <select id="country-code" class="bg-slate-50 border-r border-slate-200 px-3 py-3 text-sm font-semibold text-slate-700 outline-none cursor-pointer hover:bg-slate-100 transition-colors">
+                  <option value="+91" selected>IN +91</option>
+                  <option value="+84">VN +84</option>
+                  <option value="+1">US +1</option>
+                  <option value="+44">UK +44</option>
+                  <option value="+65">SG +65</option>
+                </select>
+                <input 
+                  type="tel" 
+                  id="phone-input" 
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="15"
+                  placeholder="Enter mobile number" 
+                  class="w-full px-3.5 py-3 text-sm text-slate-900 placeholder:text-slate-400 outline-none"
+                >
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1.5 font-medium">The AI assistant will call you on this number.</p>
             </div>
+
+            <!-- Preferred Language -->
+            <div>
+              <label for="lang-select" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Preferred language</label>
+              <div class="relative">
+                <select id="lang-select" class="w-full appearance-none bg-white rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all cursor-pointer shadow-xs">
+                  <option value="English" selected>English</option>
+                  <option value="Vietnamese">Vietnamese (Tiếng Việt)</option>
+                </select>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              </div>
+            </div>
+
+            <!-- Consent Agreement Checkbox -->
+            <label class="flex items-start space-x-3 cursor-pointer select-none group">
+              <input type="checkbox" id="consent-check" class="mt-0.5 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer">
+              <span class="text-xs text-slate-600 leading-snug group-hover:text-slate-900 transition-colors">
+                I agree to receive an AI-generated call on the number provided for this demonstration.
+              </span>
+            </label>
           </div>
 
-          <!-- Consent Agreement Checkbox -->
-          <label class="flex items-start space-x-3 cursor-pointer select-none group">
-            <input type="checkbox" id="consent-check" class="mt-0.5 w-4 h-4 rounded text-blue-600 border-slate-300 focus:ring-blue-500 cursor-pointer">
-            <span class="text-xs text-slate-600 leading-snug group-hover:text-slate-900 transition-colors">
-              I agree to receive an AI-generated call on the number provided for this demonstration.
-            </span>
-          </label>
+          <div class="space-y-4 pt-2">
+            <!-- Call Trigger Button -->
+            <button 
+              id="call-btn" 
+              onclick="initiateCall()" 
+              class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-slate-400 cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 shadow-sm"
+              disabled
+            >
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              <span>Call Me Now</span>
+            </button>
 
-          <!-- Call Trigger Button -->
-          <button 
-            id="call-btn" 
-            onclick="initiateCall()" 
-            class="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-slate-400 cursor-not-allowed transition-all duration-200 flex items-center justify-center space-x-2 shadow-sm"
-            disabled
-          >
-            <i data-lucide="phone" class="w-4 h-4"></i>
-            <span>Call Me Now</span>
-          </button>
+            <!-- Notification / Status Banner -->
+            <div id="status-banner" class="hidden rounded-xl p-3.5 text-xs font-medium leading-relaxed"></div>
 
-          <!-- Notification / Status Banner -->
-          <div id="status-banner" class="hidden rounded-xl p-3.5 text-xs font-medium leading-relaxed"></div>
-
-          <!-- Bottom micro-copy -->
-          <div class="text-center pt-1 border-t border-slate-100">
-            <span class="text-[11px] text-slate-400">Powered by pre-configured demo customer profiles.</span>
+            <!-- Bottom micro-copy -->
+            <div class="text-center pt-2 border-t border-slate-100">
+              <span class="text-[11px] text-slate-400">Powered by pre-configured demo customer profiles.</span>
+            </div>
           </div>
 
         </div>
