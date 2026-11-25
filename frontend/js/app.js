@@ -189,4 +189,40 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Render initial campaigns
   renderCampaignGrid();
   if (window.lucide) lucide.createIcons();
+
+  // Initialize service health status monitor
+  checkSystemHealth();
+  setInterval(checkSystemHealth, 30000);
 });
+
+async function checkSystemHealth() {
+  const badge = document.getElementById("system-status-badge");
+  const dot = document.getElementById("status-dot");
+  const text = document.getElementById("status-text");
+  if (!badge || !dot || !text) return;
+
+  try {
+    const res = await fetch("/api/health");
+    const data = await res.json();
+    if (data.all_healthy) {
+      dot.className = "w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0";
+      text.innerText = "Services Online";
+      badge.className = "inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700/60 text-[10px] sm:text-xs font-semibold tracking-wide uppercase text-slate-300 whitespace-nowrap shrink-0 select-none transition-all";
+      badge.title = "Supabase DB: Online · Retell AI: Online";
+    } else {
+      dot.className = "w-2 h-2 rounded-full bg-rose-500 animate-ping shrink-0";
+      const failed = [];
+      if (!data.services?.supabase) failed.push("Database Down");
+      if (!data.services?.retell) failed.push("Retell AI Down");
+      text.innerText = failed.join(" · ") || "Service Degraded";
+      badge.className = "inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-rose-950/80 border border-rose-500/60 text-[10px] sm:text-xs font-bold tracking-wide uppercase text-rose-300 whitespace-nowrap shrink-0 select-none transition-all";
+      badge.title = `Service outage detected: ${failed.join(", ")}`;
+    }
+  } catch (err) {
+    dot.className = "w-2 h-2 rounded-full bg-rose-500 shrink-0";
+    text.innerText = "System Offline";
+    badge.className = "inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-rose-950/80 border border-rose-500/60 text-[10px] sm:text-xs font-bold tracking-wide uppercase text-rose-300 whitespace-nowrap shrink-0 select-none transition-all";
+    badge.title = "Network or server connection failed";
+  }
+}
+

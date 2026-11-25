@@ -321,3 +321,47 @@ async def retell_webhook(request: Request):
         log.info("  → Retell's own analysis arrived (we use our own)")
 
     return {"ok": True, "received_event": event}
+
+
+@app.get("/api/health")
+async def health_check():
+    """Health check for Retell and Supabase services."""
+    services = {
+        "supabase": False,
+        "retell": False,
+    }
+    
+    # Check Supabase
+    try:
+        from app.db import get_call_results
+        results = get_call_results(limit=1)
+        services["supabase"] = True
+    except Exception as e:
+        log.warning(f"Health check: Supabase error: {e}")
+        services["supabase"] = False
+
+    # Check Retell
+    try:
+        retell_key = os.environ.get("RETELL_API_KEY")
+        if retell_key:
+            import httpx
+            # Quick check to Retell API
+            async with httpx.AsyncClient(timeout=4.0) as client:
+                res = await client.get(
+                    "https://api.retellai.com/get-agent/agent_3657cd9f00c649560c16754a3c",
+                    headers={"Authorization": f"Bearer {retell_key}"}
+                )
+                if res.status_code == 200:
+                    services["retell"] = True
+                else:
+                    log.warning(f"Health check: Retell returned status {res.status_code}")
+    except Exception as e:
+        log.warning(f"Health check: Retell error: {e}")
+        services["retell"] = False
+
+    all_healthy = all(services.values())
+    return {
+        "status": "healthy" if all_healthy else "degraded",
+        "all_healthy": all_healthy,
+        "services": services
+    }
