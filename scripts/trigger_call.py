@@ -90,7 +90,7 @@ def make_opening_line(campaign, first_name):
         "I'm calling from FE Credit with something I think might interest you."
     )
     return (
-        f"Hi {first_name}, this is Marissa, an AI assistant calling on behalf of "
+        f"Hi {first_name}, this is Marissa, an AI agent calling on behalf of "
         f"FE Credit. {intro} Do you have a quick minute to chat?"
     )
 
