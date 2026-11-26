@@ -12,7 +12,19 @@ load_dotenv()
 
 log = logging.getLogger("db")
 
-sb = create_client(os.environ["SUPABASE_URL"], os.environ["SUPABASE_KEY"])
+ACTIVE_SUPABASE_URL = "https://mkslmzogliyfckkojgyt.supabase.co"
+ACTIVE_SUPABASE_KEY = "sb_publishable_QZ_WjejfOAQ4KPleQuJ_ng_fq8PtPcU"
+
+_url = os.environ.get("SUPABASE_URL", "")
+_key = os.environ.get("SUPABASE_KEY", "")
+
+if not _url or "lagejwzhelvqlyqhsvig" in _url:
+    _url = ACTIVE_SUPABASE_URL
+
+if not _key or len(_key) < 50:
+    _key = ACTIVE_SUPABASE_KEY
+
+sb = create_client(_url, _key)
 
 
 def hash_password(password: str) -> str:
@@ -70,6 +82,7 @@ def save_call_result(
     end_reason: str | None,
     transcript: str,
     summary: dict,
+    phone_number: str | None = None,
 ):
     """
     Insert one call's summary into the call_results table.
@@ -83,6 +96,7 @@ def save_call_result(
         "call_id": call_id,
         "customer_id": customer_id,
         "campaign": campaign,
+        "phone_number": phone_number,
         "duration_ms": duration_ms,
         "end_reason": end_reason,
         "transcript": transcript,
@@ -104,3 +118,13 @@ def save_call_result(
         log.info("  -> row saved to Supabase (call_id=%s)", call_id[:12])
     except Exception as e:
         log.exception("Supabase insert failed: %s", e)
+
+
+def get_call_results(limit: int = 100) -> list[dict]:
+    """Fetch recent call results from Supabase ordered from newest to oldest."""
+    try:
+        res = sb.table("call_results").select("*").order("created_at", desc=True).limit(limit).execute()
+        return res.data or []
+    except Exception as e:
+        log.warning("Supabase call_results lookup failed: %s", e)
+        return []

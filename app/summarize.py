@@ -4,6 +4,7 @@ Takes a call transcript + customer profile + campaign and asks Claude to
 return a structured JSON summary.
 """
 import os
+import re
 import json
 import logging
 from pathlib import Path
@@ -62,7 +63,12 @@ def summarize_call(transcript: str, customer: dict, campaign: str, duration_ms: 
                 raw = raw[4:]
             raw = raw.strip()
 
-        summary = json.loads(raw)
+        try:
+            summary = json.loads(raw)
+        except json.JSONDecodeError:
+            # Clean common LLM trailing parenthetical annotations like "text" (comment)
+            cleaned = re.sub(r'("[^"\\]*(?:\\.[^"\\]*)*")\s*\([^)]*\)', r'\1', raw)
+            summary = json.loads(cleaned)
         return summary
 
     except json.JSONDecodeError as e:

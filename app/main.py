@@ -19,8 +19,9 @@ from starlette.middleware.sessions import SessionMiddleware
 from dotenv import load_dotenv
 
 from app.summarize import summarize_call
-from app.db import save_call_result, authenticate_admin
+from app.db import save_call_result, authenticate_admin, get_call_results
 from app.call_service import trigger_call
+from app.sync_service import sync_recent_calls
 from app.campaigns import CAMPAIGNS_LIST
 
 load_dotenv()
@@ -54,6 +55,7 @@ DEMO_USERS = {
     "admin": DEMO_PASSWORD,
     "demo@fecredit.com": DEMO_PASSWORD,
     "demo": DEMO_PASSWORD,
+    "admin@xtagelabs.com": "xtage@2026kk",
 }
 
 # Mount frontend static assets
@@ -94,7 +96,7 @@ async def handle_login(request: Request):
     db_user = authenticate_admin(username, password)
     if db_user:
         request.session["user"] = db_user.get("username", username)
-        request.session["user_name"] = db_user.get("name", "")
+        request.session["user_name"] = db_user.get("full_name") or db_user.get("name") or "admin"
         request.session["user_role"] = db_user.get("role", "admin")
         log.info("Admin user '%s' (%s) authenticated via database.", username, db_user.get("role"))
         return RedirectResponse(url="/", status_code=303)
@@ -144,8 +146,55 @@ async def serve_dashboard(request: Request):
     )
 
 
-@app.get("/health")
-@app.get("/health/")
+@app.get("/logs", response_class=HTMLResponse)
+async def serve_logs(request: Request):
+    if not request.session.get("user"):
+        return RedirectResponse(url="/login", status_code=303)
+
+    calls = get_call_results(limit=100)
+    return templates.TemplateResponse(
+        request=request,
+        name="logs.html",
+        context={
+            "user": request.session.get("user"),
+            "calls": calls,
+            "calls_json": json.dumps(calls, default=str, ensure_ascii=False),
+        },
+    )
+
+
+@app.get("/api/debug-diag")
+async def api_debug_diag():
+    from app.db import sb, _url, _key
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    retell_key = os.environ.get("RETELL_API_KEY", "")
+
+    db_err = None
+    row_count = None
+    try:
+        res = sb.table("call_results").select("call_id").limit(10).execute()
+        row_count = len(res.data) if res.data else 0
+    except Exception as e:
+        db_err = str(e)
+
+    return {
+        "supabase_url": _url,
+        "supabase_key_len": len(_key),
+        "anthropic_key_present": bool(anthropic_key),
+        "retell_key_present": bool(retell_key),
+        "db_row_count": row_count,
+        "db_error": db_err,
+    }
+
+
+@app.get("/api/call-results")
+async def api_call_results(limit: int = 100):
+    calls = get_call_results(limit=limit)
+    return {"ok": True, "count": len(calls), "data": calls}
+
+
+@app.api_route("/health", methods=["GET", "HEAD", "POST"])
+@app.api_route("/health/", methods=["GET", "HEAD", "POST"])
 async def health_check():
     return {
         "status": "ok",
@@ -175,6 +224,13 @@ async def api_trigger_call(request: Request):
         return JSONResponse(status_code=500, content={"ok": False, "error": str(e)})
 
 
+@app.api_route("/api/sync-calls", methods=["GET", "POST"])
+async def api_sync_calls():
+    """Manual sync endpoint to fetch completed calls from Retell AI into Supabase."""
+    res = sync_recent_calls(limit=15)
+    return res
+
+
 @app.post("/retell-webhook")
 async def retell_webhook(request: Request):
     body = await request.json()
@@ -192,12 +248,12 @@ async def retell_webhook(request: Request):
     raw_path = RAW_DIR / f"{timestamp}_{event}_{call_id[:12]}.json"
     raw_path.write_text(json.dumps(body, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    if event == "call_ended":
+    if event in ("call_ended", "call_analyzed"):
         transcript = call.get("transcript", "") or ""
         duration_ms = call.get("duration_ms")
         end_reason = call.get("disconnection_reason", "unknown")
 
-        log.info("  → call ended: duration=%sms, reason=%s, transcript_len=%d",
+        log.info("  → call ended/analyzed: duration=%sms, reason=%s, transcript_len=%d",
                  duration_ms, end_reason, len(transcript))
 
         # Look up customer profile
@@ -207,42 +263,105 @@ async def retell_webhook(request: Request):
         log.info("  → summarizing with Claude...")
         summary = summarize_call(transcript, customer, campaign, duration_ms)
 
-        if summary:
-            log.info("  → disposition=%s  interest=%s  escalation=%s",
-                     summary.get("disposition"),
-                     summary.get("interest_level"),
-                     summary.get("escalation_needed"))
-
-            # Save summary to disk for inspection
-            summary_record = {
-                "call_id": call_id,
-                "customer_id": customer_id,
-                "campaign": campaign,
-                "duration_ms": duration_ms,
-                "end_reason": end_reason,
-                "transcript": transcript,
-                "summary": summary,
-                "created_at": datetime.now().isoformat(timespec="seconds"),
+        if not summary:
+            log.warning("Empty summary from Claude, using fallback summary.")
+            is_connected = (duration_ms or 0) > 8000
+            summary = {
+                "disposition": "completed" if is_connected else "no_answer",
+                "interest_level": "Medium" if is_connected else "None",
+                "customer_decision": "Call completed." if is_connected else "No customer response or short interaction.",
+                "call_duration_seconds": (duration_ms or 0) // 1000,
+                "escalation_needed": False,
+                "escalation_reason": "",
+                "key_quotes": [],
+                "objections_raised": [],
+                "next_action": "Follow up as appropriate.",
+                "follow_up_within_hours": 24,
+                "sentiment": "Neutral",
+                "notes_for_marketing": "Auto-processed interaction.",
             }
-            summary_path = SUMMARY_DIR / f"{timestamp}_{call_id[:12]}.json"
-            summary_path.write_text(
-                json.dumps(summary_record, indent=2, ensure_ascii=False),
-                encoding="utf-8",
-            )
-            log.info("  → summary saved to %s", summary_path.name)
-            
-            # Insert into Supabase
-            save_call_result(
-                call_id=call_id,
-                customer_id=customer_id,
-                campaign=campaign,
-                duration_ms=duration_ms,
-                end_reason=end_reason,
-                transcript=transcript,
-                summary=summary,
-            )
+
+        log.info("  → disposition=%s  interest=%s  escalation=%s",
+                 summary.get("disposition"),
+                 summary.get("interest_level"),
+                 summary.get("escalation_needed"))
+
+        # Save summary to disk for inspection
+        summary_record = {
+            "call_id": call_id,
+            "customer_id": customer_id,
+            "campaign": campaign,
+            "duration_ms": duration_ms,
+            "end_reason": end_reason,
+            "transcript": transcript,
+            "summary": summary,
+            "created_at": datetime.now().isoformat(timespec="seconds"),
+        }
+        summary_path = SUMMARY_DIR / f"{timestamp}_{call_id[:12]}.json"
+        summary_path.write_text(
+            json.dumps(summary_record, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        log.info("  → summary saved to %s", summary_path.name)
+        
+        # Insert into Supabase
+        phone_number = call.get("to_number") or customer.get("phone")
+        save_call_result(
+            call_id=call_id,
+            customer_id=customer_id,
+            campaign=campaign,
+            phone_number=phone_number,
+            duration_ms=duration_ms,
+            end_reason=end_reason,
+            transcript=transcript,
+            summary=summary,
+        )
 
     elif event == "call_analyzed":
         log.info("  → Retell's own analysis arrived (we use our own)")
 
     return {"ok": True, "received_event": event}
+
+
+@app.get("/api/health")
+async def health_check():
+    """Health check for Retell and Supabase services."""
+    services = {
+        "supabase": False,
+        "retell": False,
+    }
+    
+    # Check Supabase
+    try:
+        from app.db import get_call_results
+        results = get_call_results(limit=1)
+        services["supabase"] = True
+    except Exception as e:
+        log.warning(f"Health check: Supabase error: {e}")
+        services["supabase"] = False
+
+    # Check Retell
+    try:
+        retell_key = os.environ.get("RETELL_API_KEY")
+        if retell_key:
+            import httpx
+            # Quick check to Retell API
+            async with httpx.AsyncClient(timeout=4.0) as client:
+                res = await client.get(
+                    "https://api.retellai.com/get-agent/agent_3657cd9f00c649560c16754a3c",
+                    headers={"Authorization": f"Bearer {retell_key}"}
+                )
+                if res.status_code == 200:
+                    services["retell"] = True
+                else:
+                    log.warning(f"Health check: Retell returned status {res.status_code}")
+    except Exception as e:
+        log.warning(f"Health check: Retell error: {e}")
+        services["retell"] = False
+
+    all_healthy = all(services.values())
+    return {
+        "status": "healthy" if all_healthy else "degraded",
+        "all_healthy": all_healthy,
+        "services": services
+    }

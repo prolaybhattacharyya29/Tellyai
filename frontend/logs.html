@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Logs - AI Voice Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-700 bg-slate-50/50">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-[#0b1528] text-white px-4 sm:px-6 py-3 border-b border-slate-800/80 shadow-sm sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center space-x-2.5 sm:space-x-3.5 min-w-0">
+        <a href="/" class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-500/20 ring-1 ring-blue-400/30 shrink-0">
+          <i data-lucide="audio-waveform" class="w-4 h-4 sm:w-5 sm:h-5 text-white"></i>
+        </a>
+        <div class="min-w-0">
+          <h1 class="font-bold text-sm sm:text-base tracking-tight text-white leading-tight truncate">AI Voice Assistant</h1>
+          <p class="text-[11px] sm:text-xs text-slate-400 font-medium truncate">Consumer Lending Solutions</p>
+        </div>
+      </div>
+
+      <!-- Center Navigation Links -->
+      <nav class="flex items-center space-x-1 bg-slate-900/80 p-1 rounded-xl border border-slate-800">
+        <a href="/" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center space-x-1.5">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+          <span>Call</span>
+        </a>
+        <a href="/logs" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-xs flex items-center space-x-1.5">
+          <i data-lucide="scroll-text" class="w-3.5 h-3.5"></i>
+          <span>Call Logs</span>
+        </a>
+      </nav>
+
+      <div class="flex items-center space-x-2 shrink-0">
+        <div id="system-status-badge" class="inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700/60 text-[10px] sm:text-xs font-semibold tracking-wide uppercase text-slate-300 whitespace-nowrap shrink-0 select-none transition-all">
+          <span id="status-dot" class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span id="status-text">Checking...</span>
+        </div>
+        <a href="/logout" title="Sign out" class="inline-flex items-center space-x-1 px-2.5 sm:px-3 py-1 rounded-full bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700/60 text-[10px] sm:text-xs font-semibold text-slate-300 transition-colors whitespace-nowrap shrink-0">
+          <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Logout</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 w-full flex-1 space-y-6">
+
+    <!-- Title and Actions Header -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center space-x-2 text-xs font-bold tracking-wider text-blue-600 uppercase">
+          <i data-lucide="database" class="w-3.5 h-3.5"></i>
+          <span>Call Intelligence Repository</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">Call Logs & Outcomes</h2>
+        <p class="text-slate-500 text-xs sm:text-sm mt-1">Structured outcomes, Claude AI summaries, and transcripts sorted from recent to oldest.</p>
+      </div>
+
+      <div class="flex items-center space-x-2.5 shrink-0">
+        <button 
+          id="sync-btn"
+          onclick="syncCallsFromRetell()" 
+          class="px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 active:scale-[0.98] transition-all shadow-xs flex items-center space-x-2 cursor-pointer"
+          title="Fetch any missed calls directly from Retell AI"
+        >
+          <i id="sync-icon" data-lucide="refresh-cw" class="w-4 h-4 text-blue-600"></i>
+          <span>Sync from Retell</span>
+        </button>
+
+        <a 
+          href="/logs" 
+          class="px-3.5 py-2.5 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-700 active:scale-[0.98] transition-all shadow-sm flex items-center space-x-1.5 cursor-pointer"
+        >
+          <i data-lucide="rotate-cw" class="w-4 h-4"></i>
+          <span>Refresh</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Metric Stat Badges -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+          <i data-lucide="phone" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Total Calls</div>
+          <div id="stat-total" class="text-xl font-extrabold text-slate-900 leading-tight">{{ calls | length }}</div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+          <i data-lucide="calendar-check" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Callbacks Booked</div>
+          <div id="stat-callback" class="text-xl font-extrabold text-emerald-600 leading-tight">-</div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
+          <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Escalated Leads</div>
+          <div id="stat-escalations" class="text-xl font-extrabold text-rose-600 leading-tight">-</div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+          <i data-lucide="clock" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Avg Duration</div>
+          <div id="stat-avg-duration" class="text-xl font-extrabold text-purple-600 leading-tight">-</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter & Search Toolbar -->
+    <div class="bg-white rounded-2xl border border-slate-200/90 shadow-xs p-4 flex flex-col md:flex-row gap-3 items-center justify-between">
+      <!-- Search Input -->
+      <div class="relative w-full md:w-80">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <input 
+          type="text" 
+          id="search-input" 
+          oninput="applyFilters()"
+          placeholder="Search by phone, campaign, disposition..." 
+          class="w-full pl-9 pr-4 py-2 text-xs sm:text-sm bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-100 transition-all placeholder:text-slate-400"
+        >
+      </div>
+
+      <!-- Filters -->
+      <div class="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
+        <!-- Campaign Filter -->
+        <select 
+          id="filter-campaign" 
+          onchange="applyFilters()"
+          class="bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:border-blue-500 cursor-pointer"
+        >
+          <option value="all">All Campaigns</option>
+        </select>
+
+        <!-- Sentiment Filter -->
+        <select 
+          id="filter-sentiment" 
+          onchange="applyFilters()"
+          class="bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-semibold text-slate-700 outline-none focus:border-blue-500 cursor-pointer"
+        >
+          <option value="all">All Sentiments</option>
+          <option value="positive">Positive</option>
+          <option value="neutral">Neutral</option>
+          <option value="negative">Negative</option>
+        </select>
+
+        <!-- Escalated Only Toggle -->
+        <label class="inline-flex items-center space-x-1.5 px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 cursor-pointer select-none hover:bg-slate-100 transition-colors">
+          <input type="checkbox" id="filter-escalated" onchange="applyFilters()" class="w-3.5 h-3.5 rounded text-rose-600 focus:ring-rose-500">
+          <span>Escalations Only</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Call Results Table / Cards -->
+    <div class="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-50/90 border-b border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
+              <th class="py-3.5 px-4">Date & Time</th>
+              <th class="py-3.5 px-4">Campaign</th>
+              <th class="py-3.5 px-4">Phone Number</th>
+              <th class="py-3.5 px-4">Duration</th>
+              <th class="py-3.5 px-4">Disposition</th>
+              <th class="py-3.5 px-4">Sentiment</th>
+              <th class="py-3.5 px-4">Escalation</th>
+              <th class="py-3.5 px-4 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="logs-tbody" class="divide-y divide-slate-100 text-xs">
+            <!-- Rendered dynamically by JS from raw json -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State -->
+      <div id="empty-state" class="hidden py-16 text-center space-y-3">
+        <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-400 mx-auto flex items-center justify-center">
+          <i data-lucide="inbox" class="w-6 h-6"></i>
+        </div>
+        <h4 class="font-bold text-slate-700 text-sm">No call records found</h4>
+        <p class="text-xs text-slate-400 max-w-sm mx-auto">Try adjusting your search filters or click "Sync from Retell" to pull recent records.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Detailed Modal for Transcript and Intelligence Analysis -->
+  <div id="modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs hidden items-center justify-center p-3 sm:p-5">
+    <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-5xl max-h-[92vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      
+      <!-- Modal Header -->
+      <div class="px-5 sm:px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/70 shrink-0">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+            <i data-lucide="phone-call" class="w-4.5 h-4.5"></i>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-sm sm:text-base text-slate-900" id="modal-title">Call Transcript & Summary</h3>
+            <p class="text-[11px] sm:text-xs text-slate-500 font-medium" id="modal-subtitle">Call ID: -</p>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="w-8 h-8 rounded-lg hover:bg-slate-200/70 text-slate-400 hover:text-slate-700 flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-4.5 h-4.5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (2-Column Grid: Transcript Left, Details Right) -->
+      <div class="p-5 sm:p-6 overflow-y-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 bg-slate-50/30">
+        
+        <!-- LEFT COLUMN: Conversation Dialogue (Transcript) -->
+        <div class="lg:col-span-7 flex flex-col space-y-3">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <i data-lucide="messages-square" class="w-4 h-4 text-blue-600"></i>
+              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">Conversation Dialogue</span>
+            </div>
+            <button onclick="copyTranscript()" class="text-[11px] text-blue-600 hover:text-blue-700 font-bold flex items-center space-x-1 px-2.5 py-1 rounded-lg hover:bg-blue-50 transition-colors">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy Text</span>
+            </button>
+          </div>
+          
+          <!-- Chat bubbles scroll container with generous inner padding -->
+          <div id="modal-chat-container" class="bg-slate-100/70 border border-slate-200/90 rounded-2xl px-4 py-5 space-y-4 max-h-[580px] overflow-y-auto flex-1">
+            <!-- Formatted message bubbles rendered here -->
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Intelligence Summary, Escalation & Insights -->
+        <div class="lg:col-span-5 flex flex-col space-y-4">
+          
+          <!-- Decision & Intelligence Box -->
+          <div class="rounded-2xl bg-white border border-slate-200/90 p-5 shadow-2xs space-y-3.5">
+            <div class="text-[11px] font-bold tracking-wider uppercase text-blue-700 flex items-center justify-between">
+              <span>Customer Decision</span>
+              <span id="modal-sentiment-badge"></span>
+            </div>
+            <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed font-medium" id="modal-decision">-</p>
+            
+            <div class="pt-3.5 border-t border-slate-100 space-y-2.5 text-xs">
+              <div class="bg-slate-50/80 rounded-xl p-3 border border-slate-100 space-y-1">
+                <span class="font-bold text-slate-400 text-[10px] tracking-wider uppercase block">Next Recommended Action</span>
+                <p id="modal-next-action" class="font-semibold text-slate-800 leading-normal">-</p>
+              </div>
+              <div id="modal-followup-container" class="flex items-center justify-between px-1 text-slate-600">
+                <span class="font-bold text-slate-400 text-[10px] tracking-wider uppercase">Follow-up Window</span>
+                <span id="modal-followup" class="font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded-md text-[11px]">-</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Escalation Notice (if escalated) -->
+          <div id="modal-escalation-alert" class="hidden rounded-2xl bg-rose-50 border border-rose-200/90 p-4 text-xs text-rose-800 space-y-1.5 shadow-2xs">
+            <div class="flex items-center space-x-1.5 font-bold text-rose-900">
+              <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
+              <span>Escalated to Operations</span>
+            </div>
+            <div id="modal-escalation-text" class="text-rose-700 font-medium">Reason: -</div>
+          </div>
+
+          <!-- Key Quotes -->
+          <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-2xs space-y-2">
+            <div class="flex items-center space-x-1.5 font-bold text-slate-700 text-[11px] uppercase tracking-wide">
+              <i data-lucide="quote" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Key Customer Quotes</span>
+            </div>
+            <ul id="modal-quotes" class="list-disc list-inside text-xs text-slate-600 space-y-1.5"></ul>
+          </div>
+
+          <!-- Objections Raised -->
+          <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-2xs space-y-2">
+            <div class="flex items-center space-x-1.5 font-bold text-slate-700 text-[11px] uppercase tracking-wide">
+              <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-500"></i>
+              <span>Objections Raised</span>
+            </div>
+            <ul id="modal-objections" class="list-disc list-inside text-xs text-slate-600 space-y-1.5"></ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3.5 border-t border-slate-100 bg-slate-50/70 flex justify-end shrink-0">
+        <button onclick="closeModal()" class="px-5 py-2 bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs rounded-xl transition-all shadow-xs active:scale-[0.98]">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Page Footer -->
+  <footer class="border-t border-slate-200/80 bg-white/70 py-4 px-6 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div>AI Voice Assistant · Interactive Demonstration</div>
+      <div class="flex items-center space-x-1.5 font-medium text-slate-500">
+        <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+        <span>FE Credit Security Protected</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Raw Injected Calls Data -->
+  <script>
+    let allCalls = {{ calls_json | default('[]') | safe }};
+    let currentFilteredCalls = [...allCalls];
+    let selectedCall = null;
+
+    function formatDateTime(isoString) {
+      if (!isoString) return "-";
+      try {
+        const d = new Date(isoString);
+        return d.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      } catch (e) {
+        return isoString;
+      }
+    }
+
+    function formatDuration(ms) {
+      if (ms === null || ms === undefined) return "-";
+      const secs = Math.round(ms / 1000);
+      if (secs < 60) return `${secs}s`;
+      const mins = Math.floor(secs / 60);
+      const rem = secs % 60;
+      return `${mins}m ${rem}s`;
+    }
+
+    function getDispositionBadge(disp) {
+      if (!disp) return `<span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-semibold text-[10px]">Unknown</span>`;
+      
+      const d = disp.toLowerCase();
+      if (d.includes("scheduled") || d.includes("accepted") || d.includes("promoter") || d.includes("confirmed")) {
+        return `<span class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span>${disp}</span></span>`;
+      }
+      if (d.includes("escalated") || d.includes("fraud") || d.includes("dispute") || d.includes("hardship")) {
+        return `<span class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200 font-semibold text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span><span>${disp}</span></span>`;
+      }
+      if (d.includes("decline") || d.includes("refused") || d.includes("detractor") || d.includes("cannot")) {
+        return `<span class="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 font-semibold text-[11px]"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span><span>${disp}</span></span>`;
+      }
+      return `<span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 font-semibold text-[11px]"><span>${disp}</span></span>`;
+    }
+
+    function getSentimentBadge(sentiment) {
+      if (!sentiment) return `<span class="text-slate-400 font-medium">-</span>`;
+      const s = sentiment.toLowerCase();
+      if (s === "positive") {
+        return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase bg-emerald-100/70 text-emerald-800">Positive</span>`;
+      }
+      if (s === "negative") {
+        return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase bg-rose-100/70 text-rose-800">Negative</span>`;
+      }
+      return `<span class="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold uppercase bg-slate-100 text-slate-600">Neutral</span>`;
+    }
+
+    function populateCampaignOptions() {
+      const select = document.getElementById("filter-campaign");
+      if (!select) return;
+      const campaigns = Array.from(new Set(allCalls.map(c => c.campaign).filter(Boolean))).sort();
+      campaigns.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c;
+        opt.innerText = c;
+        select.appendChild(opt);
+      });
+    }
+
+    function updateStats() {
+      document.getElementById("stat-total").innerText = allCalls.length;
+      
+      const callbacks = allCalls.filter(c => (c.disposition || "").toLowerCase().includes("scheduled") || (c.disposition || "").toLowerCase().includes("accepted")).length;
+      document.getElementById("stat-callback").innerText = callbacks;
+
+      const escalations = allCalls.filter(c => c.escalation_needed).length;
+      document.getElementById("stat-escalations").innerText = escalations;
+
+      const totalMs = allCalls.reduce((acc, c) => acc + (c.duration_ms || 0), 0);
+      const avgSecs = allCalls.length > 0 ? Math.round((totalMs / allCalls.length) / 1000) : 0;
+      document.getElementById("stat-avg-duration").innerText = `${avgSecs}s`;
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById("logs-tbody");
+      const emptyState = document.getElementById("empty-state");
+      tbody.innerHTML = "";
+
+      if (!currentFilteredCalls || currentFilteredCalls.length === 0) {
+        emptyState.classList.remove("hidden");
+        return;
+      }
+      emptyState.classList.add("hidden");
+
+      currentFilteredCalls.forEach((c, idx) => {
+        const tr = document.createElement("tr");
+        tr.className = "hover:bg-slate-50/80 transition-colors group cursor-pointer";
+        tr.onclick = (e) => {
+          if (!e.target.closest("button")) {
+            openModal(idx);
+          }
+        };
+
+        const escalationMarkup = c.escalation_needed 
+          ? `<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-rose-100 text-rose-800 border border-rose-200">
+               <i data-lucide="alert-circle" class="w-3 h-3 mr-1 text-rose-600"></i>${c.escalation_reason || "Escalated"}
+             </span>`
+          : `<span class="text-slate-300">-</span>`;
+
+        tr.innerHTML = `
+          <td class="py-3.5 px-4 font-mono text-[11px] text-slate-500 whitespace-nowrap">${formatDateTime(c.created_at)}</td>
+          <td class="py-3.5 px-4 font-semibold text-slate-900 whitespace-nowrap">${c.campaign || "General"}</td>
+          <td class="py-3.5 px-4 font-mono font-medium text-slate-700 whitespace-nowrap">${c.phone_number || "-"}</td>
+          <td class="py-3.5 px-4 text-slate-600 font-mono text-[11px] whitespace-nowrap">${formatDuration(c.duration_ms)}</td>
+          <td class="py-3.5 px-4 whitespace-nowrap">${getDispositionBadge(c.disposition)}</td>
+          <td class="py-3.5 px-4 whitespace-nowrap">${getSentimentBadge(c.sentiment)}</td>
+          <td class="py-3.5 px-4 whitespace-nowrap">${escalationMarkup}</td>
+          <td class="py-3.5 px-4 text-right whitespace-nowrap">
+            <button 
+              onclick="openModal(${idx})" 
+              class="px-3 py-1 rounded-lg text-xs font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 transition-colors inline-flex items-center space-x-1"
+            >
+              <span>View Transcript</span>
+              <i data-lucide="chevron-right" class="w-3 h-3"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function applyFilters() {
+      const q = (document.getElementById("search-input")?.value || "").toLowerCase().trim();
+      const camp = document.getElementById("filter-campaign")?.value || "all";
+      const sent = document.getElementById("filter-sentiment")?.value || "all";
+      const esc = document.getElementById("filter-escalated")?.checked || false;
+
+      currentFilteredCalls = allCalls.filter(c => {
+        if (esc && !c.escalation_needed) return false;
+        if (camp !== "all" && c.campaign !== camp) return false;
+        if (sent !== "all" && (c.sentiment || "").toLowerCase() !== sent) return false;
+
+        if (q) {
+          const matchPhone = (c.phone_number || "").toLowerCase().includes(q);
+          const matchCampaign = (c.campaign || "").toLowerCase().includes(q);
+          const matchDisp = (c.disposition || "").toLowerCase().includes(q);
+          const matchCust = (c.customer_id || "").toLowerCase().includes(q);
+          const matchTranscript = (c.transcript || "").toLowerCase().includes(q);
+          const matchDecision = (c.customer_decision || "").toLowerCase().includes(q);
+          if (!matchPhone && !matchCampaign && !matchDisp && !matchCust && !matchTranscript && !matchDecision) {
+            return false;
+          }
+        }
+        return true;
+      });
+
+      renderTable();
+    }
+
+    function openModal(idx) {
+      selectedCall = currentFilteredCalls[idx];
+      if (!selectedCall) return;
+
+      document.getElementById("modal-title").innerText = `${selectedCall.campaign || "Call"} · ${selectedCall.phone_number || "Demo Number"}`;
+      document.getElementById("modal-subtitle").innerText = `Call ID: ${selectedCall.call_id || "N/A"} · ${formatDateTime(selectedCall.created_at)} · Duration: ${formatDuration(selectedCall.duration_ms)}`;
+      document.getElementById("modal-decision").innerText = selectedCall.customer_decision || "No decision summary recorded.";
+      document.getElementById("modal-next-action").innerText = selectedCall.next_action || "None required.";
+      document.getElementById("modal-followup").innerText = selectedCall.follow_up_within_hours ? `${selectedCall.follow_up_within_hours} hours` : "N/A";
+      document.getElementById("modal-sentiment-badge").innerHTML = getSentimentBadge(selectedCall.sentiment);
+
+      // Escalation Alert
+      const escAlert = document.getElementById("modal-escalation-alert");
+      if (selectedCall.escalation_needed) {
+        escAlert.classList.remove("hidden");
+        document.getElementById("modal-escalation-text").innerText = `Trigger: ${selectedCall.escalation_reason || "Requires human agent intervention."}`;
+      } else {
+        escAlert.classList.add("hidden");
+      }
+
+      // Quotes
+      const quotesList = document.getElementById("modal-quotes");
+      quotesList.innerHTML = "";
+      const quotes = Array.isArray(selectedCall.key_quotes) ? selectedCall.key_quotes : [];
+      if (quotes.length > 0) {
+        quotes.forEach(q => {
+          const li = document.createElement("li");
+          li.innerText = `"${q}"`;
+          quotesList.appendChild(li);
+        });
+      } else {
+        quotesList.innerHTML = "<span class='text-slate-400'>None captured</span>";
+      }
+
+      // Objections
+      const objectionsList = document.getElementById("modal-objections");
+      objectionsList.innerHTML = "";
+      const objections = Array.isArray(selectedCall.objections_raised) ? selectedCall.objections_raised : [];
+      if (objections.length > 0) {
+        objections.forEach(obj => {
+          const li = document.createElement("li");
+          li.innerText = obj;
+          objectionsList.appendChild(li);
+        });
+      } else {
+        objectionsList.innerHTML = "<span class='text-slate-400'>No objections recorded</span>";
+      }
+
+      // Render Chat Dialogue
+      renderChatDialogue(selectedCall.transcript);
+
+      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modal").classList.add("flex");
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function renderChatDialogue(transcript) {
+      const container = document.getElementById("modal-chat-container");
+      container.innerHTML = "";
+
+      if (!transcript || !transcript.trim()) {
+        container.innerHTML = `
+          <div class="py-8 text-center text-slate-400 space-y-1">
+            <i data-lucide="phone-missed" class="w-6 h-6 mx-auto text-slate-300 mb-1"></i>
+            <p class="text-xs font-semibold">No voice dialogue recorded</p>
+            <p class="text-[11px] text-slate-400">Call was unanswered, disconnected immediately, or silent.</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Parse lines: lines often start with "Agent:" or "User:"
+      const lines = transcript.split("\n");
+      let turns = [];
+      let currentSpeaker = null;
+      let currentText = [];
+
+      for (let line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed) continue;
+
+        const agentMatch = line.match(/^(Agent|Bot|AI|Marissa):\s*(.*)/i);
+        const userMatch = line.match(/^(User|Customer|Human):\s*(.*)/i);
+
+        if (agentMatch) {
+          if (currentSpeaker && currentText.length > 0) {
+            turns.push({ speaker: currentSpeaker, text: currentText.join(" ") });
+            currentText = [];
+          }
+          currentSpeaker = "agent";
+          if (agentMatch[2].trim()) currentText.push(agentMatch[2].trim());
+        } else if (userMatch) {
+          if (currentSpeaker && currentText.length > 0) {
+            turns.push({ speaker: currentSpeaker, text: currentText.join(" ") });
+            currentText = [];
+          }
+          currentSpeaker = "user";
+          if (userMatch[2].trim()) currentText.push(userMatch[2].trim());
+        } else {
+          if (currentSpeaker) {
+            currentText.push(trimmed);
+          } else {
+            // Unattributed leading text
+            currentSpeaker = "agent";
+            currentText.push(trimmed);
+          }
+        }
+      }
+
+      if (currentSpeaker && currentText.length > 0) {
+        turns.push({ speaker: currentSpeaker, text: currentText.join(" ") });
+      }
+
+      if (turns.length === 0) {
+        container.innerHTML = `<div class="p-3 text-xs text-slate-600 bg-white rounded-xl border border-slate-200">${transcript}</div>`;
+        return;
+      }
+
+      turns.forEach((turn) => {
+        const isAgent = turn.speaker === "agent";
+        const bubbleWrap = document.createElement("div");
+        bubbleWrap.className = `flex items-end gap-3 px-2 sm:px-3 ${isAgent ? "justify-start" : "justify-end"} group`;
+
+        if (isAgent) {
+          bubbleWrap.innerHTML = `
+            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs mb-1" title="AI Voice Assistant">
+              <i data-lucide="bot" class="w-4.5 h-4.5"></i>
+            </div>
+            <div class="max-w-[82%] space-y-1">
+              <div class="text-[10px] font-bold tracking-wider text-slate-500 uppercase px-1">AI Assistant (Marissa)</div>
+              <div class="bg-white text-slate-800 text-xs sm:text-[13px] px-4 py-3 rounded-2xl rounded-bl-xs border border-slate-200/90 shadow-2xs leading-relaxed">
+                ${turn.text}
+              </div>
+            </div>
+          `;
+        } else {
+          bubbleWrap.innerHTML = `
+            <div class="max-w-[82%] space-y-1 text-right">
+              <div class="text-[10px] font-bold tracking-wider text-slate-500 uppercase px-1">Customer / User</div>
+              <div class="bg-blue-600 text-white text-xs sm:text-[13px] px-4 py-3 rounded-2xl rounded-br-xs shadow-2xs leading-relaxed text-left">
+                ${turn.text}
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-800 text-slate-200 flex items-center justify-center shrink-0 shadow-xs mb-1" title="Customer">
+              <i data-lucide="user" class="w-4.5 h-4.5"></i>
+            </div>
+          `;
+        }
+
+        container.appendChild(bubbleWrap);
+      });
+    }
+
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+      document.getElementById("modal").classList.remove("flex");
+      selectedCall = null;
+    }
+
+    function copyTranscript() {
+      if (!selectedCall || !selectedCall.transcript) return;
+      navigator.clipboard.writeText(selectedCall.transcript);
+      alert("Transcript copied to clipboard!");
+    }
+
+    async function syncCallsFromRetell() {
+      const syncBtn = document.getElementById("sync-btn");
+      const syncIcon = document.getElementById("sync-icon");
+      if (syncBtn.disabled) return;
+
+      syncBtn.disabled = true;
+      syncIcon.classList.add("animate-spin");
+
+      try {
+        const resp = await fetch("/api/sync-calls", { method: "POST" });
+        const res = await resp.json();
+        if (res.ok) {
+          // Re-fetch call results
+          const fetchResp = await fetch("/api/call-results");
+          const freshData = await fetchResp.json();
+          if (freshData.ok && freshData.data) {
+            allCalls = freshData.data;
+            updateStats();
+            applyFilters();
+          }
+        }
+      } catch (err) {
+        console.error("Sync error:", err);
+      } finally {
+        syncBtn.disabled = false;
+        syncIcon.classList.remove("animate-spin");
+      }
+    }
+
+    async function checkSystemHealth() {
+      const badge = document.getElementById("system-status-badge");
+      const dot = document.getElementById("status-dot");
+      const text = document.getElementById("status-text");
+      if (!badge || !dot || !text) return;
+
+      try {
+        const res = await fetch("/api/health");
+        const data = await res.json();
+        if (data.all_healthy) {
+          dot.className = "w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0";
+          text.innerText = "Services Online";
+          badge.className = "inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700/60 text-[10px] sm:text-xs font-semibold tracking-wide uppercase text-slate-300 whitespace-nowrap shrink-0 select-none transition-all";
+          badge.title = "Supabase DB: Online · Retell AI: Online";
+        } else {
+          dot.className = "w-2 h-2 rounded-full bg-rose-500 animate-ping shrink-0";
+          const failed = [];
+          if (!data.services?.supabase) failed.push("Database Down");
+          if (!data.services?.retell) failed.push("Retell AI Down");
+          text.innerText = failed.join(" · ") || "Service Degraded";
+          badge.className = "inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-rose-950/80 border border-rose-500/60 text-[10px] sm:text-xs font-bold tracking-wide uppercase text-rose-300 whitespace-nowrap shrink-0 select-none transition-all";
+          badge.title = `Service outage detected: ${failed.join(", ")}`;
+        }
+      } catch (err) {
+        dot.className = "w-2 h-2 rounded-full bg-rose-500 shrink-0";
+        text.innerText = "System Offline";
+        badge.className = "inline-flex items-center space-x-1.5 sm:space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-rose-950/80 border border-rose-500/60 text-[10px] sm:text-xs font-bold tracking-wide uppercase text-rose-300 whitespace-nowrap shrink-0 select-none transition-all";
+        badge.title = "Network or server connection failed";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      populateCampaignOptions();
+      updateStats();
+      renderTable();
+      if (window.lucide) lucide.createIcons();
+      checkSystemHealth();
+      setInterval(checkSystemHealth, 30000);
+    });
+  </script>
+</body>
+</html>

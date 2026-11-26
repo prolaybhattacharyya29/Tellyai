@@ -12,9 +12,13 @@ load_dotenv()
 RETELL_KEY = os.environ["RETELL_API_KEY"]
 LLM_ID = os.environ["RETELL_LLM_ID"]
 VOICE_ID = os.environ["VIETNAMESE_VOICE_ID"]
-NGROK_DOMAIN = os.environ["NGROK_DOMAIN"]
 
-webhook_url = f"https://{NGROK_DOMAIN}/retell-webhook"
+render_url = os.environ.get("RENDER_APP_URL")
+if render_url:
+    webhook_url = f"{render_url.rstrip('/')}/retell-webhook"
+else:
+    ngrok_domain = os.environ.get("NGROK_DOMAIN", "valiant-briar-ninja.ngrok-free.dev")
+    webhook_url = f"https://{ngrok_domain}/retell-webhook"
 
 agent_config = {
     "agent_name": "FE Credit Demo Agent (English testing)",

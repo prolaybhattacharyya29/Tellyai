@@ -21,17 +21,25 @@ sb = create_client(SUPABASE_URL, SUPABASE_KEY)
 DEMO_ACCOUNTS = [
     {
         "username": "admin",
+        "email": "admin@xtagelabs.com",
+        "password_hash": hash_password("xtage@2026kk"),
+        "full_name": "admin",
+        "role": "superadmin",
+        "is_active": True,
+    },
+    {
+        "username": "fe_admin",
         "email": "admin@fecredit.com",
-        "password_hash": "admin123",  # Supports both plaintext and hashed
-        "name": "Platform Administrator",
+        "password_hash": hash_password("admin123"),
+        "full_name": "Platform Administrator",
         "role": "superadmin",
         "is_active": True,
     },
     {
         "username": "demo",
         "email": "demo@fecredit.com",
-        "password_hash": "admin123",
-        "name": "Demo Presenter",
+        "password_hash": hash_password("admin123"),
+        "full_name": "Demo Presenter",
         "role": "admin",
         "is_active": True,
     },
