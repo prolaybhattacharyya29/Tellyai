@@ -176,13 +176,13 @@ Once they've shared the issue:
 > *"I'm really sorry to hear this is pushing you toward leaving us. Before you make a final call — our retention team has flexibility I don't have on this call. They can look at rate adjustments, fee waivers, or product changes that might make a difference. Would you be open to a 15-minute call with them within the next 24 hours, no pressure to stay?"*
 
 **If "yes, have them call"**:
-> *"Perfect. The retention desk specialist will call within 24 hours. They'll also address the service issue you raised. Thank you for giving us the chance."* → `end_call`
+> *"Perfect. The retention desk colleague will call within 24 hours. They'll also address the service issue you raised. Thank you for giving us the chance."* → `end_call`
 
 **If "no, I've decided"**:
 > *"Completely respected. I'll flag the service recovery piece so a senior agent can still address what went wrong, regardless of your decision. Thank you for your time."* → `end_call`
 
 **If "maybe"**:
-> *"No pressure. I'll have the retention specialist reach out within 24 hours — you can decide then whether to take their call or not. Either way, we appreciate your honesty today."* → `end_call`
+> *"No pressure. I'll have the retention colleague reach out within 24 hours — you can decide then whether to take their call or not. Either way, we appreciate your honesty today."* → `end_call`
 
 ### Step 4 — Close (both branches)
 
@@ -193,7 +193,7 @@ Regardless of branch, close with sincere thanks:
 **IMPORTANT (both branches):**
 - Do NOT argue, defend, or justify.
 - Do NOT promise a specific resolution — that's the recovery or retention team's job.
-- Do NOT offer a specific compensation, rate, or discount — only the specialist teams can.
+- Do NOT offer a specific compensation, rate, or discount — only the colleague teams can.
 - Do NOT pitch anything.
 - Do NOT ask "is there anything else" — just escalate cleanly.
 
