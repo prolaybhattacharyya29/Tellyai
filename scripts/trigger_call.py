@@ -72,6 +72,25 @@ def load_campaign_prompt(campaign):
         raise FileNotFoundError(f"Campaign prompt not found: {prompt_path}")
     return prompt_path.read_text(encoding="utf-8")
 
+def load_system_prompt():
+    """Load the universal system prompt that wraps every campaign."""
+    prompt_path = PROJECT_ROOT / "prompts" / "agent_system.md"
+    if not prompt_path.exists():
+        raise FileNotFoundError(f"Agent system prompt not found: {prompt_path}")
+    return prompt_path.read_text(encoding="utf-8")
+
+
+def build_full_prompt(campaign):
+    """Combine agent_system.md (universal) with the campaign-specific prompt.
+    agent_system.md has a {{campaign_rules}} placeholder where the campaign
+    prompt gets injected."""
+    system = load_system_prompt()
+    campaign_prompt = load_campaign_prompt(campaign)
+    if "{{campaign_rules}}" in system:
+        return system.replace("{{campaign_rules}}", campaign_prompt)
+    # Fallback: append campaign prompt at the end
+    return system + "\n\n" + campaign_prompt
+
 
 def extract_first_name(full_name):
     """For Vietnamese names like 'Nguyen Thi Minh Chi', the given name is the
