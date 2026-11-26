@@ -83,12 +83,16 @@ def extract_first_name(full_name):
 
 
 def make_opening_line(campaign, first_name):
-    """Generate a short, campaign-aware opening line Marissa speaks first."""
+    """Generate a short, campaign-aware opening line Marissa speaks first.
+    Must explicitly disclose AI identity — regulatory requirement."""
     intro = CAMPAIGN_INTROS.get(
         campaign,
         "I'm calling from FE Credit with something I think might interest you."
     )
-    return f"Hi {first_name}, this is Marissa from FE Credit. {intro} Do you have a quick minute to chat?"
+    return (
+        f"Hi {first_name}, this is Marissa, an AI assistant calling on behalf of "
+        f"FE Credit. {intro} Do you have a quick minute to chat?"
+    )
 
 
 def row_to_variables(row):
