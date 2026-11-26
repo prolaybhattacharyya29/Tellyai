@@ -8,17 +8,12 @@ from pathlib import Path
 
 import httpx
 import pandas as pd
-from anthropic import Anthropic
 from dotenv import load_dotenv
 
 from app.campaigns import CAMPAIGNS
 
 load_dotenv()
 log = logging.getLogger("call_service")
-
-CACHE_OPENINGS_DIR = Path("cache/openings")
-CACHE_OPENINGS_DIR.mkdir(parents=True, exist_ok=True)
-
 
 def load_campaign_rules(filename: str) -> str:
     path = Path("prompts/campaigns") / filename
@@ -34,6 +29,31 @@ def profile_to_text(row: dict) -> str:
             continue
         parts.append(f"{k}: {v}")
     return ". ".join(parts) + "."
+
+
+# Campaign-specific one-liner Marissa says after the greeting
+CAMPAIGN_INTROS = {
+    "Cross-sell": "I'm calling with a product opportunity that might suit your profile.",
+    "Pre-approved Offer": "I'm calling because you have a pre-approved loan offer ready and waiting for you.",
+    "Reactivation": "It's been a while since we've connected, and I'm calling with a special offer for returning customers like yourself.",
+    "Winback": "I'm calling to reconnect and share something we've put together specially for you.",
+    "Payment Reminder": "I'm calling with a friendly reminder about your upcoming EMI payment.",
+    "Early Collections": "I'm calling about your loan account and would like to work with you on bringing it current.",
+    "Onboarding": "I'm calling to welcome you to FE Credit and help you make the most of your new product.",
+    "EMI Conversion": "I'm calling because there's an option to convert your outstanding card balance into a more manageable EMI plan.",
+    "Renewal": "I'm calling about an upcoming renewal on one of your products with us.",
+    "Pre-closure Retention": "I'm calling because your loan with us is nearing its final payments, and I wanted to discuss the options available.",
+    "Lead Follow-up": "I'm following up on your recent interest in one of our products.",
+    "NPS / Feedback": "I'm calling to get your quick feedback on your recent experience with FE Credit.",
+}
+
+
+def extract_first_name(full_name: str) -> str:
+    """For Vietnamese names the given name is the last word."""
+    if not full_name or not full_name.strip():
+        return "there"
+    parts = full_name.strip().split()
+    return parts[-1] if parts else "there"
 
 
 def get_customer_for_campaign(campaign_csv_name: str) -> dict:
@@ -65,52 +85,23 @@ def get_customer_for_campaign(campaign_csv_name: str) -> dict:
     }
 
 
-def generate_opening_line(customer: dict, language: str = "English") -> str:
-    """Generate dynamic opening line with Claude, cached per customer."""
-    customer_id = customer.get("customer_id", "demo")
-    cache_file = CACHE_OPENINGS_DIR / f"{customer_id}_{language[:2].lower()}.txt"
-    if cache_file.exists():
-        return cache_file.read_text(encoding="utf-8").strip()
-
-    anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not anthropic_key:
-        return f"Xin chào {customer.get('name', 'quý khách')}, em là trợ lý ảo gọi từ FE Credit."
-
-    try:
-        client = Anthropic(api_key=anthropic_key)
-        sys_prompt_path = Path("prompts/opening_system.md")
-        system_prompt = (
-            sys_prompt_path.read_text(encoding="utf-8")
-            if sys_prompt_path.exists()
-            else ""
+def generate_opening_line(customer: dict, campaign_title: str, language: str = "English") -> str:
+    """Generate a deterministic opening line with AI disclosure and campaign-specific intro."""
+    full_name = customer.get("name", "there")
+    first_name = extract_first_name(full_name)
+    intro = CAMPAIGN_INTROS.get(
+        campaign_title,
+        "I'm calling from FE Credit with something I think might interest you.",
+    )
+    if "en" in language.lower():
+        return (
+            f"Hi {first_name}, this is Marissa, an AI assistant calling on behalf of "
+            f"FE Credit. {intro} Do you have a quick minute to chat?"
         )
-        profile = profile_to_text(customer)
-
-        lang_note = (
-            "Respond in English."
-            if "en" in language.lower()
-            else "Respond in Vietnamese."
-        )
-        msg = client.messages.create(
-            model="claude-haiku-4-5",
-            max_tokens=100,
-            system=system_prompt,
-            messages=[
-                {
-                    "role": "user",
-                    "content": f"Customer profile:\n{profile}\nLanguage instruction: {lang_note}",
-                }
-            ],
-        )
-        opening = msg.content[0].text.strip().strip('"').strip("'")
-        cache_file.write_text(opening, encoding="utf-8")
-        return opening
-    except Exception as e:
-        log.warning("Claude opening generation failed: %s", e)
-        name = customer.get("name", "customer")
-        if "en" in language.lower():
-            return f"Hello {name}, I am calling from FE Credit regarding your account services."
-        return f"Xin chào {name}, em là trợ lý ảo gọi từ FE Credit."
+    return (
+        f"Xin chào {first_name}, em là Marissa, trợ lý AI gọi từ FE Credit. "
+        f"Do you have a quick minute to chat?"
+    )
 
 
 def trigger_call(campaign_key: str, phone: str, language: str = "English") -> dict:
@@ -137,7 +128,7 @@ def trigger_call(campaign_key: str, phone: str, language: str = "English") -> di
     customer = get_customer_for_campaign(campaign_info["csv_name"])
     customer["phone"] = cleaned_phone
 
-    opening = generate_opening_line(customer, language=language)
+    opening = generate_opening_line(customer, campaign_title=campaign_info["title"], language=language)
     profile_text = profile_to_text(customer)
     campaign_rules = load_campaign_rules(campaign_info["file"])
 
