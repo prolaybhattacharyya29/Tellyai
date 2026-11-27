@@ -2,9 +2,15 @@
 scripts/trigger_call.py
 
 Fires an outbound Retell AI call for a specific campaign + customer.
-Reads campaign CSVs from the OneDrive data folder.
-Generates opening_line and first_name so the prompt's {{opening_line}}
-and {{first_name}} placeholders resolve.
+
+Architecture (matches the deployed backend):
+    1. Push agent_system.md VERBATIM to the Retell LLM as general_prompt.
+       Placeholders like {{opening_line}}, {{campaign_rules}}, {{customer_profile}}
+       are kept INTACT so Retell can substitute them per-call.
+    2. Fire the call with dynamic variables. Retell interpolates them into
+       the template at call time.
+
+This way local and web-UI calls behave identically.
 
 Usage:
     python -m scripts.trigger_call --campaign cross_sell --customer_id XS-10000
@@ -39,7 +45,6 @@ CAMPAIGNS = [
     "lead_followup", "nps_feedback",
 ]
 
-# One-line campaign intro Marissa says after the greeting.
 CAMPAIGN_INTROS = {
     "cross_sell":         "I'm calling with a product opportunity that might suit your profile.",
     "pre_approved":       "I'm calling because you have a pre-approved loan offer ready and waiting for you.",
@@ -72,29 +77,20 @@ def load_campaign_prompt(campaign):
         raise FileNotFoundError(f"Campaign prompt not found: {prompt_path}")
     return prompt_path.read_text(encoding="utf-8")
 
-def load_system_prompt():
-    """Load the universal system prompt that wraps every campaign."""
+
+def load_system_template():
+    """Load agent_system.md VERBATIM - keep {{placeholders}} intact.
+    Campaign content and customer profile are passed as dynamic variables at
+    call time; Retell substitutes the placeholders per-call."""
     prompt_path = PROJECT_ROOT / "prompts" / "agent_system.md"
     if not prompt_path.exists():
         raise FileNotFoundError(f"Agent system prompt not found: {prompt_path}")
     return prompt_path.read_text(encoding="utf-8")
 
 
-def build_full_prompt(campaign):
-    """Combine agent_system.md (universal) with the campaign-specific prompt.
-    agent_system.md has a {{campaign_rules}} placeholder where the campaign
-    prompt gets injected."""
-    system = load_system_prompt()
-    campaign_prompt = load_campaign_prompt(campaign)
-    if "{{campaign_rules}}" in system:
-        return system.replace("{{campaign_rules}}", campaign_prompt)
-    # Fallback: append campaign prompt at the end
-    return system + "\n\n" + campaign_prompt
-
-
 def extract_first_name(full_name):
     """For Vietnamese names like 'Nguyen Thi Minh Chi', the given name is the
-    last word ('Chi'). For other names, same rule works well enough."""
+    last word ('Chi'). Works adequately for other naming conventions too."""
     if not full_name or not full_name.strip():
         return "there"
     parts = full_name.strip().split()
@@ -102,8 +98,7 @@ def extract_first_name(full_name):
 
 
 def make_opening_line(campaign, first_name):
-    """Generate a short, campaign-aware opening line Marissa speaks first.
-    Must explicitly disclose AI identity — regulatory requirement."""
+    """Generate the opening line Marissa speaks first. MUST disclose AI identity."""
     intro = CAMPAIGN_INTROS.get(
         campaign,
         "I'm calling from FE Credit with something I think might interest you."
@@ -114,21 +109,24 @@ def make_opening_line(campaign, first_name):
     )
 
 
-def row_to_variables(row):
-    """Convert row → {str: str} for Retell dynamic variables. Skip blanks."""
-    out = {}
+def profile_to_text(row):
+    """Format a customer row as a readable context block for Marissa."""
+    lines = []
     for col, val in row.items():
         s = str(val).strip()
         if not s or s.lower() == "nan":
             continue
-        out[col] = s
-    return out
+        pretty = col.replace("_", " ").title()
+        lines.append(f"- {pretty}: {s}")
+    return "\n".join(lines)
 
 
 def main():
     parser = argparse.ArgumentParser(description="Trigger a Retell AI outbound call")
     parser.add_argument("--campaign", required=True, choices=CAMPAIGNS)
     parser.add_argument("--customer_id", required=True)
+    parser.add_argument("--skip-llm-update", action="store_true",
+                        help="Skip re-pushing the LLM template (faster for rapid repeat tests)")
     args = parser.parse_args()
 
     missing = [k for k, v in {
@@ -138,69 +136,53 @@ def main():
         "RETELL_FROM_NUMBER": RETELL_FROM_NUMBER,
     }.items() if not v]
     if missing:
-        print(f"❌ Missing env vars: {', '.join(missing)}")
+        print(f"[ERROR] Missing env vars: {', '.join(missing)}")
         sys.exit(1)
 
-    print(f"📁 Data folder: {DATA_DIR}")
-    print(f"📂 Campaign: {args.campaign}")
-    print(f"👤 Customer:  {args.customer_id}")
+    print(f"[INFO] Data folder: {DATA_DIR}")
+    print(f"[INFO] Campaign:    {args.campaign}")
+    print(f"[INFO] Customer:    {args.customer_id}")
 
     df = load_campaign_data(args.campaign)
     match = df[df["customer_id"] == args.customer_id]
     if len(match) == 0:
-        print(f"❌ Customer {args.customer_id} not found in {args.campaign}.csv")
+        print(f"[ERROR] No customer found with id {args.customer_id} in {args.campaign}.csv")
         sys.exit(1)
-    row = match.iloc[0]
-
-    prompt_template = build_full_prompt(args.campaign)
-
-    # Build dynamic variables from the row
-    variables = row_to_variables(row)
-    variables["campaign"] = args.campaign
-
-    # Derive first_name + opening_line so prompts can use these placeholders
-    full_name = variables.get("name", "")
-    first_name = extract_first_name(full_name)
-    variables["first_name"] = first_name
-    variables["opening_line"] = make_opening_line(args.campaign, first_name)
-
-    to_number = row["phone"]
+    row = match.iloc[0].to_dict()
 
     client = Retell(api_key=RETELL_API_KEY)
 
-    try:
-        client.llm.update(
-            llm_id=RETELL_LLM_ID,
-            general_prompt=prompt_template,
-        )
-        print(f"✓ Updated Retell LLM with {args.campaign} prompt")
-    except Exception as e:
-        print(f"❌ Failed to update Retell LLM: {e}")
-        sys.exit(1)
+    # --- Step 1: push the CLEAN template to the LLM (placeholders intact) ---
+    if not args.skip_llm_update:
+        template = load_system_template()
+        client.llm.update(llm_id=RETELL_LLM_ID, general_prompt=template)
+        print(f"[OK] LLM template pushed ({len(template)} chars, placeholders intact)")
 
-    try:
-        call = client.call.create_phone_call(
-            from_number=RETELL_FROM_NUMBER,
-            to_number=to_number,
-            override_agent_id=RETELL_AGENT_ID,
-            retell_llm_dynamic_variables=variables,
-            metadata={
-                "campaign": args.campaign,
-                "customer_id": args.customer_id,
-                "customer_name": full_name,
-            },
-        )
-        print(f"✓ Call initiated")
-        print(f"  Call ID       : {call.call_id}")
-        print(f"  Customer      : {full_name}")
-        print(f"  First name    : {first_name}")
-        print(f"  Opening line  : {variables['opening_line']}")
-        print(f"  Phone         : {to_number}")
-        print(f"  Campaign      : {args.campaign}")
-        print(f"  Variables sent: {len(variables)}")
-    except Exception as e:
-        print(f"❌ Failed to create call: {e}")
-        sys.exit(1)
+    # --- Step 2: build the per-call dynamic variables ---
+    campaign_rules = load_campaign_prompt(args.campaign)
+    customer_profile = profile_to_text(row)
+    first_name = extract_first_name(row.get("name", ""))
+    opening_line = make_opening_line(args.campaign, first_name)
+
+    print(f"[INFO] First name:   {first_name}")
+    print(f"[INFO] Phone:        {row.get('phone', '(missing)')}")
+
+    # --- Step 3: fire the call ---
+    resp = client.call.create_phone_call(
+        from_number=RETELL_FROM_NUMBER,
+        to_number=row["phone"],
+        override_agent_id=RETELL_AGENT_ID,
+        retell_llm_dynamic_variables={
+            "opening_line": opening_line,
+            "customer_profile": customer_profile,
+            "campaign_rules": campaign_rules,
+        },
+        metadata={
+            "campaign": args.campaign,
+            "customer_id": args.customer_id,
+        },
+    )
+    print(f"[OK] Call fired: call_id={resp.call_id}")
 
 
 if __name__ == "__main__":
