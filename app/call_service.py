@@ -1,5 +1,5 @@
 """
-Service to initiate demo outbound calls for FE Credit AI Voice Assistant.
+Service to initiate demo outbound calls for Toki AI Voice Assistant.
 """
 
 import logging
@@ -39,12 +39,12 @@ CAMPAIGN_INTROS = {
     "Winback": "I'm calling to reconnect and share something we've put together specially for you.",
     "Payment Reminder": "I'm calling with a friendly reminder about your upcoming EMI payment.",
     "Early Collections": "I'm calling about your loan account and would like to work with you on bringing it current.",
-    "Onboarding": "I'm calling to welcome you to FE Credit and help you make the most of your new product.",
+    "Onboarding": "I'm calling to welcome you to Toki and help you make the most of your new product.",
     "EMI Conversion": "I'm calling because there's an option to convert your outstanding card balance into a more manageable EMI plan.",
     "Renewal": "I'm calling about an upcoming renewal on one of your products with us.",
     "Pre-closure Retention": "I'm calling because your loan with us is nearing its final payments, and I wanted to discuss the options available.",
     "Lead Follow-up": "I'm following up on your recent interest in one of our products.",
-    "NPS / Feedback": "I'm calling to get your quick feedback on your recent experience with FE Credit.",
+    "NPS / Feedback": "I'm calling to get your quick feedback on your recent experience with Toki.",
 }
 
 
@@ -91,15 +91,15 @@ def generate_opening_line(customer: dict, campaign_title: str, language: str = "
     first_name = extract_first_name(full_name)
     intro = CAMPAIGN_INTROS.get(
         campaign_title,
-        "I'm calling from FE Credit with something I think might interest you.",
+        "I'm calling from Toki with something I think might interest you.",
     )
     if "en" in language.lower():
         return (
             f"Hi {first_name}, this is Marissa, an AI assistant calling on behalf of "
-            f"FE Credit. {intro} Do you have a quick minute to chat?"
+            f"Toki. {intro} Do you have a quick minute to chat?"
         )
     return (
-        f"Xin chào {first_name}, em là Marissa, trợ lý AI gọi từ FE Credit. "
+        f"Xin chào {first_name}, em là Marissa, trợ lý AI gọi từ Toki. "
         f"Do you have a quick minute to chat?"
     )
 
