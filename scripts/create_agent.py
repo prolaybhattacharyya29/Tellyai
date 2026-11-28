@@ -21,7 +21,7 @@ else:
     webhook_url = f"https://{ngrok_domain}/retell-webhook"
 
 agent_config = {
-    "agent_name": "FE Credit Demo Agent (English testing)",
+    "agent_name": "Toqi Demo Agent (English testing)",
     "voice_id": VOICE_ID,
     "voice_speed": 1.0,
     "language": "en-US",

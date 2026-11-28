@@ -1,4 +1,4 @@
--- Create customers table for FE Credit Demo
+-- Create customers table for Toqi Demo
 -- Unified schema storing common customer identity attributes alongside campaign-specific JSONB data.
 
 CREATE TABLE IF NOT EXISTS public.customers (

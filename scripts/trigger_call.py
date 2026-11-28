@@ -30,7 +30,7 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 DATA_DIR = Path(os.getenv(
     "CAMPAIGN_DATA_DIR",
-    r"C:\Users\Prolay Bhattacharyya\OneDrive\Documents\Fe Credit data"
+    r"C:\Users\Prolay Bhattacharyya\OneDrive\Documents\Toqi data"
 ))
 
 RETELL_API_KEY = os.getenv("RETELL_API_KEY")
@@ -52,12 +52,12 @@ CAMPAIGN_INTROS = {
     "winback":            "I'm calling to reconnect and share something we've put together specially for you.",
     "payment_reminder":   "I'm calling with a friendly reminder about your upcoming EMI payment.",
     "early_collections":  "I'm calling about your loan account and would like to work with you on bringing it current.",
-    "onboarding":         "I'm calling to welcome you to FE Credit and help you make the most of your new product.",
+    "onboarding":         "I'm calling to welcome you to Toqi and help you make the most of your new product.",
     "emi_conversion":     "I'm calling because there's an option to convert your outstanding card balance into a more manageable EMI plan.",
     "renewal":            "I'm calling about an upcoming renewal on one of your products with us.",
     "pre_closure":        "I'm calling because your loan with us is nearing its final payments, and I wanted to discuss the options available.",
     "lead_followup":      "I'm following up on your recent interest in one of our products.",
-    "nps_feedback":       "I'm calling to get your quick feedback on your recent experience with FE Credit.",
+    "nps_feedback":       "I'm calling to get your quick feedback on your recent experience with Toqi.",
 }
 
 
@@ -101,11 +101,11 @@ def make_opening_line(campaign, first_name):
     """Generate the opening line Marissa speaks first. MUST disclose AI identity."""
     intro = CAMPAIGN_INTROS.get(
         campaign,
-        "I'm calling from FE Credit with something I think might interest you."
+        "I'm calling from Toqi with something I think might interest you."
     )
     return (
         f"Hi {first_name}, this is Marissa, an AI assistant calling on behalf of "
-        f"FE Credit. {intro} Do you have a quick minute to chat?"
+        f"Toqi. {intro} Do you have a quick minute to chat?"
     )
 
 

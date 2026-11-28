@@ -1,5 +1,5 @@
 -- ==============================================================================
--- Schema: Admin Users Table for FE Credit AI Calling Platform
+-- Schema: Admin Users Table for Toqi AI Calling Platform
 -- Paste and run this script in your Supabase SQL Editor:
 -- https://supabase.com/dashboard/project/lagejwzhelvqlyqhsvig/sql
 -- ==============================================================================
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS public.admin_users (
     username VARCHAR(100) UNIQUE NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    name VARCHAR(255) DEFAULT 'FE Credit Staff',
+    name VARCHAR(255) DEFAULT 'Toqi Staff',
     role VARCHAR(50) DEFAULT 'admin',
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMPTZ DEFAULT NOW(),
